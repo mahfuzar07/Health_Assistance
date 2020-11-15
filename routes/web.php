@@ -26,11 +26,19 @@ Route::get('/', 'FrontendController@index')->name('home');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+//=================Admin Route==========================
 //adminController
 Route::get('admin/home', 'AdminController@index');
 Route::get('admin','Admin\LoginController@showLoginForm')->name('login.admin');
 Route::post('admin','Admin\LoginController@login');
 Route::get('admin/logout', 'AdminController@Logout')->name('admin.logout');
+//CategoryController
+Route::get('admin/categories', 'Admin\CategoryController@index')->name('admin.category');
+
+//umanageController
+Route::get('admin/user', 'Admin\UmanageController@index')->name('admin.umanage');
+
 //consultantController
 Route::get('consultan/home', 'ConsultantController@index');
 Route::get('consultant','Consultant\LoginController@showLoginForm')->name('login.consultant');

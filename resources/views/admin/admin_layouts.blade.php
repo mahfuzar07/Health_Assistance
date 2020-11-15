@@ -1,34 +1,37 @@
 <!DOCTYPE html>
+
 <html>
-    <head>
+     
+     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
-        <link rel="shortcut icon" href="{{ asset('backend/images/favicon_1.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon_1.ico">
 
-        <title>Moltran - Responsive Admin Dashboard Template</title>
-
-
+        <title>Admin- Aim 2B Well</title>
 
         <!-- Base Css Files -->
-        <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('backend') }}/css/bootstrap.min.css" rel="stylesheet" />
 
         <!-- Font Icons -->
-        <link href="{{ asset('backend/assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
-        <link href="{{ asset('backend/assets/ionicon/css/ionicons.min.css') }}" rel="stylesheet" />
-        <link href="{{ asset('backend/css/material-design-iconic-font.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend') }}/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="{{ asset('backend') }}/assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
+        <link href="{{ asset('backend') }}/css/material-design-iconic-font.min.css" rel="stylesheet">
 
         <!-- animate css -->
-        <link href="{{ asset('backend/css/animate.css') }}" rel="stylesheet" />
+        <link href="{{ asset('backend') }}/css/animate.css" rel="stylesheet" />
 
         <!-- Waves-effect -->
-        <link href="{{ asset('backend/css/waves-effect.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend') }}/css/waves-effect.css" rel="stylesheet">
+
+        <!-- sweet alerts -->
+        <link href="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
 
         <!-- Custom Files -->
-        <link href="{{ asset('backend/css/helper.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend') }}/css/helper.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend') }}/css/style.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +40,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="{{ asset('backend/js/modernizr.min.js') }}"></script>
+        <script src="{{ asset('backend') }}/js/modernizr.min.js"></script>
         
     </head>
 
@@ -171,66 +174,25 @@
                     <div id="sidebar-menu">
                         <ul>
                             <li>
-                                <a href="index.html" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
-                            </li>
+                                <a href="{{ url('admin/home') }}" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                                <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
+                                <a href="{{ route('admin.category') }}" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
+
+                                <a href="{{ route('admin.umanage') }}" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
+
+
+
+                            </li>
+                            
+
+                            
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Mail </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="inbox.html">Inbox</a></li>
-                                    <li><a href="email-compose.html">Compose Mail</a></li>
-                                    <li><a href="email-read.html">View Mail</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="calendar.html" class="waves-effect"><i class="md md-event"></i><span> Calendar </span></a>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Elements </span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="typography.html">Typography</a></li>
-                                    <li><a href="buttons.html">Buttons</a></li>
-                                   
-                                  
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Components </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Order Manage</span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="grid.html">Grid</a></li>
                                     <li><a href="portlets.html">Portlets</a></li>
                                     
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-redeem"></i> <span> Icons </span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="material-icon.html">Material Design</a></li>
-                                    <li><a href="ion-icons.html">Ion Icons</a></li>
-                                    <li><a href="font-awesome.html">Font awesome</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-now-widgets"></i><span> Forms </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="form-elements.html">General Elements</a></li>
-                                    <li><a href="form-validation.html">Form Validation</a></li>
-                                  
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-view-list"></i><span> Data Tables </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="tables.html">Basic Tables</a></li>
-                                    <li><a href="table-datatable.html">Data Table</a></li>
-                                    <li><a href="tables-editable.html">Editable Table</a></li>
-                                    <li><a href="responsive-table.html">Responsive Table</a></li>
                                 </ul>
                             </li>
 
@@ -304,45 +266,71 @@
         </script>
 
         <!-- jQuery  -->
-        <script src="{{ asset('backend/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('backend/js/waves.js') }}"></script>
-        <script src="{{ asset('backend/js/wow.min.js') }}"></script>
-        <script src="{{ asset('backend/js/jquery.nicescroll.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('backend/js/jquery.scrollTo.min.js') }}"></script>
-        <script src="{{ asset('backend/assets/jquery-detectmobile/detect.js') }}"></script>
-        <script src="{{ asset('backend/assets/fastclick/fastclick.js') }}"></script>
-        <script src="{{ asset('backend/assets/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
-        <script src="{{ asset('backend/assets/jquery-blockui/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('backend') }}/js/jquery.min.js"></script>
+        <script src="{{ asset('backend') }}/js/bootstrap.min.js"></script>
+        <script src="{{ asset('backend') }}/js/waves.js"></script>
+        <script src="{{ asset('backend') }}/js/wow.min.js"></script>
+        <script src="{{ asset('backend') }}/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="{{ asset('backend') }}/js/jquery.scrollTo.min.js"></script>
+        <script src="{{ asset('backend') }}/assets/chat/moment-2.2.1.js"></script>
+        <script src="{{ asset('backend') }}/assets/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="{{ asset('backend') }}/assets/jquery-detectmobile/detect.js"></script>
+        <script src="{{ asset('backend') }}/assets/fastclick/fastclick.js"></script>
+        <script src="{{ asset('backend') }}/assets/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="{{ asset('backend') }}/assets/jquery-blockui/jquery.blockUI.js"></script>
 
+        <!-- sweet alerts -->
+        <script src="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.min.js"></script>
+        <script src="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.init.js"></script>
 
-
-        <!-- CUSTOM JS -->
-        <script src="{{ asset('backend/js/jquery.app.js') }}"></script>
-
-        <script src="js/jquery.chat.js"></script>
-
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.time.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.tooltip.min.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.resize.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.pie.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.selection.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.stack.js') }}"></script>
-        <script src="{{ asset('backend/assets/flot-chart/jquery.flot.crosshair.js') }}"></script>
+        <!-- flot Chart -->
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.time.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.tooltip.min.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.resize.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.pie.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.selection.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.stack.js"></script>
+        <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.crosshair.js"></script>
 
         <!-- Counter-up -->
-        <script src="{{ asset('backend/assets/counterup/waypoints.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('backend/assets/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('backend') }}/assets/counterup/waypoints.min.js" type="text/javascript"></script>
+        <script src="{{ asset('backend') }}/assets/counterup/jquery.counterup.min.js" type="text/javascript"></script>
         
         <!-- CUSTOM JS -->
-        <script src="{{ asset('backend/js/jquery.app.js') }}"></script>
+        <script src="{{ asset('backend') }}/js/jquery.app.js"></script>
 
         <!-- Dashboard -->
-        <script src="{{ asset('backend/js/jquery.dashboard.js') }}"></script>
+        <script src="{{ asset('backend') }}/js/jquery.dashboard.js"></script>
 
         <!-- Chat -->
-        <script src="{{ asset('backend/js/jquery.chat.js') }}"></script>
+        <script src="{{ asset('backend') }}/js/jquery.chat.js"></script>
+
+        <!-- Todo -->
+        <script src="{{ asset('backend') }}/js/jquery.todo.js"></script>
+
+        <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
+
+        <script type="text/javascript">
+
+
+            /* ==============================================
+            Counter Up
+            =============================================== */
+            jQuery(document).ready(function($) {
+                $('.counter').counterUp({
+                    delay: 100,
+                    time: 1200
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').dataTable();
+            } );
+        </script>
 	
 	</body>
 </html>
