@@ -35,9 +35,11 @@ Route::post('admin','Admin\LoginController@login');
 Route::get('admin/logout', 'AdminController@Logout')->name('admin.logout');
 //CategoryController
 Route::get('admin/categories', 'Admin\CategoryController@index')->name('admin.category');
+Route::post('admin/categories-store', 'Admin\CategoryController@storecat')->name('store.category');
 
 //umanageController
 Route::get('admin/user', 'Admin\UmanageController@index')->name('admin.umanage');
+
 
 //consultantController
 Route::get('consultan/home', 'ConsultantController@index');

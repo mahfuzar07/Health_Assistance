@@ -28,9 +28,10 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr> 
-                                                        	<th>user Id</th>
+                                                        	<th>User Id</th>
                                                             <th>Name</th>
                                                             <th>Email</th>
+                                                            <th>Status</th>
                                                             <th>Action</th>
                                                             
                                                         </tr>
@@ -38,12 +39,29 @@
 
                                              
                                                     <tbody>
+                                                        @php
+                                                            $i =1;
+                                                        @endphp
+                                                        @foreach($users as $user)
                                                         <tr>
-                                                        	<td>61</td>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edit-Delete</td>
-                                                            
+                                                        	<td>{{ $i ++ }}</td>
+                                                            <td>{{ $user-> name }}</td>
+                                                            <td>{{ $user-> email}}</td>
+                                                            <td>
+                                                                @if($user-> status == 1)
+                                                                <span class="badge badge-success">Active</span>
+                                                                @else
+                                                                <span class="badge badge-danger">Inactive</span>
+                                                                @endif
+
+                                                            </td>
+
+                                                            <td>
+                                                                <a href=""class="btn btn-primary"> Edit</a>
+                                                                <a href=""class="btn btn-danger"> Delete</a>
+                                                            </td>
+
+                                                            @endforeach
                                                             
                                                         </tr>
                                                     </tbody>

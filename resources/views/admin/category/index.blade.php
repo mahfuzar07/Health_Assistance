@@ -18,16 +18,18 @@
                             </div>
                         </div>
 
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Categories</h3></div>
                                     <div class="panel-body">
                                     
-                                        <form class="form-inline" role="form">
+                                        <form action="{{ route('store.category') }}" method="POST">
+                                            @csrf
                                             <div class="form-group">
-                                                <label class="sr-only" for="exampleInputEmail2">Category Name</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter category name">
+                                                <label class="sr-only">Category Name</label>
+                                                <input type="text" name="category_name" class="form-control"  placeholder="Enter category name">
                                             </div>
                                            
                                             <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">ADD</button>
@@ -58,16 +60,33 @@
 
                                              
                                                     <tbody>
+
+                                                        @php
+                                                            $i =1;
+                                                        @endphp
+                                                        @foreach($categories as $category)
                                                         <tr>
-                                                        	<td>61</td>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edit-Delete</td>
+                                                        	<td>{{ $i ++ }}</td>
+                                                            <td>{{ $category-> category_name }}</td>
+                                                            <td>
+                                                                @if($category-> status == 1)
+                                                                <span class="badge badge-success">Active</span>
+                                                                @else
+                                                                <span class="badge badge-danger">Inactive</span>
+                                                                @endif
+
+                                                            </td>
+                                                            <td>
+                                                                <a href=""class="btn btn-primary"> Edit</a>
+                                                                <a href=""class="btn btn-danger"> Delete</a>
+                                                            </td>
                                                             
                                                             
                                                         </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
+                                                
 
                                             </div>
                                         </div>

@@ -174,8 +174,11 @@
                     <div id="sidebar-menu">
                         <ul>
                             <li>
-                                <a href="{{ url('admin/home') }}" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+
                                 <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
+
+                                <a href="{{ url('admin/home') }}" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                                
 
                                 <a href="{{ route('admin.category') }}" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
 
@@ -184,6 +187,8 @@
 
 
                             </li>
+
+                    
                             
 
                             
