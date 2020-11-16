@@ -9,7 +9,7 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="pull-left page-title">User Table</h4>
+                                <h4 class="pull-left page-title">Users Table</h4>
                                 <ol class="breadcrumb pull-right">
                                     <li><a href="#"></a></li>
                                     <li><a href="#"></a></li>
@@ -48,10 +48,10 @@
                                                             <td>{{ $user-> name }}</td>
                                                             <td>{{ $user-> email}}</td>
                                                             <td>
-                                                                @if($user-> status == 1)
+                                                                @if($user-> status )
                                                                 <span class="badge badge-success">Active</span>
                                                                 @else
-                                                                <span class="badge badge-danger">Inactive</span>
+                                                                <span class="badge badge-success">Active</span>
                                                                 @endif
 
                                                             </td>

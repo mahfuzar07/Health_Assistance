@@ -14,7 +14,7 @@
 
 
                 <div class="panel-body">
-                <form method="POST" action="{{ route('login.admin') }}">
+                <form action="{{ route('login.admin') }}" method="POST" >
                     @csrf
                     <div class="form-group ">
                         <div class="col-xs-12">

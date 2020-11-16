@@ -22,6 +22,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    
     public function index()
     {
         return view('admin.home');
@@ -30,6 +31,6 @@ class AdminController extends Controller
      public function Logout()
     {
         Auth::logout();
-        return redirect()->route('login.admin');
+        return redirect()-> route('login.admin');
     }
 }
