@@ -22,9 +22,16 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -34,7 +41,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo.png" alt=""></a>
+            <a href="#"><img src="{{ asset('frontend') }}/img/logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -44,18 +51,41 @@
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
         <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="img/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Bangla </a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
+            
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a  class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="">My Account</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -90,6 +120,10 @@
     </div>
     <!-- Humberger End -->
 
+
+
+
+   
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
@@ -98,7 +132,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li><i class="fa fa-envelope"></i> hello@aim2bwell.com</li>
                                 <li>৫০০ টাকার  অর্ডারের জন্য বিনামূল্যে শিপিং</li>
                             </ul>
                         </div>
@@ -106,24 +140,55 @@
 
 
                      <div class="col-lg-6 col-md-6">
-                         <div class="header__top__right">
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i>লগইন</a>
-                            </div>
-                        
+                         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                        <div class="container">
+               
+                 <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a  class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
 
-                    <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i>রেজিস্ট্রেশন</a>
-                    </div>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                         </div> 
-                    </div>
+                                    <a class="dropdown-item" href="">My Account</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
-            </div>
+            </nav>
         </div>
-        <div class="container">
+            
+    </div>
+    </div>
+
+     
+
+    </div>
+                   
+            <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
@@ -133,7 +198,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="">Home</a></li>
                             <li><a href="./shop-grid.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -158,9 +223,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
+            <i class="fa fa-bars"></i>
+    </div>
+            
         </div>
     </header>
     <!-- Header Section End -->
@@ -207,6 +274,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <!-- Hero Section End -->
 
@@ -281,6 +349,8 @@
     <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 
 
