@@ -337,7 +337,7 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text, text-center"><p>
-                             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> <a href="https://aim2bwell.com" target="_blank"> Aim 2B Well</a></p>
+                             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> <a href="https://aim2bwell.com" target="_blank"> Aim 2B ওয়েল্ল </a></p>
                  </div>
                     </div>
                 </div>
