@@ -28,9 +28,5 @@ class HomeController extends Controller
 
     }
 
-     public function upanel()
-    {
-        return view('dashboard');
-        
-    }
+    
 }

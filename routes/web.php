@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,5 +49,5 @@ Route::post('consultant','Consultant\LoginController@login');
 
 //userpanel
 
-Route::get('home/dashboard','HomeController@upanel')->name('dashboard');
+
 
