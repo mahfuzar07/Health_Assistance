@@ -132,7 +132,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@aim2bwell.com</li>
+                                <li><i class="fa fa-envelope"></i>support@aim2bwell.com</li>
                                 <li>৫০০ টাকার  অর্ডারের জন্য বিনামূল্যে শিপিং</li>
                             </ul>
                         </div>
@@ -274,7 +274,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
+                                <h5>+8801</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
@@ -298,15 +298,15 @@
                             <a href="./index.html"><img src="{{ asset('frontend') }}/img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: Dhaka, Bangladesh</li>
-                            <li>Phone: +8801</li>
-                            <li>Email: hello@aim2bwell.com</li>
+                            <li>ঠিকানা: ঢাকা,বাংলাদেশ</li>
+                            <li>মোবাইল: +৮৮০১</li>
+                            <li>ইমেল: support@aim2bwell.com</li>
                         </ul>
                     </div>
-                </div>
+                </div> 
                 <div class="col-lg-3 col-md-6 col-sm-6 offset-lg-1">
                     <div class="footer__widget">
-                        <h6>Useful Links</h6>
+                        <h6>উপকারী সেবা </h6>
                         <ul>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">About Our Shop</a></li>
