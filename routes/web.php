@@ -46,4 +46,7 @@ Route::get('consultan/home', 'ConsultantController@index');
 Route::get('consultant','Consultant\LoginController@showLoginForm')->name('login.consultant');
 Route::post('consultant','Consultant\LoginController@login');
 
+//userpanel
+
+Route::get('home/dashboard','HomeController@upanel')->name('dashboard');
 

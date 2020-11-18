@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon_1.ico">
 
-        <title>Admin- Aim 2B Well</title>
+        <title>My account- Aim 2B Well</title>
 
         <!-- Base Css Files -->
         <link href="{{ asset('backend') }}/css/bootstrap.min.css" rel="stylesheet" />
@@ -58,7 +58,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>Moltran </span></a>
+                        <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>My Account</span></a>
                     </div>
                 </div>
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -149,7 +149,7 @@
                                         
                                         
                                         
-                                        <li><a href="{{ route('admin.logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
+                                        <li><a href="{{ route('logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -163,7 +163,7 @@
 
      @endguest
 
- @yield('admin_content')
+ @yield('user_content')
 
             <!-- ========== Left Sidebar Start ========== -->
     @guest
@@ -175,55 +175,19 @@
                         <ul>
                             <li>
 
-                                <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
+                                <a href="{{ url('') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
-                                <a href="{{ url('admin/home') }}" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                                <a href="{{ url('') }}" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
                                 
 
-                                <a href="{{ route('admin.category') }}" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
-
-                                <a href="{{ route('admin.umanage') }}" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
-
-
+                                <a href="{{ route('') }}" class="waves-effect"><i class="md md-view-list"></i><span>Ask Question</span></a>
 
                             </li>
                             
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Product</span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="grid.html">Add Product</a></li>
-                                    <li><a href="portlets.html">View All product</a></li>
-                                    
-                                </ul>
-                            </li>
+                           
 
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Charts </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="morris-chart.html">Morris Chart</a></li>
-                                    <li><a href="chartjs.html">Chartjs</a></li>
-                                   
-                                </ul>
-                            </li>
+                           
 
-                          
-
-                            {{-- <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul>
-                                    <li class="has_sub">
-                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                        <ul style="">
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-                                    </li>
-                                </ul>
-                            </li> --}}
                         </ul>
                         <div class="clearfix"></div>
                     </div>
