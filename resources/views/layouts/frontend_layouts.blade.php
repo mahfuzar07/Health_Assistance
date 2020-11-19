@@ -226,12 +226,26 @@
                             <i class="fa fa-bars"></i>
                             <span>All Categories</span>
                         </div>
+
+
+                        @php
+                            $categories = App\Category::where('status',1)->latest()-> get();
+                        @endphp
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
+
+                           
+
+                         @foreach($categories as $row)
+                            <li><a href="#">{{ $row->category_name }}</a></li>
+                            @endforeach
+
+
+
+                            {{-- <li><a href="#">Fruit & Nut Gifts</a></li>
                             <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
+                            <li><a href="#">Ocean Foods</a></li> --}}
+
+                           
                            
                         </ul>
                     </div>

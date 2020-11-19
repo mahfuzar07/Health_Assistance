@@ -198,10 +198,10 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Charts </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="morris-chart.html">Morris Chart</a></li>
-                                    <li><a href="chartjs.html">Chartjs</a></li>
+                                    <li><a href="">Create Post</a></li>
+                                    <li><a href="">View All Post</a></li>
                                    
                                 </ul>
                             </li>
