@@ -90,7 +90,7 @@
             <ul>
                <li class="active"><a href="">Home</a></li>
 
-                <li><a href="./shop-grid.html">Medical Shop</a></li>
+                <li><a href="./shop-grid.html">Shop</a></li>
                            
                 <li><a href="./blog.html">Blog</a></li>
 
@@ -130,6 +130,7 @@
                      <div class="col-lg-6 col-md-6">
                          <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                         <div class="container">
+                            <div><h5>Aim 2B Well . Com</h5></div>
                
                  <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -188,7 +189,7 @@
                         <ul>
                             <li class="active"><a href="">Home</a></li>
 
-                            <li><a href="./shop-grid.html">Medical Shop</a></li>
+                            <li><a href="./shop-grid.html">Shop</a></li>
                            
                             <li><a href="./blog.html">Blog</a></li>
 
@@ -215,7 +216,7 @@
     </header>
     <!-- Header Section End -->
 
-       <!-- Hero Section Begin -->
+       
  <!-- Hero Section Begin -->
     <section class="hero hero-normal">
         <div class="container">
