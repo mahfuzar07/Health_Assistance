@@ -1,5 +1,5 @@
 @extends('admin.admin_layouts')
-@section('all user') active @endsection
+@section('product2') active @endsection
 @section('admin_content')
 <div class="content-page">
                 <!-- Start content -->
@@ -13,7 +13,8 @@
                                 <ol class="breadcrumb pull-right">
                                     
                                     <li><a href="#">Admin</a></li>
-                                    <li class="active">All Users</li>
+                                    <li><a href="#">product</a></li>
+                                    <li class="active">Manage Product</li>
                                 </ol>
                             </div>
                         </div>
@@ -28,17 +29,26 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr> 
-                                                        	<th>User Id</th>
-                                                            <th>Name</th>
-                                                            <th>Email</th>
+                                                        	<th>SL.No</th>
+                                                            <th>Category</th>
+                                                            <th>Product Name</th>
+                                                            <th>product Slug</th>
+                                                            <th>product Code</th>
+                                                            <th>Quantity</th>
+                                                            <th>Price</th>
+                                                            <th>Short Description</th>
+                                                            <th>Description</th>
                                                             <th>Status</th>
+                                                            <th>Image-1</th>
+                                                            <th>Images-2</th>
+                                                            <th>Images-3</th>
                                                             <th>Action</th>
                                                             
                                                         </tr>
                                                     </thead>
 
                                              
-                                                    <tbody>
+                                                    {{-- <tbody>
                                                         @php
                                                             $i =1;
                                                         @endphp
@@ -64,7 +74,9 @@
                                                             @endforeach
                                                             
                                                         </tr>
-                                                    </tbody>
+                                                    </tbody> --}}
+
+
                                                 </table>
 
                                             </div>

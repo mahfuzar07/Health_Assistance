@@ -40,6 +40,15 @@ Route::post('admin/categories-store', 'Admin\CategoryController@storecat')->name
 Route::get('admin/categories/edit/{cat_id}', 'Admin\CategoryController@Edit');
 Route::post('admin/categories-update', 'Admin\CategoryController@UpdateCat')->name('update.category');
 Route::get('admin/categories/delete/{cat_id}', 'Admin\CategoryController@Delete');
+Route::get('admin/categories/inactive/{cat_id}', 'Admin\CategoryController@Inactive');
+Route::get('admin/categories/active/{cat_id}', 'Admin\CategoryController@Active');
+
+
+//product
+Route::get('admin/product/add', 'Admin\ProductController@Addproduct')->name('add-product');
+Route::get('admin/product/view', 'Admin\ProductController@Viewproduct')->name('view-product');
+
+
 
 //umanageController
 Route::get('admin/user', 'Admin\UmanageController@index')->name('admin.umanage');

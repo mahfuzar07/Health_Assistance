@@ -1,5 +1,5 @@
 @extends('admin.admin_layouts')
-
+@section('category') active @endsection
 @section('admin_content')
 <div class="content-page">
                 <!-- Start content -->
@@ -11,9 +11,9 @@
                             <div class="col-sm-12">
                                 <h4 class="pull-left page-title">Categories Table</h4>
                                 <ol class="breadcrumb pull-right">
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#"></a></li>
-                                    <li class="active"></li>
+                                    
+                                    <li><a href="#">Admin</a></li>
+                                    <li class="active">Categories</li>
                                 </ol>
                             </div>
                         </div>
@@ -78,7 +78,17 @@
                                                             </td>
                                                             <td>
                                                                 <a href="{{ url('admin/categories/edit/'.$category-> id) }}"class="btn btn-primary"> Edit</a>
+
                                                                 <a href="{{ url('admin/categories/delete/'.$category-> id) }}"class="btn btn-danger"> Delete</a>
+                                                                
+                                                                @if($category-> status == 1)
+                                                                <a href="{{ url('admin/categories/inactive/'.$category-> id) }}"class="btn btn-danger">Inactive</a>
+                                                                @else
+                                                                <a href="{{ url('admin/categories/active/'.$category-> id) }}"class="btn btn-success">Active</a>
+                                                                @endif
+
+
+
                                                             </td>
                                                             
                                                             

@@ -68,8 +68,24 @@ class CategoryController extends Controller
         return Redirect() -> back();
           
      } 
+//category status
 
 
+  public function Inactive($cat_id){
+
+          Category::find($cat_id)->update(['status' => 0]);
+          return Redirect() -> back();
+            
+       } 
+
+
+
+   public function Active($cat_id){
+
+          Category::find($cat_id)->update(['status' => 1]);
+          return Redirect() -> back();
+            
+       } 
 
 
 

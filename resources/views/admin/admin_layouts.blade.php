@@ -41,6 +41,8 @@
         <![endif]-->
 
         <script src="{{ asset('backend') }}/js/modernizr.min.js"></script>
+
+        <link href="{{ asset('backend') }}/assets/summernote/summernote.css" rel="stylesheet" />
         
     </head>
 
@@ -177,31 +179,31 @@
 
                                 <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
-                                <a href="{{ url('admin/home') }}" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                                <a href="{{ url('admin/home') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
                                 
 
-                                <a href="{{ route('admin.category') }}" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
+                                <a href="{{ route('admin.category') }}" class=" @yield('category')" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
 
-                                <a href="{{ route('admin.umanage') }}" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
+                                <a href="{{ route('admin.umanage') }}" class=" @yield('all user')" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
 
 
 
                             </li>
                             
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Product</span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Products</span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="grid.html">Add Product</a></li>
-                                    <li><a href="portlets.html">View All product</a></li>
+                                    <li><a class=" @yield('product1')" href="{{ route('add-product') }}">Add Product</a></li>
+                                    <li><a class=" @yield('product2')" href="{{ route('view-product') }}">Manage Products</a></li>
                                     
                                 </ul>
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="">Create Post</a></li>
-                                    <li><a href="">View All Post</a></li>
+                                    <li><a class=" @yield('blog post')" href="">Create Post</a></li>
+                                    <li><a class=" @yield('blog post')" href="">View All Post</a></li>
                                    
                                 </ul>
                             </li>
@@ -313,6 +315,10 @@
         <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
         <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
 
+       
+
+        <script src="{{ asset('backend') }}/assets/summernote/summernote.min.js"></script>
+
         <script type="text/javascript">
 
 
@@ -332,6 +338,30 @@
                 $('#datatable').dataTable();
             } );
         </script>
+
+
+        
+
+        <script>
+
+            jQuery(document).ready(function(){
+                
+                $('.summernote').summernote({
+                    height: 50,                 
+
+                    minHeight: null,             
+                    maxHeight: null,             
+
+                    focus: true                
+                });
+
+            });
+        </script>
 	
+
+
+
+
+
 	</body>
 </html>

@@ -11,9 +11,9 @@
                             <div class="col-sm-12">
                                 <h4 class="pull-left page-title">Categories</h4>
                                 <ol class="breadcrumb pull-right">
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#"></a></li>
-                                    <li class="active"></li>
+                                    <li><a href="#">Admin</a></li>
+                                    <li><a href="#">Categories</a></li>
+                                    <li class="active">Edit</li>
                                 </ol>
                             </div>
                         </div>
