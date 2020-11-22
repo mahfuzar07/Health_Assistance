@@ -39,4 +39,38 @@ class CategoryController extends Controller
    	    ]);
    	    return Redirect() -> back();
    }
+
+
+
+//category Edit data
+
+  public function Edit($cat_id){
+
+        $category = Category::find($cat_id);
+          return view('admin.category.edit',compact('category'));
+     } 
+
+
+     public function UpdateCat(Request $request){
+        $cat_id = $request->id;
+
+        Category::find($cat_id)->update([
+        'category_name'=> $request-> category_name,
+        'updated_at' => Carbon::now()
+
+        ]);
+        return Redirect() -> route('admin.category');
+   }
+
+   public function Delete($cat_id){
+
+        Category::find($cat_id)->delete();
+        return Redirect() -> back();
+          
+     } 
+
+
+
+
+
 }

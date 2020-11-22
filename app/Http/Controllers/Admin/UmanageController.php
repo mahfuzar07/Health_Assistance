@@ -18,4 +18,12 @@ class UmanageController extends Controller
    	     
    	    return view('admin.umanage',compact('users'));
    }
+
+
+   public function Delete($user_id){
+
+        User::find($user_id)->delete();
+        return Redirect() -> back();
+}
+
 }

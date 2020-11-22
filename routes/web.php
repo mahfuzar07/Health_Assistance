@@ -37,9 +37,13 @@ Route::get('admin/logout', 'AdminController@Logout')->name('admin.logout');
 //CategoryController
 Route::get('admin/categories', 'Admin\CategoryController@index')->name('admin.category');
 Route::post('admin/categories-store', 'Admin\CategoryController@storecat')->name('store.category');
+Route::get('admin/categories/edit/{cat_id}', 'Admin\CategoryController@Edit');
+Route::post('admin/categories-update', 'Admin\CategoryController@UpdateCat')->name('update.category');
+Route::get('admin/categories/delete/{cat_id}', 'Admin\CategoryController@Delete');
 
 //umanageController
 Route::get('admin/user', 'Admin\UmanageController@index')->name('admin.umanage');
+Route::get('admin/user/delete/{user_id}', 'Admin\UmanageController@Delete');
 
 
 //consultantController

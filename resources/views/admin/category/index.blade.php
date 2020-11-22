@@ -77,8 +77,8 @@
 
                                                             </td>
                                                             <td>
-                                                                <a href=""class="btn btn-primary"> Edit</a>
-                                                                <a href=""class="btn btn-danger"> Delete</a>
+                                                                <a href="{{ url('admin/categories/edit/'.$category-> id) }}"class="btn btn-primary"> Edit</a>
+                                                                <a href="{{ url('admin/categories/delete/'.$category-> id) }}"class="btn btn-danger"> Delete</a>
                                                             </td>
                                                             
                                                             
