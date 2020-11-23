@@ -30,51 +30,70 @@
                                                     <thead>
                                                         <tr> 
                                                         	<th>SL.No</th>
+                                                            <th>Product Image</th>
                                                             <th>Category</th>
                                                             <th>Product Name</th>
-                                                            <th>product Slug</th>
+                                                            
                                                             <th>product Code</th>
                                                             <th>Quantity</th>
                                                             <th>Price</th>
-                                                            <th>Short Description</th>
-                                                            <th>Description</th>
+                                                            
                                                             <th>Status</th>
-                                                            <th>Image-1</th>
-                                                            <th>Images-2</th>
-                                                            <th>Images-3</th>
+                                                            
+                                                            
                                                             <th>Action</th>
                                                             
                                                         </tr>
                                                     </thead>
 
                                              
-                                                    {{-- <tbody>
+                                                    <tbody>
+
                                                         @php
                                                             $i =1;
                                                         @endphp
-                                                        @foreach($users as $user)
+                                                        @foreach($products as $row)
                                                         <tr>
-                                                        	<td>{{ $i ++ }}</td>
-                                                            <td>{{ $user-> name }}</td>
-                                                            <td>{{ $user-> email}}</td>
+                                                            <td>{{ $i ++ }}</td>
                                                             <td>
-                                                                @if($user-> status )
+                                 <img src="{{ asset($row->image_1) }}" width="50px" height="50px" alt="">
+
+                                                            </td>
+
+                                                            <td>{{ $row-> join-> category_name}}</td>
+
+                                                            <td>{{ $row-> product_name }}</td>
+
+                                                            <td>{{ $row-> product_code }}</td>
+                                                            <td>{{ $row-> product_quantity }}</td>
+                                                            <td>{{ $row-> price }}</td>
+                                                            <td>
+                                                                @if($row-> status == 1)
                                                                 <span class="badge badge-success">Active</span>
                                                                 @else
-                                                                <span class="badge badge-success">Active</span>
+                                                                <span class="badge badge-danger">Inactive</span>
                                                                 @endif
 
                                                             </td>
-
                                                             <td>
-                                                                
-                                                                <a href="{{ url('admin/user/delete/'.$user-> id) }}"class="btn btn-danger"> Delete</a>
-                                                            </td>
+                                                                <a href="{{ url('admin/product/edit/'.$row-> id) }}"class="btn btn-primary"> Edit</a>
 
-                                                            @endforeach
+                                                                <a href="{{ url('admin/product/delete/'.$row-> id) }}"class="btn btn-danger"> Delete</a>
+                                                                
+                                                                @if($row-> status == 1)
+                                                                <a href="{{ url('admin/product/inactive/'.$row-> id) }}"class="btn btn-danger">Inactive</a>
+                                                                @else
+                                                                <a href="{{ url('admin/product/active/'.$row-> id) }}"class="btn btn-success">Active</a>
+                                                                @endif
+
+
+
+                                                            </td>
+                                                            
                                                             
                                                         </tr>
-                                                    </tbody> --}}
+                                                        @endforeach
+                                                    </tbody>
 
 
                                                 </table>

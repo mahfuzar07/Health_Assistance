@@ -28,10 +28,10 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr> 
-                                                        	<th>User Id</th>
+                                                        	<th>Serial No.</th>
                                                             <th>Name</th>
                                                             <th>Email</th>
-                                                            <th>Status</th>
+                                                            {{-- <th>Status</th> --}}
                                                             <th>Action</th>
                                                             
                                                         </tr>
@@ -47,18 +47,24 @@
                                                         	<td>{{ $i ++ }}</td>
                                                             <td>{{ $user-> name }}</td>
                                                             <td>{{ $user-> email}}</td>
-                                                            <td>
-                                                                @if($user-> status )
+                                                            {{-- <td>
+                                                                @if($user-> status==1 )
                                                                 <span class="badge badge-success">Active</span>
                                                                 @else
-                                                                <span class="badge badge-success">Active</span>
+                                                                <span class="badge badge-danger">Inactive</span>
                                                                 @endif
 
-                                                            </td>
+                                                            </td> --}}
 
                                                             <td>
                                                                 
                                                                 <a href="{{ url('admin/user/delete/'.$user-> id) }}"class="btn btn-danger"> Delete</a>
+
+                                                                {{-- @if($user-> status == 1)
+                                                                <a href="{{ url('admin/product/inactive/'.$user-> id) }}"class="btn btn-danger">Inactive</a>
+                                                                @else
+                                                                <a href="{{ url('admin/product/active/'.$user-> id) }}"class="btn btn-success">Active</a>
+                                                                @endif --}}
                                                             </td>
 
                                                             @endforeach

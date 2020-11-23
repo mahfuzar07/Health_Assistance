@@ -46,6 +46,8 @@ Route::get('admin/categories/active/{cat_id}', 'Admin\CategoryController@Active'
 
 //product
 Route::get('admin/product/add', 'Admin\ProductController@Addproduct')->name('add-product');
+Route::post('admin/product/store', 'Admin\ProductController@Storeproduct')->name('store-product');
+
 Route::get('admin/product/view', 'Admin\ProductController@Viewproduct')->name('view-product');
 
 

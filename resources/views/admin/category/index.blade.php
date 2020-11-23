@@ -30,6 +30,10 @@
                                             <div class="form-group">
                                                 <label class="sr-only">Category Name</label>
                                                 <input type="text" name="category_name" class="form-control"  placeholder="Enter category name">
+
+                                                @error('category_name')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
                                             </div>
                                            
                                             <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">ADD</button>

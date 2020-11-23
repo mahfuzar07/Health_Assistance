@@ -203,7 +203,7 @@
                                 <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a class=" @yield('blog post')" href="">Create Post</a></li>
-                                    <li><a class=" @yield('blog post')" href="">View All Post</a></li>
+                                    <li><a class=" @yield('blog post')" href="">Manage Post</a></li>
                                    
                                 </ul>
                             </li>
