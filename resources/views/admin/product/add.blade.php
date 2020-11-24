@@ -157,10 +157,11 @@
                                                 <label class="col-md-2 control-label">Product Image-2</label>
                                                 <div class="col-md-3">
                                                     <input name="image_2" type="file" class="form-control" value="">
-
                                                      @error('image_2')
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
+
+                                                     
                                                 </div>
                                                 
                                                </div>
@@ -170,10 +171,11 @@
                                                 <label class="col-md-2 control-label">Product Image-3</label>
                                                 <div class="col-md-3">
                                                     <input name="image_3" type="file" class="form-control" value="">
-
                                                      @error('image_3')
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
+
+                                            
                                                 </div>
                                                 
                                                </div>

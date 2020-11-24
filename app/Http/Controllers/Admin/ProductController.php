@@ -36,7 +36,7 @@ class ProductController extends Controller
            'product_code' =>'required|max:255',
            'product_quantity' =>'required|max:255',
            'price' =>'required|max:255',
-           'short_description' =>'required|max:255',
+           'short_description' =>'required',
            'description' =>'required',
            'image_1' =>'required|mimes:jpg,jpeg,png,gif',
            'image_2' =>'required|mimes:jpg,jpeg,png,gif',

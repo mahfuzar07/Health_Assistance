@@ -20,7 +20,7 @@
 
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Categories</h3></div>
                                     <div class="panel-body">
@@ -54,7 +54,7 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr> 
-                                                        	<th>Category Id</th>
+                                                        	<th>Serial No.</th>
                                                             <th>Category Name</th>
                                                             <th>Status</th>
                                                             <th>Action</th>
