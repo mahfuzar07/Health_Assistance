@@ -49,12 +49,23 @@ Route::get('admin/product/add', 'Admin\ProductController@Addproduct')->name('add
 Route::post('admin/product/store', 'Admin\ProductController@Storeproduct')->name('store-product');
 
 Route::get('admin/product/view', 'Admin\ProductController@Viewproduct')->name('view-product');
+Route::get('admin/product/edit/{product_id}', 'Admin\ProductController@editproduct');
+Route::post('admin/product/update', 'Admin\ProductController@Updateproduct')->name('update-product');
 
 
 
 //umanageController
 Route::get('admin/user', 'Admin\UmanageController@index')->name('admin.umanage');
 Route::get('admin/user/delete/{user_id}', 'Admin\UmanageController@Delete');
+
+
+
+
+
+
+
+
+
 
 
 //consultantController

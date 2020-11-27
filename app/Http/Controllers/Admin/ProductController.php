@@ -93,4 +93,40 @@ class ProductController extends Controller
    	    return view('admin.product.view',compact('products'));
    }
 
+
+   public function Editproduct($product_id){
+
+      $product= Product::findOrFail($product_id);
+      $categories = Category::latest()-> get();
+        return view('admin.product.edit',compact('product','categories'));
+   }
+ 
+
+ public function Updateproduct(Request $request){
+
+      $product_id = $request-> id;
+
+      Product::findOrFail($product_id)->Update([
+
+        'category_id'=> $request-> category_id,
+        'product_name'=> $request-> product_name,
+        'product_slug'=> strtolower(str_replace('','-',$request->product_name)),
+        'product_code'=> $request-> product_code,
+        'product_quantity'=> $request-> product_quantity,
+        'price'=> $request-> price,
+        'short_description'=> $request-> short_description,
+        'description'=> $request-> description,
+        
+        'update_at' => Carbon::now()
+
+
+
+      ]);
+      
+        return Redirect() -> route('view-product');
+   }
+
+
+
+
 }
