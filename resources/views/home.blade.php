@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="hero__item set-bg" data-setbg="{{ asset('frontend') }}/img/hero/banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="{{ asset('frontend') }}/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>aim2bwell.com</span>
                             <h2>Your Health <br/>Is Our Priority</h2>
@@ -13,8 +13,11 @@
                 </div>
             </div>
         </div>
+        
 
     </section>
+<!-- Hero Section End -->
+
  <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
@@ -31,6 +34,7 @@
                             <h5><a href="#">drink fruits</a></h5>
                         </div>
                     </div>
+
                     
                 </div>
             </div>

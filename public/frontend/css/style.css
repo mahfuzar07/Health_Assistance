@@ -365,6 +365,17 @@ ol {
 	top: 2px;
 }
 
+.site-name {
+	font-size: 18px;
+	color: #7fad39;
+	font-family: Times New Roman;
+	position: relative;
+	font-style:oblique;
+
+	
+	
+}
+
 .header__top__right__language ul {
 	background: #222222;
 	width: 100px;
@@ -562,6 +573,7 @@ ol {
 
 .hero {
 	padding-bottom: 50px;
+
 }
 
 .hero.hero-normal {
@@ -600,9 +612,11 @@ ol {
 }
 
 .hero__categories__all span {
-	font-size: 18px;
-	font-weight: 700;
+	font-size: 20px;
+	font-weight: 600;
 	color: #ffffff;
+	/*font-family: times new roman;*/
+
 }
 
 .hero__categories__all:after {
@@ -644,6 +658,7 @@ ol {
 	border: 1px solid #ebebeb;
 	position: relative;
 	float: left;
+
 }
 
 .hero__search__form form .hero__search__categories {
@@ -727,10 +742,12 @@ ol {
 }
 
 .hero__item {
-	height: 431px;
+	height: 430px;
 	display: flex;
 	align-items: center;
+	margin-top: 30px;
 	padding-left: 75px;
+
 }
 
 .hero__text span {
