@@ -7,7 +7,8 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Digital Health Assistance</title>
+    <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon_1.ico">
+    <title>Aim 2B Well</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -55,27 +56,27 @@
             <div class="header__top__right__auth">
                 <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a  class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                         @guest
+                            
+
+                            <div class="header__top__right__auth">
+                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
+                            </div>
+                           
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="">My Account</a>
+                                    <a class="dropdown-item" href="" > My Account</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -136,14 +137,23 @@
                         <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
+                            </li> --}}
+
+                            <div class="header__top__right__auth">
+                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
+                            </div>
+                             
+                             
+
+
+
+                           {{--  @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a  class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -239,12 +249,6 @@
                          @foreach($categories as $row)
                             <li><a href="#">{{ $row->category_name }}</a></li>
                             @endforeach
-
-
-
-                            {{-- <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li> --}}
 
                            
                            

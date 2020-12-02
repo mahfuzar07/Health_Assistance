@@ -83,7 +83,7 @@
                                                             <td>
                                                                 <a href="{{ url('admin/categories/edit/'.$category-> id) }}"class="btn btn-primary"> Edit</a>
 
-                                                                <a href="{{ url('admin/categories/delete/'.$category-> id) }}"class="btn btn-danger"> Delete</a>
+                                                                <a href="{{ url('admin/categories/delete/'.$category-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"> Delete</a>
                                                                 
                                                                 @if($category-> status == 1)
                                                                 <a href="{{ url('admin/categories/inactive/'.$category-> id) }}"class="btn btn-danger">Inactive</a>

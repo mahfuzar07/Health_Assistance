@@ -1,5 +1,5 @@
 @extends('admin.admin_layouts')
-@section('product2') active @endsection
+@section('coupon') active @endsection
 @section('admin_content')
 <div class="content-page">
                 <!-- Start content -->
@@ -9,14 +9,39 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="pull-left page-title">Users Table</h4>
+                                <h4 class="pull-left page-title">Coupon Table</h4>
                                 <ol class="breadcrumb pull-right">
                                     
                                     <li><a href="#">Admin</a></li>
-                                    <li><a href="#">product</a></li>
-                                    <li class="active">Manage Product</li>
+                                    <li class="active">Coupon</li>
                                 </ol>
                             </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><h3 class="panel-title">Add Coupon</h3></div>
+                                    <div class="panel-body">
+                                    
+                                        <form action="{{ route('store.coupon') }}" method="POST">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label class="sr-only">Coupon Code</label>
+                                                <input type="text" name="coupon_code" class="form-control"  placeholder="Enter coupon code">
+
+                                                @error('coupon_code')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
+                                            </div>
+                                           
+                                            <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">ADD COUPON</button>
+                                        </form>
+                                    </div> <!-- panel-body -->
+                                </div> <!-- panel -->
+                            </div> <!-- col -->
+                             
                         </div>
 
                         <div class="row">
@@ -29,18 +54,9 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr> 
-                                                        	<th>SL.No</th>
-                                                            <th>Product Image</th>
-                                                            <th>Category</th>
-                                                            <th>Product Name</th>
-                                                            
-                                                            <th>product Code</th>
-                                                            <th>Quantity</th>
-                                                            <th>Price</th>
-                                                            
+                                                        	<th>Serial No.</th>
+                                                            <th>Coupon</th>
                                                             <th>Status</th>
-                                                            
-                                                            
                                                             <th>Action</th>
                                                             
                                                         </tr>
@@ -52,23 +68,12 @@
                                                         @php
                                                             $i =1;
                                                         @endphp
-                                                        @foreach($products as $row)
+                                                        @foreach($coupons as $coupon)
                                                         <tr>
-                                                            <td>{{ $i ++ }}</td>
+                                                        	<td>{{ $i ++ }}</td>
+                                                            <td>{{ $coupon-> coupon_code}}</td>
                                                             <td>
-                                 <img src="{{ asset($row->image_1) }}" width="50px" height="50px" alt="">
-
-                                                            </td>
-
-                                                            <td>{{ $row-> join-> category_name}}</td>
-
-                                                            <td>{{ $row-> product_name }}</td>
-
-                                                            <td>{{ $row-> product_code }}</td>
-                                                            <td>{{ $row-> product_quantity }}</td>
-                                                            <td>{{ $row-> price }}</td>
-                                                            <td>
-                                                                @if($row-> status == 1)
+                                                                @if($coupon-> status == 1)
                                                                 <span class="badge badge-success">Active</span>
                                                                 @else
                                                                 <span class="badge badge-danger">Inactive</span>
@@ -76,14 +81,14 @@
 
                                                             </td>
                                                             <td>
-                                                                <a href="{{ url('admin/product/edit/'.$row-> id) }}"class="btn btn-primary"> Edit</a>
+                                                                <a href="{{ url('admin/coupon/edit/'.$coupon-> id) }}"class="btn btn-primary"> Edit</a>
 
-                                                                <a href="{{ url('admin/product/delete/'.$row-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"> Delete</a>
+                                                                <a href="{{ url('admin/coupon/delete/'.$coupon-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"> Delete</a>
                                                                 
-                                                                @if($row-> status == 1)
-                                                                <a href="{{ url('admin/product/inactive/'.$row-> id) }}"class="btn btn-danger">Inactive</a>
+                                                                @if($coupon-> status == 1)
+                                                                <a href="{{ url('admin/coupon/inactive/'.$coupon-> id) }}" class="btn btn-danger">Inactive</a>
                                                                 @else
-                                                                <a href="{{ url('admin/product/active/'.$row-> id) }}"class="btn btn-success">Active</a>
+                                                                <a href="{{ url('admin/coupon/active/'.$coupon-> id) }}"class="btn btn-success">Active</a>
                                                                 @endif
 
 
@@ -94,9 +99,8 @@
                                                         </tr>
                                                         @endforeach
                                                     </tbody>
-
-
                                                 </table>
+                                                
 
                                             </div>
                                         </div>

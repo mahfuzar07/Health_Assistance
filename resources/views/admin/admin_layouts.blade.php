@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon_1.ico">
 
-        <title>Admin- Aim 2B Well</title>
+        <title>Aim 2B Well</title>
 
         <!-- Base Css Files -->
         <link href="{{ asset('backend') }}/css/bootstrap.min.css" rel="stylesheet" />
@@ -186,6 +186,8 @@
 
                                 <a href="{{ route('admin.umanage') }}" class=" @yield('all user')" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
 
+                                <a href="{{ route('admin.coupon') }}" class=" @yield('coupon')" class="waves-effect"><i class="md md-view-list"></i><span> Coupons</span></a>
+
 
 
                             </li>
@@ -347,7 +349,7 @@
             jQuery(document).ready(function(){
                 
                 $('.summernote').summernote({
-                    height: 50,                 
+                    height:200,                 
 
                     minHeight: null,             
                     maxHeight: null,             

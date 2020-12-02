@@ -127,6 +127,32 @@ class ProductController extends Controller
    }
 
 
+   public function Delete($product_id){
+
+      Product::findOrFail($product_id)->delete();
+      
+        return Redirect() -> back();
+   }
+
+
+
+
+public function Inactive($product_id){
+
+          Product::find($product_id)->update(['status' => 0]);
+          return Redirect() -> back();
+            
+       } 
+
+
+
+   public function Active($product_id){
+
+          Product::find($product_id)->update(['status' => 1]);
+          return Redirect() -> back();
+            
+       } 
+
 
 
 }

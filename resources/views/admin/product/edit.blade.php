@@ -65,16 +65,7 @@
                                                 </div>
                                             </div>
                                             
-                                            {{-- <div class="form-group">
-                                                <label class="col-md-2 control-label">Slug</label>
-                                                <div class="col-md-3">
-                                                    <input type="text" placeholder="Product Slug" class="form-control" value="">
-
-                                                    @error('product_slug')
-                                                    <strong class="text-danger">{{ $message }}</strong>
-                                                    @enderror
-                                                </div>
-                                            </div> --}}
+                                            
 
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label">Code</label>
@@ -137,9 +128,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-
-                                            
-
+                                        
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label"><h3>Images</h3></label>
                                                  </div>
@@ -210,6 +199,12 @@
 
 
                                         </form>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                                     </div> <!-- panel-body -->
                                 </div> <!-- panel -->
                             </div> <!-- col -->

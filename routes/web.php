@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
 //FrontendController
 Route::get('/', 'FrontendController@index')->name('home');
 
@@ -47,10 +46,22 @@ Route::get('admin/categories/active/{cat_id}', 'Admin\CategoryController@Active'
 //product
 Route::get('admin/product/add', 'Admin\ProductController@Addproduct')->name('add-product');
 Route::post('admin/product/store', 'Admin\ProductController@Storeproduct')->name('store-product');
-
 Route::get('admin/product/view', 'Admin\ProductController@Viewproduct')->name('view-product');
 Route::get('admin/product/edit/{product_id}', 'Admin\ProductController@editproduct');
 Route::post('admin/product/update', 'Admin\ProductController@Updateproduct')->name('update-product');
+Route::get('admin/product/delete/{product_id}', 'Admin\ProductController@Delete');
+Route::get('admin/product/inactive/{product_id}', 'Admin\ProductController@Inactive');
+Route::get('admin/product/active/{product_id}', 'Admin\ProductController@Active');
+
+//Coupon
+Route::get('admin/coupon', 'Admin\CouponController@index')->name('admin.coupon');
+Route::post('admin/coupon-store', 'Admin\CouponController@storecpn')->name('store.coupon');
+Route::get('admin/coupon/edit/{cpn_id}', 'Admin\CouponController@Edit');
+Route::post('admin/coupon-update', 'Admin\CouponController@Updatecpn')->name('update.coupon');
+Route::get('admin/coupon/delete/{cpn_id}', 'Admin\CouponController@Delete');
+Route::get('admin/coupon/inactive/{cpn_id}', 'Admin\CouponController@Inactive');
+Route::get('admin/coupon/active/{cpn_id}', 'Admin\CouponController@Active');
+
 
 
 
