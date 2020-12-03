@@ -17,15 +17,23 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
+//==========================frontend route=========================================
 //FrontendController
 Route::get('/', 'FrontendController@index')->name('home');
-
-
 //FrontentController End
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+//frontend cart
+Route::get('add/to-cart', 'CartController@addToCart');
+
+
+
+
+
+
+
+
+
 
 //=================Admin Route==========================
 //adminController
