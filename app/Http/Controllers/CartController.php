@@ -19,7 +19,7 @@ class CartController extends Controller
 
    public function addToCart()
     {
-        return view('add/to-cart');
+        return view('pages.cart');
     }
 
 }

@@ -45,24 +45,44 @@
             <a href="#"><img src="{{ asset('frontend') }}/img/logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
+        @guest
+
+                @else
+                    <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">মোট কেনাকাটা : <span>00 ৳</span></div>
+                    </div>
+                </div>
+                @endguest
+            </div>
         <div class="humberger__menu__widget">
             
             <div class="header__top__right__auth">
+                
                 <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                         @guest
-                            
+                        @guest
+                            {{-- <li class="nav-item">
+                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li> --}}
 
                             <div class="header__top__right__auth">
-                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
+                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i>সাইন-ইন / রেজিস্টার  </a></li>
                             </div>
-                           
+                             
+                             
+
+
+
+                           {{--  @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a  class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,11 +91,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="" > My Account</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="" > {{ __('প্রোফাইল ') }} </a>
+                                    <a  class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();"><i class="md md-settings-power"></i>
+
+                                        {{ __('লগ-আউট') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -142,7 +163,7 @@
                             </li> --}}
 
                             <div class="header__top__right__auth">
-                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
+                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i>সাইন-ইন / রেজিস্টার  </a></li>
                             </div>
                              
                              
@@ -162,11 +183,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="" > My Account</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="" > {{ __('প্রোফাইল ') }} </a>
+                                    <a  class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();"><i class="md md-settings-power"></i>
+
+                                        {{ __('লগ-আউট') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -204,18 +226,25 @@
                             <li><a href="./blog.html">Blog</a></li>
 
                             <li><a href="./contact.html">Contact Us</a></li>
+
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
+                @guest
+
+                @else
+                    <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
-                        <div class="header__cart__price"> Total item: <span>150.00 TK</span></div>
+                        <div class="header__cart__price">মোট কেনাকাটা : <span>00 ৳</span></div>
                     </div>
                 </div>
+                @endguest
+                
+
             </div>
 
             <div class="humberger__open">
@@ -235,7 +264,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All Categories</span>
+                            <span>সকল ক্যাটাগরি </span>
                         </div>
 
 
@@ -262,8 +291,8 @@
                         <div class="hero__search__form">
                             <form action="#">
                                
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <input  type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn"> <i class="fa fa-search"> </i> খুঁজুন </button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -272,7 +301,7 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>+8801773841134</h5>
-                                <span>support 24/7 time</span>
+                                <span>৭ দিন ২৪ ঘন্টা  স্বাস্থ সহায়তা </span>
                             </div>
                         </div>
                     </div>

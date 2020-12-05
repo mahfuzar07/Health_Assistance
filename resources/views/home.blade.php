@@ -70,9 +70,14 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset($product->image_1) }}">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="add/to-cart/"><i class="fa fa-shopping-cart"></i></a></li>
+                                <button type="" style="border-radius: 50%;">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    
+                                </button>
+                                <button type="" style="border-radius: 50%;">
+                                    <li><a href="add/to-cart/"><i class="fa fa-shopping-cart"></i></a></li>
+                                    
+                                </button>
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -94,7 +99,7 @@
     <section class="latest-product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="latest-product__text">
                         <h4>নতুন পণ্য</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -129,44 +134,11 @@
                         </div>
                     </div>
                 </div>
+                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>শীর্ষ রেটেড পণ্য</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
-                                    </div>
-                                </a>
-                                @endforeach
-                               
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
-                                    </div>
-                                </a>
-                                @endforeach
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>পণ্য পর্যালোচনা</h4>
+                        <h4>নতুন স্বাস্থ্য  বার্তা</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 @foreach ($lts_p as $product)
@@ -199,6 +171,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-5 col-md-6 col-sm-6">
+                    
+                    <div class="latest__item set-bg" data-setbg="{{ asset('frontend') }}/img/hero/banner.jpg">
+                        <div class="latest__text">
+                            <span>Banner1</span>
+                            <h2>Banner<br/>Banner</h2>
+                            <p>Free Pickup and Delivery Available</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -212,7 +198,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title from-blog__title">
-                        <h2>স্বাস্থ্য ব্লগ </h2>
+                        <h2>স্বাস্থ্য বার্তা </h2>
                     </div>
                 </div>
             </div>
