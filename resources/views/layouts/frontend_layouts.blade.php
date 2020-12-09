@@ -210,6 +210,16 @@
     </div>
                    
             <div class="container">
+                @if(session('success'))
+                <div class="alert alert-success alart-dismissible fade show" role="alert">
+                  <strong>{{ (session('success')) }}</strong>
+
+                  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times</span>
+                </button>
+                </div>
+                                    
+                @endif
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
@@ -219,7 +229,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="">Home</a></li>
+                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
 
                             <li><a href="./shop-grid.html">Shop</a></li>
                            
@@ -235,11 +245,18 @@
                 @else
                     <div class="col-lg-3">
                     <div class="header__cart">
+                        @php
+                            $total = App\Cart::all()->where('user_ip',request()->ip()) 
+                            ->sum(function($t){
+                                return $t->price * $t->qty;
+                            });
+                            $quantity = App\Cart:: where('user_ip',request()->ip())->sum('qty')
+                        @endphp
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            {{-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> --}}
+                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ $quantity }}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">মোট কেনাকাটা : <span>00 ৳</span></div>
+                        <div class="header__cart__price">মোট কেনাকাটা : <span>{{ $total }} ৳</span></div>
                     </div>
                 </div>
                 @endguest

@@ -24,7 +24,11 @@ Route::get('/', 'FrontendController@index')->name('home');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //frontend cart
-Route::get('add/to-cart', 'CartController@addToCart');
+Route::post('add/to-cart/{product_id}', 'CartController@addToCart');
+Route::get('cart', 'CartController@Cartpage');
+Route::get('cart/remove/{cart_id}', 'CartController@Remove');
+Route::post('cart/quantity/update/{cart_id}', 'CartController@qtyUpdate');
+Route::post('coupon/apply', 'CartController@applyCoupon');
 
 
 

@@ -70,14 +70,19 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset($product->image_1) }}">
                             <ul class="featured__item__pic__hover">
-                                <button type="" style="border-radius: 50%;">
+
+                                {{-- <button type="" style="border-radius: 50%;">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                </button>
-                                <button type="" style="border-radius: 50%;">
-                                    <li><a href="add/to-cart/"><i class="fa fa-shopping-cart"></i></a></li>
-                                    
-                                </button>
+                                </button> --}}
+
+                                <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+
+                                   <button type="submit" style="border-radius: 50%;">
+                                    <li><a><i class="fa fa-shopping-cart"></i></a></li>
+                                    </button>
+                                </form>
                             </ul>
                         </div>
                         <div class="featured__item__text">

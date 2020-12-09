@@ -24,12 +24,14 @@ class CouponController extends Controller
    public function storecpn(Request $request){
    	    $request-> validate([
            
-           'coupon_code' =>'required|unique:coupons,coupon_code'
+           'coupon_code' =>'required|unique:coupons,coupon_code',
+           'discount' =>'required|discount'
 
    	    ]);
 
    	    Coupon::insert([
         'coupon_code'=> $request-> coupon_code,
+        'discount'=> $request-> discount,
         'created_at' => Carbon::now()
 
    	    ]);
@@ -52,6 +54,7 @@ class CouponController extends Controller
 
         Coupon::find($cpn_id)->update([
         'coupon_code'=> $request-> coupon_code,
+        'discount'=> $request-> discount,
         'updated_at' => Carbon::now()
 
         ]);

@@ -37,6 +37,11 @@
                                                 <label class="sr-only">Coupon Code</label>
                                                 <input value="{{ $coupon->coupon_code }}" type="text" name="coupon_code" class="form-control">
                                             </div>
+
+                                            <div class="form-group">
+                                                <label class="sr-only">Discount</label>
+                                                <input value="{{ $coupon->discount }}" type="text" name="discount" class="form-control">
+                                            </div>
                                            
                                             <button  type="submit" class="btn btn-success waves-effect waves-light m-l-10">Update</button>
                                         </form>

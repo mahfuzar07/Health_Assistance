@@ -9,6 +9,7 @@ use App\Category;
 use Image;
 use Carbon\Carbon;
 
+
 class ProductController extends Controller
 {
     public function __construct(){

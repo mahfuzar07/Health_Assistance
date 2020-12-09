@@ -35,7 +35,14 @@
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
                                             </div>
-                                           
+                                           <div class="form-group">
+                                                <label class="sr-only">Discount</label>
+                                                <input type="text" name="discount" class="form-control"  placeholder="Discount amount">
+
+                                                @error('discount')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
+                                            </div>
                                             <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">ADD COUPON</button>
                                         </form>
                                     </div> <!-- panel-body -->
@@ -56,6 +63,7 @@
                                                         <tr> 
                                                         	<th>Serial No.</th>
                                                             <th>Coupon</th>
+                                                            <th>Discount</th>
                                                             <th>Status</th>
                                                             <th>Action</th>
                                                             
@@ -72,6 +80,7 @@
                                                         <tr>
                                                         	<td>{{ $i ++ }}</td>
                                                             <td>{{ $coupon-> coupon_code}}</td>
+                                                            <td>{{ $coupon-> discount}} %</td>
                                                             <td>
                                                                 @if($coupon-> status == 1)
                                                                 <span class="badge badge-success">Active</span>

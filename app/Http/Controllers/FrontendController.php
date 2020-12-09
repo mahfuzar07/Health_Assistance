@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 
+
 class FrontendController extends Controller
 {
     
