@@ -236,6 +236,10 @@
                             <li><a href="./blog.html">Blog</a></li>
 
                             <li><a href="./contact.html">Contact Us</a></li>
+                             
+
+                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
+                            
 
                         </ul>
                     </nav>
@@ -254,7 +258,7 @@
                         @endphp
                         <ul>
                             {{-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> --}}
-                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ $quantity }}</span></a></li>
+                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i><span> {{ $quantity }}</span></a></li>
                         </ul>
                         <div class="header__cart__price">মোট কেনাকাটা : <span>{{ $total }} ৳</span></div>
                     </div>

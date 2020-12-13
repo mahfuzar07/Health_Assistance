@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Shopping Cart</h2>
+                        <h2>কেনাকাটা</h2>
                         <div class="breadcrumb__option">
                             <a href="{{ url('/home') }}">Home</a>
                             <span>Shopping Cart</span>
@@ -169,7 +169,7 @@
                 @endif
 {{--=================================== end allart=========================================== --}}
                     <div class="shoping__checkout">
-                        <h5>Cart Total</h5>
+                        <h5>সর্ব-মোট কেনাকাটা </h5>
                         <ul>
                             
                             @if (Session::has('coupon'))
@@ -178,7 +178,7 @@
                             ({{$discount= $subtotal * session()->get('coupon')['discount'] /100 }} ৳)
                             </span></li>
 
-                            <li>সর্ব-মোট <span>{{ $subtotal - $discount }} টাকা</span></li>
+                            <li>সর্ব-মোট মূল্য <span>{{ $subtotal - $discount }} টাকা</span></li>
                              @else
 
                              <li>মোট <span>{{ $subtotal }} টাকা</span>

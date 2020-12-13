@@ -30,6 +30,9 @@ Route::get('cart/remove/{cart_id}', 'CartController@Remove');
 Route::post('cart/quantity/update/{cart_id}', 'CartController@qtyUpdate');
 Route::post('coupon/apply', 'CartController@applyCoupon');
 
+//product details
+Route::get('product/details/{product_id}', 'HomeController@productDetails');
+
 
 
 
