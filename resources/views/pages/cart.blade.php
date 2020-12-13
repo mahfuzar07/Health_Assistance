@@ -59,10 +59,10 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="shoping__product">Products</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
+                                    <th class="shoping__product">পণ্য</th>
+                                    <th>মূল্য</th>
+                                    <th>পরিমাণ</th>
+                                    <th>মোট মূল্য</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -128,7 +128,7 @@
                     {{-- @else --}}
                     <div class="shoping__continue">
                         <div class="shoping__discount">
-                            <h5>Discount Codes</h5>
+                            <h5>ডিসকাউন্ট-কোড </h5>
                             <form action="{{ url('coupon/apply') }}" method="POST">
                             	@csrf
                                 <input type="text" name="coupon_code" placeholder="Enter your coupon code">
@@ -173,14 +173,17 @@
                         <ul>
                             
                             @if (Session::has('coupon'))
-                            <li>Subtotal <span>{{ $subtotal }} ৳</span></li>
-                            <li>Discount <span>{{ session()->get('coupon')['discount'] }} %
+                            <li>মোট <span>{{ $subtotal }} ৳</span></li>
+                            <li>ডিসকাউন্ট <span>{{ session()->get('coupon')['discount'] }} %
                             ({{$discount= $subtotal * session()->get('coupon')['discount'] /100 }} ৳)
                             </span></li>
 
-                            <li>Total <span>{{ $subtotal - $discount }} টাকা</span></li>
+                            <li>সর্ব-মোট <span>{{ $subtotal - $discount }} টাকা</span></li>
                              @else
-                             <li>Subtotal <span>{{ $subtotal * session()->get('coupon')['discount'] /100 }} ৳</span></li>
+
+                             <li>মোট <span>{{ $subtotal }} টাকা</span>
+                             </li>
+
                              @endif
                             
                         </ul>
