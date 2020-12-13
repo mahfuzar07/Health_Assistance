@@ -79,8 +79,10 @@
                                     @csrf
                                     <input type="hidden" name="price" value="{{ $product->price }}">
 
-                                   <button type="submit" style="border-radius: 50%;">
-                                    <li><a><i class="fa fa-shopping-cart"></i></a></li>
+                                  
+
+                                  <button type="submit" style="border-radius: 50%;">
+                                    <li><i class="fa fa-shopping-cart"></i></li>
                                     </button>
                                 </form>
                             </ul>

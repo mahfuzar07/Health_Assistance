@@ -34,11 +34,13 @@ class HomeController extends Controller
         return view('home',compact('products','categories','lts_p'));
 
     }
-      public function productDetails()
+      public function productDetail($product_id)
 
     {
-        $product =Product::findOrFail('$product_id');
-        return view('pages.pdetails',compact('products'));
+        $product =Product::findOrFail($product_id);
+        $category_id = $product->category_id;
+        $related_p = Product::where('category_id',$category_id)-> latest()-> get();
+        return view('pages.pdetails',compact('product','related_p'));
 
     }
     

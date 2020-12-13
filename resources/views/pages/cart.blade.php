@@ -98,6 +98,9 @@
                                     <td class="shoping__cart__item__close">
                                         
                                         	<a href="{{ url('cart/remove/'.$cart->id) }}"><span class="icon_close"></span></a>
+
+                                            
+
                                         
                                     </td>
                                 </tr>
@@ -124,8 +127,8 @@
                 </div>
                 <div class="col-lg-6">
                    @if (Session::has('coupon'))
-                        
-                    {{-- @else --}}
+                     @else   
+                    
                     <div class="shoping__continue">
                         <div class="shoping__discount">
                             <h5>ডিসকাউন্ট-কোড </h5>
@@ -136,6 +139,8 @@
                             </form>
                         </div>
                     </div>
+
+
                     
                     @endif
                 </div>
@@ -173,7 +178,10 @@
                         <ul>
                             
                             @if (Session::has('coupon'))
-                            <li>মোট <span>{{ $subtotal }} ৳</span></li>
+                            <li>মোট <span>{{ $subtotal }} টাকা</span></li>
+                            <li>সংযুক্ত কুপন কোড <span>{{ session()->get('coupon')['coupon_code'] }} <a href=""><i class="fa fa-trash" ></i></a></span>
+                            </li>
+
                             <li>ডিসকাউন্ট <span>{{ session()->get('coupon')['discount'] }} %
                             ({{$discount= $subtotal * session()->get('coupon')['discount'] /100 }} ৳)
                             </span></li>

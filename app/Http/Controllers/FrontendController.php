@@ -19,13 +19,7 @@ class FrontendController extends Controller
         return view('home',compact('products','categories','lts_p'));
     }
 
-    public function productDetails()
-
-    {
-        // $product =Product::findOrFail('$product_id');
-        return view('pages.pdetails');
-
-    }
+    
 
      
 }

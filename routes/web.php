@@ -31,7 +31,7 @@ Route::post('cart/quantity/update/{cart_id}', 'CartController@qtyUpdate');
 Route::post('coupon/apply', 'CartController@applyCoupon');
 
 //product details
-Route::get('product/details/{product_id}', 'HomeController@productDetails');
+Route::get('product/details/{product_id}', 'HomeController@productDetail');
 
 
 

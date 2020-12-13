@@ -30,22 +30,22 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="{{ asset("frontend") }}/img/product/details/product-details-1.jpg" alt="">
+                                src="{{ asset($product->image_1) }}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="{{ asset("frontend") }}/img/product/details/thumb-1.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="{{ asset("frontend") }}/img/product/details/thumb-2.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="{{ asset("frontend") }}/img/product/details/thumb-3.jpg" alt="">
+                            <img data-imgbigurl="{{ asset($product->image_1) }}"
+                                src="{{ asset($product->image_1) }}"  alt="">
+                            <img data-imgbigurl="{{ asset($product->image_2) }}"
+                                src="{{ asset($product->image_2) }}" alt="">
+                            <img data-imgbigurl="{{ asset($product->image_3) }}"
+                                src="{{ asset($product->image_3) }}" alt="">
                             
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
-                        <h3>Vetgetable’s Package</h3>
+                        <h3>{{ $product->product_name }}</h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -54,21 +54,33 @@
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 reviews)</span>
                         </div>
-                        <div class="product__details__price">$50.00</div>
-                        <p>Mauris blandit aliquet elit</p>
+                        <div class="product__details__price">{{ $product->price }} ৳</div>
+                        <p>{!! $product->short_description !!}</p>
                         <div class="product__details__quantity">
-                            <div class="quantity">
+                            {{-- <div class="quantity">
                                 <div class="pro-qty">
                                     <input type="text" value="1">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
-                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+
+                       <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+
+                                   <button  type="submit" class="primary-btn">ADD TO CARD</button>
+                                    
+                                    
+                                </form>
+
+                        {{-- <a href="#" class="primary-btn">ADD TO CARD</a> --}}
+
+
+                        {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}
                         <ul>
-                            <li><b>Availability</b> <span>In Stock</span></li>
+                            <li><b>Availability</b> <span>{{ $product->product_quantity }}</span></li>
                             <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            <li><b>Weight</b> <span>0.5 kg</span></li>
+                            {{-- <li><b>Weight</b> <span>0.5 kg</span></li> --}}
                             <li><b>Share on</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -97,8 +109,8 @@
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>Products Infomation</h6>
-                                    <p>Vestibulum ac diam sit amet</p>
-                                        <p>Praesent sapien .</p>
+                                    <p>{!! $product->description !!}</p>
+                                        <p>Praesent sapien.</p>
                                 </div>
                             </div>
                             
@@ -128,24 +140,37 @@
                 </div>
             </div>
             <div class="row">
+            	@foreach ($related_p as $product)
+            		{{-- expr --}}
+            	
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="{{ asset($product->image_1) }}">
                             <ul class="product__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+
+                                {{-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li> --}}
+                                    <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+
+                                  
+
+                                  <button type="submit" style="border-radius: 50%;">
+                                    <li><i class="fa fa-shopping-cart"></i></li>
+                                    </button>
+                                </form>
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="{{ url('product/details/'.$product->id) }}">{{ $product->product_name }}</a></h6>
+                            <h5>{{ $product->price }} ৳</h5>
                         </div>
                     </div>
                 </div>
                 
                 
-                
+               @endforeach 
             </div>
         </div>
     </section>
