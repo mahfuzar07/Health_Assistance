@@ -1,4 +1,5 @@
 @extends('layouts.frontend_layouts')
+@section('cart') active @endsection
 @section('content')
 
   </div>

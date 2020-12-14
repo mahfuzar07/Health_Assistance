@@ -229,17 +229,18 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
+                            <li  class=" @yield('home')" ><a href="{{ route('home') }}">Home</a></li>
 
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li  class=" @yield('shop')"><a href="./shop-grid.html">Shop</a></li>
                            
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li  class=" @yield('blog')"><a href="./blog.html">Blog</a></li>
 
-                            <li><a href="./contact.html">Contact Us</a></li>
-                             
-
-                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
+                            <li  class=" @yield('contact')"><a href="./contact.html">Contact Us</a></li>
                             
+                            @guest
+                            @else
+                            <li  class=" @yield('cart')"><a  href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
+                            @endguest
 
                         </ul>
                     </nav>

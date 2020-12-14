@@ -55,7 +55,16 @@
                             <span>(18 reviews)</span>
                         </div>
                         <div class="product__details__price">{{ $product->price }} ৳</div>
-                        <p>{!! $product->short_description !!}</p>
+
+                        <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+
+                                   <button  type="submit" class="primary-btn">ADD TO CARD</button>
+                                    
+                                    
+                                </form>
+                         <p>{!! $product->short_description !!}</p>
                         <div class="product__details__quantity">
                             {{-- <div class="quantity">
                                 <div class="pro-qty">
@@ -64,14 +73,7 @@
                             </div> --}}
                         </div>
 
-                       <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="price" value="{{ $product->price }}">
-
-                                   <button  type="submit" class="primary-btn">ADD TO CARD</button>
-                                    
-                                    
-                                </form>
+                       
 
                         {{-- <a href="#" class="primary-btn">ADD TO CARD</a> --}}
 
@@ -108,15 +110,16 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__tab__desc">
-                                    <h6>Products Infomation</h6>
+                                    <h6>Products Information:</h6>
+
                                     <p>{!! $product->description !!}</p>
-                                        <p>Praesent sapien.</p>
+                                        <p></p>
                                 </div>
                             </div>
                             
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__tab__desc">
-                                    <h6>Products Infomation</h6>
+                                    <h6>Products Reviews</h6>
                                     <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
                                         </p>
                                 </div>

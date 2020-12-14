@@ -1,4 +1,5 @@
 @extends('layouts.frontend_layouts')
+@section('home') active @endsection
 @section('content')
 
 
@@ -27,7 +28,7 @@
                     @foreach($products as $product)
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{ asset($product->image_1) }}">
-                            <h5><a href="#">{{ $product->product_name }}</a></h5>
+                            <h5><a href="{{ url('product/details/'.$product->id) }}">{{ $product->product_name }}</a></h5>
                         </div>
                     </div>
                     @endforeach
@@ -49,6 +50,8 @@
                         <h2>আমাদের পণ্য</h2>
                     </div>
                     <div class="featured__controls">
+
+
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             @foreach($categories as $cat)
@@ -62,7 +65,7 @@
             <div class="row featured__filter">
                 @foreach($categories as $cat)
                 @php
-                    $products = App\Product::where('category_id',$cat->id)->latest()-> get();
+                    $products = App\Product::where('category_id',$cat->id)->where('status',1)->latest()-> get();
                 @endphp
                 @foreach ($products as $product)
                    
@@ -106,7 +109,7 @@
     <section class="latest-product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-5 col-md-6">
                     <div class="latest-product__text">
                         <h4>নতুন পণ্য</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -126,7 +129,7 @@
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{ url('product/details/'.$product->id) }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
                                     </div>
@@ -143,7 +146,7 @@
                 </div>
                 
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-5 col-md-6">
                     <div class="latest-product__text">
                         <h4>নতুন স্বাস্থ্য  বার্তা</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -178,18 +181,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-6 col-sm-6">
-                    
-                    <div class="latest__item set-bg" data-setbg="{{ asset('frontend') }}/img/hero/banner.jpg">
-                        <div class="latest__text">
-                            <span>Banner1</span>
-                            <h2>Banner<br/>Banner</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
-                    </div>
                 
-                </div>
 
 
             </div>

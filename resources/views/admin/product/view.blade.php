@@ -1,5 +1,5 @@
 @extends('admin.admin_layouts')
-@section('product2') active @endsection
+@section('productmn') active @endsection
 @section('admin_content')
 <div class="content-page">
                 <!-- Start content -->

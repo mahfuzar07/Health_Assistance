@@ -2,6 +2,7 @@
 @section('content')
 
 
+
                     <div class="hero__item set-bg" data-setbg="{{ asset('frontend') }}/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>aim2bwell.com</span>
@@ -27,7 +28,7 @@
                     @foreach($products as $product)
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{ asset($product->image_1) }}">
-                            <h5><a href="#">{{ $product->product_name }}</a></h5>
+                            <h5><a href="{{ url('product/details/'.$product->id) }}">{{ $product->product_name }}</a></h5>
                         </div>
                     </div>
                     @endforeach
@@ -49,6 +50,8 @@
                         <h2>আমাদের পণ্য</h2>
                     </div>
                     <div class="featured__controls">
+
+
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             @foreach($categories as $cat)
@@ -62,7 +65,7 @@
             <div class="row featured__filter">
                 @foreach($categories as $cat)
                 @php
-                    $products = App\Product::where('category_id',$cat->id)->latest()-> get();
+                    $products = App\Product::where('category_id',$cat->id)->where('status',1)->latest()-> get();
                 @endphp
                 @foreach ($products as $product)
                    
@@ -70,18 +73,25 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset($product->image_1) }}">
                             <ul class="featured__item__pic__hover">
-                                <button type="" style="border-radius: 50%;">
+
+                                {{-- <button type="" style="border-radius: 50%;">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                </button>
-                                <button type="" style="border-radius: 50%;">
-                                    <li><a href="add/to-cart/"><i class="fa fa-shopping-cart"></i></a></li>
-                                    
-                                </button>
+                                </button> --}}
+
+                                <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+
+                                  
+
+                                  <button type="submit" style="border-radius: 50%;">
+                                    <li><i class="fa fa-shopping-cart"></i></li>
+                                    </button>
+                                </form>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{ $product->product_name }}</a></h6>
+                            <h6><a href="{{ url('product/details/'.$product->id) }}">{{ $product->product_name }}</a></h6>
                             <h5>{{ $product->price }} ৳</h5>
                         </div>
                     </div>
@@ -93,106 +103,7 @@
         </div>
     </section>
     <!-- Featured Section End -->
-
-    
-    <!-- Latest Product Section Begin -->
-    <section class="latest-product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>নতুন পণ্য</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
-                                    </div>
-                                </a>
-                                @endforeach
-                                
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
-                                    </div>
-                                </a>
-                                @endforeach
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>নতুন স্বাস্থ্য  বার্তা</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
-                                    </div>
-                                </a>
-                                @endforeach
-                                
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
-                                    </div>
-                                </a>
-                                @endforeach
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-6">
-                    
-                    <div class="latest__item set-bg" data-setbg="{{ asset('frontend') }}/img/hero/banner.jpg">
-                        <div class="latest__text">
-                            <span>Banner1</span>
-                            <h2>Banner<br/>Banner</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
-                    </div>
-                
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- Latest Product Section End -->
-
-
-
-    <!-- Blog Section Begin -->
+      <!-- Blog Section Begin -->
     <section class="from-blog spad">
         <div class="container">
             <div class="row">
@@ -252,6 +163,7 @@
         </div>
     </section>
     <!-- Blog Section End -->
+
 
 
 @endsection

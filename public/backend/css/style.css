@@ -1331,7 +1331,7 @@ input.search-bar:-ms-input-placeholder {
 .side-menu.left {
   background: #ffffff;
   position: absolute;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px  rgba(76, 175, 80, 0.7);
   top: 70px;
 }
 body.fixed-left .side-menu.left {
@@ -1397,9 +1397,12 @@ body.fixed-left .side-menu.left {
 }
 #sidebar-menu > ul > li > a > span {
   vertical-align: middle;
+
+
 }
 #sidebar-menu > ul > li > a:hover {
   background: #f3f3f3;
+
 }
 #sidebar-menu > ul > li > a > i {
   display: inline-block;
@@ -1420,7 +1423,8 @@ body.fixed-left .side-menu.left {
 }
 #sidebar-menu > ul > li > a.active,
 #sidebar-menu > ul > li > a.active.subdrop {
-  background: #f3f3f3 !important;
+  background: #317EEB;!important;
+  color: #f3f3f3;
 }
 .subdrop {
   background: #f3f3f3;

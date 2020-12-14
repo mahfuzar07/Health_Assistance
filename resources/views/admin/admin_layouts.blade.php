@@ -180,11 +180,13 @@
                                 <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
                                 <a href="{{ url('admin/home') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+
+                                <a href="{{ route('admin.umanage') }}" class=" @yield('all user')" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
                                 
 
                                 <a href="{{ route('admin.category') }}" class=" @yield('category')" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
 
-                                <a href="{{ route('admin.umanage') }}" class=" @yield('all user')" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
+                                
 
                                 <a href="{{ route('admin.coupon') }}" class=" @yield('coupon')" class="waves-effect"><i class="md md-view-list"></i><span> Coupons</span></a>
 
@@ -195,8 +197,8 @@
                             <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Products</span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a class=" @yield('product1')" href="{{ route('add-product') }}">Add Product</a></li>
-                                    <li><a class=" @yield('product2')" href="{{ route('view-product') }}">Manage Products</a></li>
+                                    <li><a class=" @yield('productadd')"  class="waves-effect" href="{{ route('add-product') }}">Add Product</a></li>
+                                    <li><a class=" @yield('productmn')"  class="waves-effect" href="{{ route('view-product') }}">Manage Products</a></li>
                                     
                                 </ul>
                             </li>
@@ -204,8 +206,8 @@
                             <li class="has_sub">
                                 <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a class=" @yield('blog post')" href="">Create Post</a></li>
-                                    <li><a class=" @yield('blog post')" href="">Manage Post</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Create Post</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Manage Post</a></li>
                                    
                                 </ul>
                             </li>
