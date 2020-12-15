@@ -110,13 +110,19 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-               <li class="active"><a href="">Home</a></li>
+                    <li  class=" @yield('home')" ><a href="{{ route('home') }}">Home</a></li>
 
-                <li><a href="./shop-grid.html">Shop</a></li>
+                    <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">Shop</a></li>
                            
-                <li><a href="./blog.html">Blog</a></li>
+                    <li  class=" @yield('blog')"><a href="">Blog</a></li>
 
-                <li><a href="./contact.html">Contact Us</a></li>
+                    <li  class=" @yield('contact')"><a href="./contact.html">Contact Us</a></li>
+                            
+                    @guest
+                    @else
+                    <li  class=" @yield('cart')"><a  href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
+                    @endguest
+
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -152,7 +158,7 @@
                      <div class="col-lg-6 col-md-6">
                          <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                         <div class="container">
-                            <div  class="site-name">Aim 2B Well . Com</div>
+                            <div  class="site-name">Aim 2 BE Well . Com</div>
                
                  <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -231,9 +237,9 @@
                         <ul>
                             <li  class=" @yield('home')" ><a href="{{ route('home') }}">Home</a></li>
 
-                            <li  class=" @yield('shop')"><a href="./shop-grid.html">Shop</a></li>
+                            <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">Shop</a></li>
                            
-                            <li  class=" @yield('blog')"><a href="./blog.html">Blog</a></li>
+                            <li  class=" @yield('blog')"><a href="">Blog</a></li>
 
                             <li  class=" @yield('contact')"><a href="./contact.html">Contact Us</a></li>
                             
@@ -298,20 +304,22 @@
                            
 
                          @foreach($categories as $row)
-                            <li><a href="#">{{ $row->category_name }}</a></li>
+                            <li><a href="{{ url('category/product-show/'.$row-> id) }}">{{ $row->category_name }}</a></li>
                             @endforeach
 
                            
                            
                         </ul>
                     </div>
+                
+
                 </div>
 
 
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+                            <form action="GET">
                                
                                 <input  type="text" placeholder="What do yo u need?">
                                 <button type="submit" class="site-btn"> <i class="fa fa-search"> </i> খুঁজুন </button>

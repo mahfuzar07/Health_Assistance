@@ -39,6 +39,12 @@ Route::get('product/details/{product_id}', 'HomeController@productDetail');
 
 
 
+//shop page
+Route::get('shop', 'HomeController@shop')->name('shop.page');
+
+//categorywise product show
+Route::get('category/product-show/{id}', 'HomeController@catWp');
+
 
 
 

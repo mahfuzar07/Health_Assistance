@@ -116,7 +116,7 @@
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
 
-                    	<a href="{{ url('/home') }}" class="primary-btn cart-btn "><button
+                    	<a href="{{ route('shop.page') }}" class="primary-btn cart-btn "><button
                        	class="btn btn-info">CONTINUE SHOPPING</button></a>
 
 

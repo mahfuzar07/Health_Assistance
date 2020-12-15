@@ -73,16 +73,11 @@
                             </div> --}}
                         </div>
 
-                       
-
-                        {{-- <a href="#" class="primary-btn">ADD TO CARD</a> --}}
-
-
-                        {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}
                         <ul>
+                            <li><b>Product Code</b><span>{{ $product->product_code }}</span></li>
                             <li><b>Availability</b> <span>{{ $product->product_quantity }}</span></li>
                             <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            {{-- <li><b>Weight</b> <span>0.5 kg</span></li> --}}
+                            
                             <li><b>Share on</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
