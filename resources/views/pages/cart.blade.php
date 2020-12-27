@@ -180,7 +180,7 @@
                             
                             @if (Session::has('coupon'))
                             <li>মোট <span>{{ $subtotal }} টাকা</span></li>
-                            <li>সংযুক্ত কুপন কোড <span>{{ session()->get('coupon')['coupon_code'] }} <a href=""><i class="fa fa-trash" ></i></a></span>
+                            <li>সংযুক্ত কুপন কোড <span>{{ session()->get('coupon')['coupon_code'] }} <a href="{{ url('coupon/delete') }}"><i class="fa fa-trash" ></i></a></span>
                             </li>
 
                             <li>ডিসকাউন্ট <span>{{ session()->get('coupon')['discount'] }} %

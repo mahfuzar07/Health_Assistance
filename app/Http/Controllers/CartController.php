@@ -93,4 +93,17 @@ class CartController extends Controller
        
     }
 
+
+     public function cDelete()
+    {
+
+        if (Session::has('coupon')) {
+          Session()->forget('coupon');
+           return Redirect() -> back()->with('cart_delete','Coupon Remove Success');
+        }
+        
+
+      
+    }
+
 }

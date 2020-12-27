@@ -29,6 +29,7 @@ Route::get('cart', 'CartController@Cartpage');
 Route::get('cart/remove/{cart_id}', 'CartController@Remove');
 Route::post('cart/quantity/update/{cart_id}', 'CartController@qtyUpdate');
 Route::post('coupon/apply', 'CartController@applyCoupon');
+Route::get('coupon/delete', 'CartController@cDelete');
 
 //product details
 Route::get('product/details/{product_id}', 'HomeController@productDetail');
