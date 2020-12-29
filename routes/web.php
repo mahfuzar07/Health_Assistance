@@ -31,8 +31,19 @@ Route::post('cart/quantity/update/{cart_id}', 'CartController@qtyUpdate');
 Route::post('coupon/apply', 'CartController@applyCoupon');
 Route::get('coupon/delete', 'CartController@cDelete');
 
+//checkout
+Route::get('checkout', 'CheckoutController@index');
+
+//place order
+Route::post('place/order', 'OrderController@storeOrder')->name('place-order');
+Route::get('order/success', 'OrderController@orderSuccess');
+
 //product details
 Route::get('product/details/{product_id}', 'HomeController@productDetail');
+
+
+
+
 
 
 
