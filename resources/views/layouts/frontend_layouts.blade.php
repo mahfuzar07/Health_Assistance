@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon_1.ico">
-    <title>Aim 2B Well</title>
+    <title>Aim 2Be Well</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -148,7 +148,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i>support@aim2bwell.com</li>
+                                <li><i class="fa fa-envelope"></i>support@aim2bewell.com</li>
                                 <li>৫০০ টাকার  অর্ডারের জন্য বিনামূল্যে শিপিং</li>
                             </ul>
                         </div>
@@ -158,7 +158,7 @@
                      <div class="col-lg-6 col-md-6">
                          <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                         <div class="container">
-                            <div  class="site-name">Aim 2 BE Well . Com</div>
+                            <div  class="site-name">Aim 2 Be Well . Com</div>
                
                  <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -189,7 +189,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="" > {{ __('প্রোফাইল ') }} </a>
+                                    <a class="dropdown-item" href="{{ route('user.profile') }}" > {{ __('প্রোফাইল ') }} </a>
                                     <a  class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="md md-settings-power"></i>

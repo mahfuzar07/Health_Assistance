@@ -12,7 +12,7 @@
                                 <h4 class="pull-left page-title">Add Product</h4>
                                 <ol class="breadcrumb pull-right">
                                     
-                                    <li><a href="#">Admin</a></li>
+                                    <li><a href="{{ url('admin/home') }}">Admin</a></li>
                                     <li><a href="#">Products</a></li>
                                     <li class="active">Add Products</li>
                                 </ol>

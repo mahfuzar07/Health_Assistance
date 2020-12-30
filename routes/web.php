@@ -41,6 +41,9 @@ Route::get('order/success', 'OrderController@orderSuccess');
 //product details
 Route::get('product/details/{product_id}', 'HomeController@productDetail');
 
+//user profile
+Route::get('user/profile','ProfileController@uProfile')->name('user.profile');
+
 
 
 
@@ -94,6 +97,9 @@ Route::post('admin/coupon-update', 'Admin\CouponController@Updatecpn')->name('up
 Route::get('admin/coupon/delete/{cpn_id}', 'Admin\CouponController@Delete');
 Route::get('admin/coupon/inactive/{cpn_id}', 'Admin\CouponController@Inactive');
 Route::get('admin/coupon/active/{cpn_id}', 'Admin\CouponController@Active');
+//Orders
+Route::get('admin/orders', 'Admin\OrdersController@index')->name('admin.orders');
+Route::get('admin/orders/view/{id}', 'Admin\OrdersController@viewOrders')->name('view-orders');
 
 
 

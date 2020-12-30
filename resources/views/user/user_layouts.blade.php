@@ -147,12 +147,6 @@
                                 <li class="dropdown">
                                      <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">[{{ Auth::user()->name }}] {{-- <img src="" alt="user-img" class="img-circle"> </a> --}}
                                     
-                                    <ul class="dropdown-menu">
-                                        
-                                        
-                                        
-                                        <li><a href="{{ route('admin.logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -165,7 +159,7 @@
 
      @endguest
 
- @yield('admin_content')
+ @yield('user_content')
 
             <!-- ========== Left Sidebar Start ========== -->
     @guest
@@ -177,61 +171,17 @@
                         <ul>
                             <li>
 
-                                <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
+                                <a href="{{ route('home') }}" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
-                                <a href="{{ url('admin/home') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
-
-                                <a href="{{ route('admin.umanage') }}" class=" @yield('all user')" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
-                                
-
-                                <a href="{{ route('admin.category') }}" class=" @yield('category')" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
+                                <a href="{{ route('user.profile') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
 
                                 
-
-                                <a href="{{ route('admin.coupon') }}" class=" @yield('coupon')" class="waves-effect"><i class="md md-view-list"></i><span> Coupons</span></a>
-
-                                <a href="{{ route('admin.orders') }}" class=" @yield('orders')" class="waves-effect"><i class="md md-view-list"></i><span> Orders Details</span></a>
 
 
 
                             </li>
                             
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Products</span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a class=" @yield('productadd')"  class="waves-effect" href="{{ route('add-product') }}">Add Product</a></li>
-                                    <li><a class=" @yield('productmn')"  class="waves-effect" href="{{ route('view-product') }}">Manage Products</a></li>
-                                    
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Create Post</a></li>
-                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Manage Post</a></li>
-                                   
-                                </ul>
-                            </li>
-
-                          
-
-                            {{-- <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul>
-                                    <li class="has_sub">
-                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                        <ul style="">
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-                                    </li>
-                                </ul>
-                            </li> --}}
+                            
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -367,11 +317,11 @@
 
             });
         </script>
-	
+    
 
 
 
 
 
-	</body>
+    </body>
 </html>
