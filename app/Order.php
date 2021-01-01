@@ -14,4 +14,8 @@ class Order extends Model
     protected $guarded = [
         
     ];
+
+    protected $fillable = [
+         'status'
+    ];
 }

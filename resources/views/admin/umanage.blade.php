@@ -58,7 +58,7 @@
 
                                                             <td>
                                                                 
-                                                                <a href="{{ url('admin/user/delete/'.$user-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"> Delete</a>
+                                                                <a href="{{ url('admin/user/delete/'.$user-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i> Delete</a>
 
                                                                 {{-- @if($user-> status == 1)
                                                                 <a href="{{ url('admin/product/inactive/'.$user-> id) }}"class="btn btn-danger">Inactive</a>

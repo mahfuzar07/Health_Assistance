@@ -1,29 +1,15 @@
-@extends('admin.admin_layouts')
-@section('orders') active @endsection
-@section('admin_content')
+@extends('user.user_layouts')
+@section('Orders') active @endsection
+
+@section('user_content')
+
 <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-                        <!-- Page-Title -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 class="pull-left page-title">Orders Details </h4>
-                                <ol class="breadcrumb pull-right">
-                                    
-                                    <li><a href="{{ url('admin/home') }}">Admin</a></li>
-                                    <li class="active">Orders-View</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <div class="row">
+                            <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
-                                    <!-- <div class="panel-heading">
-                                        <h4>Invoice</h4>
-                                    </div> -->
                                     <div class="panel-body">
                                         <div class="clearfix">
                                             <div class="pull-left">
@@ -52,16 +38,13 @@
                                                       </address>
                                                       <address>
                                                       <strong>Address</strong><br>
-                                                      {{ $shipping->address }}<br>
-                                                      {{ $shipping->city }}<br>
-                                                      {{ $shipping->state }}, {{ $shipping->post_code }}<br>
-                                                      
-
-                                                      </address>
+                                                      <strong>House/Road: </strong >{{ $shipping->address }}<br>
+                                                      <strong>City: </strong >{{ $shipping->city }}<br>
+                                                      <strong>State: </strong >{{ $shipping->state }}, {{ $shipping->post_code }}
+                                                     </address>
                                                 </div>
                                                 <div class="pull-right m-t-30">
                                                     <p><strong>Order Date: </strong > {{ $order-> created_at }}</p>
-                                                     <p class="m-t-10"><strong>Order ID: </strong> {{ $shipping->order_id }}</p>
                                                      <p><strong>Payment Type: </strong > {{ $order-> payment_type }}</p>
 
                                                     
@@ -84,8 +67,7 @@
                                                 <div class="table-responsive">
                                                     <table class="table m-t-30">
                                                         <thead>
-                                                            <tr><th>S No.</th>
-                                                            <th>Product Id</th>
+                                                            <tr><th>Serial No #</th>
                                                             <th>Product code</th>
                                                             <th>Item</th>
                                                             <th>Quantity</th>
@@ -94,14 +76,13 @@
                                                             
                                                         </tr></thead>
                                                         <tbody>
-                                                        	@php
+                                                            @php
                                                             $i =1;
                                                         @endphp
-                                                        	@foreach($orderItems as $row)
-                                                        	
+                                                            @foreach($orderItems as $row)
+                                                            
                                                             <tr>
                                                                 <td>{{ $i ++ }}</td>
-                                                                <td>{{ $row->product_id}}</td>
                                                                 <td>{{ $row->product->product_code}}</td>
                                                                 <td>{{ $row->product_name}}</td>
                                                                 <td>{{ $row->product_qty}}</td>
@@ -125,7 +106,7 @@
                                             <div class="col-md-3 col-md-offset-9">
                                                 <p class="text-right"><b>Sub-total: </b>{{ $order->subtotal }}</p>
                                                 <p class="text-right"><b>Discount: </b>
-                                                	@if($order-> discount == NULL)
+                                                    @if($order-> discount == NULL)
                                                                 <span class="badge badge-danger">No Discount</span>
                                                                 @else
                                                                 <span class="badge badge-success">{{ $order-> discount }} %</span>
@@ -159,8 +140,7 @@
                                         <div class="hidden-print">
                                             <div class="pull-right">
                                                 <a href="#" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-print"></i></a>
-                                                <a href="#" class="btn btn-primary waves-effect waves-light">Submit</a>
-                                            </div>
+                                             </div>
                                         </div>
                                        
 
@@ -185,5 +165,5 @@
         </div>
 
 
-@endsection()
 
+ @endsection

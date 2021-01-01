@@ -145,7 +145,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">[{{ Auth::user()->name }}] {{-- <img src="" alt="user-img" class="img-circle"> </a> --}}
+                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ Auth::user()->name }} <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                                     
                                 </li>
                             </ul>
@@ -174,6 +174,8 @@
                                 <a href="{{ route('home') }}" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
                                 <a href="{{ route('user.profile') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+
+                                <a href="{{ route('user.orders') }}" class=" @yield('Orders')" class="waves-effect"><i class="md md-home"></i><span> Orders Details</span></a>
 
                                 
 

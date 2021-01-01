@@ -117,7 +117,7 @@
                     <div class="shoping__cart__btns">
 
                     	<a href="{{ route('shop.page') }}" class="primary-btn cart-btn "><button
-                       	class="btn btn-info">CONTINUE SHOPPING</button></a>
+                       	class="btn btn-info">কেনাকাটা চালিয়ে যান</button></a>
 
 
                     	{{-- <a href="#" class="primary-btn cart-btn cart-btn-right">Upadate Cart</a> --}}

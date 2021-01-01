@@ -33,4 +33,20 @@ class OrdersController extends Controller
 
        return view('admin.orders.view', compact('order','orderItems','shipping'));
    }
+
+   public function Success($order_id){
+
+          Order::find($order_id)->update(['status' => 0]);
+          return Redirect() -> back();
+            
+       } 
+
+
+
+   public function Pending($order_id){
+
+          Order::find($order_id)->update(['status' => 1]);
+          return Redirect() -> back();
+            
+       } 
 }

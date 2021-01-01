@@ -90,14 +90,16 @@
 
                                                             </td>
                                                             <td>
-                                                                <a href="{{ url('admin/coupon/edit/'.$coupon-> id) }}"class="btn btn-primary"> Edit</a>
+                                                                <a href="{{ url('admin/coupon/edit/'.$coupon-> id) }}"class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
 
-                                                                <a href="{{ url('admin/coupon/delete/'.$coupon-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"> Delete</a>
+                                                                <a href="{{ url('admin/coupon/delete/'.$coupon-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i> Delete</a>
                                                                 
                                                                 @if($coupon-> status == 1)
-                                                                <a href="{{ url('admin/coupon/inactive/'.$coupon-> id) }}" class="btn btn-danger">Inactive</a>
+                                                                <a href="{{ url('admin/coupon/inactive/'.$coupon-> id) }}" class="btn btn-danger"><i class="fa fa-toggle-on"></i> </a>
                                                                 @else
-                                                                <a href="{{ url('admin/coupon/active/'.$coupon-> id) }}"class="btn btn-success">Active</a>
+                                                                <a href="{{ url('admin/coupon/active/'.$coupon-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                    
+                                                                </i> Active</a>
                                                                 @endif
 
 

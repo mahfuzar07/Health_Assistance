@@ -43,6 +43,11 @@ Route::get('product/details/{product_id}', 'HomeController@productDetail');
 
 //user profile
 Route::get('user/profile','ProfileController@uProfile')->name('user.profile');
+//user Orders
+Route::get('user/Orders-Details/','ProfileController@uOrders')->name('user.orders');
+Route::get('user/orders/view/{id}','ProfileController@ordersView')->name('view-orders');
+
+
 
 
 
@@ -100,6 +105,9 @@ Route::get('admin/coupon/active/{cpn_id}', 'Admin\CouponController@Active');
 //Orders
 Route::get('admin/orders', 'Admin\OrdersController@index')->name('admin.orders');
 Route::get('admin/orders/view/{id}', 'Admin\OrdersController@viewOrders')->name('view-orders');
+
+Route::get('admin/orders/pending/{order_id}', 'Admin\OrdersController@Pending');
+Route::get('admin/orders/success/{order_id}', 'Admin\OrdersController@Success');
 
 
 

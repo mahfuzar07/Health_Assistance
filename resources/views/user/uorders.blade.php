@@ -1,6 +1,7 @@
-@extends('admin.admin_layouts')
-@section('orders') active @endsection
-@section('admin_content')
+@extends('user.user_layouts')
+@section('Orders') active @endsection
+
+@section('user_content')
 <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -9,11 +10,10 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="pull-left page-title">Orders Details Table</h4>
+                                <h4 class="pull-left page-title">Orders Details</h4>
                                 <ol class="breadcrumb pull-right">
-                                    
-                                    <li><a href="{{ url('admin/home') }}">Admin</a></li>
-                                    <li class="active">Orders</li>
+                                    <li class="active">{{ Auth::user()->name }}</li>
+                                     <li class="active">Orders</li>
                                 </ol>
                             </div>
                         </div>
@@ -25,17 +25,18 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <table id="datatable" class="table table-striped table-bordered">
+                                               <table id="datatable" class="table table-hover">
+
                                                     <thead>
                                                         <tr> 
-                                                            <th>SL.No</th>
-                                                            <th>Invoice No</th>
+                                                            <th>Order</th>
+                                                            <th>Invoice No.</th>
                                                             <th>Payment Type</th>
                                                             <th>Sub Total</th>
                                                             <th>Discount</th>
                                                             <th>Total</th>
                                                             <th>Status</th>
-                                                            <th>Action</th>
+                                                            
                                                             
                                                             
                                                         </tr>
@@ -80,19 +81,10 @@
                                                             </td>
 
                                                             <td>
-                                                                <a href="{{ url('admin/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
-
-                                                                @if($order-> status == 1)
-                                                                <a href="{{ url('admin/orders/success/'.$order-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
-                                                                    
-                                                                </i>  Success</a>
-                                                                @else
-                                                                <a href="{{ url('admin/orders/pending/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
-                                                                    
-                                                                </i> </a>
-                                                                @endif
-
+                                                                <a href="{{ url('user/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
                                                             </td>
+
+                                                            
 
                                                             
                                                             
@@ -102,10 +94,9 @@
 
 
                                                 </table>
-
                                             </div>
                                         </div>
-                                    </div>
+</div>
                                 </div>
                             </div>
                             

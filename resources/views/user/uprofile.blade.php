@@ -21,9 +21,11 @@
 
 
 
-                        {{-- <div class="row">
+
+
+                        <div class="row">
                             <!-- INBOX -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">Inbox</h4>
@@ -32,7 +34,7 @@
                                         <div class="inbox-widget nicescroll mx-box">
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-1.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-1.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Chadengle</p>
                                                     <p class="inbox-item-text">Hey! there I'm available...</p>
                                                     <p class="inbox-item-date">13:40 PM</p>
@@ -40,7 +42,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-2.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-2.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Tomaslau</p>
                                                     <p class="inbox-item-text">I've finished it! See you so...</p>
                                                     <p class="inbox-item-date">13:34 PM</p>
@@ -48,7 +50,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-3.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-3.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Stillnotdavid</p>
                                                     <p class="inbox-item-text">This theme is awesome!</p>
                                                     <p class="inbox-item-date">13:17 PM</p>
@@ -56,7 +58,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-4.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-4.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Kurafire</p>
                                                     <p class="inbox-item-text">Nice to meet you</p>
                                                     <p class="inbox-item-date">12:20 PM</p>
@@ -64,7 +66,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-5.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-5.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Shahedk</p>
                                                     <p class="inbox-item-text">Hey! there I'm available...</p>
                                                     <p class="inbox-item-date">10:15 AM</p>
@@ -72,7 +74,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-6.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-6.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Adhamdannaway</p>
                                                     <p class="inbox-item-text">This theme is awesome!</p>
                                                     <p class="inbox-item-date">9:56 AM</p>
@@ -80,7 +82,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-8.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-8.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Arashasghari</p>
                                                     <p class="inbox-item-text">Hey! there I'm available...</p>
                                                     <p class="inbox-item-date">10:15 AM</p>
@@ -88,7 +90,7 @@
                                             </a>
                                             <a href="#">
                                                 <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="images/users/avatar-9.jpg" class="img-circle" alt=""></div>
+                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-9.jpg" class="img-circle" alt=""></div>
                                                     <p class="inbox-item-author">Joshaustin</p>
                                                     <p class="inbox-item-text">I've finished it! See you so...</p>
                                                     <p class="inbox-item-date">9:56 AM</p>
@@ -110,7 +112,7 @@
                                             <ul class="conversation-list nicescroll">
                                                 <li class="clearfix">
                                                     <div class="chat-avatar">
-                                                        <img src="images/avatar-1.jpg" alt="male">
+                                                        <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="male">
                                                         <i>10:00</i>
                                                     </div>
                                                     <div class="conversation-text">
@@ -124,7 +126,7 @@
                                                 </li>
                                                 <li class="clearfix odd">
                                                     <div class="chat-avatar">
-                                                        <img src="images/users/avatar-5.jpg" alt="Female">
+                                                        {{-- <img src="{{ asset('backend') }}/images/users/avatar-5.jpg" alt="Female"> --}}
                                                         <i>10:01</i>
                                                     </div>
                                                     <div class="conversation-text">
@@ -138,7 +140,7 @@
                                                 </li>
                                                 <li class="clearfix">
                                                     <div class="chat-avatar">
-                                                        <img src="images/avatar-1.jpg" alt="male">
+                                                        <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="male">
                                                         <i>10:01</i>
                                                     </div>
                                                     <div class="conversation-text">
@@ -152,7 +154,6 @@
                                                 </li>
                                                 <li class="clearfix odd">
                                                     <div class="chat-avatar">
-                                                        <img src="images/users/avatar-5.jpg" alt="male">
                                                         <i>10:02</i>
                                                     </div>
                                                     <div class="conversation-text">
@@ -178,7 +179,7 @@
                                 </div>
                             </div> <!-- end col-->
 
-                        </div> --}} <!-- end row -->
+                        </div> <!-- end row -->
 
                     </div> <!-- container -->
                                

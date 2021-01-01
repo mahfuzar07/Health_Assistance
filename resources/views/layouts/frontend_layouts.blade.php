@@ -109,21 +109,21 @@
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                    <li  class=" @yield('home')" ><a href="{{ route('home') }}">Home</a></li>
+           <ul>
+                            <li  class=" @yield('home')" ><a href="{{ route('home') }}">হোম </a></li>
 
-                    <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">Shop</a></li>
+                            <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">শপ </a></li>
                            
-                    <li  class=" @yield('blog')"><a href="">Blog</a></li>
+                            <li  class=" @yield('blog')"><a href="">স্বাস্থ্য বার্তা </a></li>
 
-                    <li  class=" @yield('contact')"><a href="./contact.html">Contact Us</a></li>
+                            <li  class=" @yield('contact')"><a href="./contact.html">যোগাযোগ করুন</a></li>
                             
-                    @guest
-                    @else
-                    <li  class=" @yield('cart')"><a  href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
-                    @endguest
+                            @guest
+                            @else
+                            <li  class=" @yield('cart')"><a  href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
+                            @endguest
 
-            </ul>
+                        </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -235,13 +235,13 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li  class=" @yield('home')" ><a href="{{ route('home') }}">Home</a></li>
+                            <li  class=" @yield('home')" ><a href="{{ route('home') }}">হোম </a></li>
 
-                            <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">Shop</a></li>
+                            <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">শপ </a></li>
                            
-                            <li  class=" @yield('blog')"><a href="">Blog</a></li>
+                            <li  class=" @yield('blog')"><a href="">স্বাস্থ্য বার্তা </a></li>
 
-                            <li  class=" @yield('contact')"><a href="./contact.html">Contact Us</a></li>
+                            <li  class=" @yield('contact')"><a href="./contact.html">যোগাযোগ করুন</a></li>
                             
                             @guest
                             @else
@@ -330,7 +330,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+8801773841134</h5>
+                                <h5>০১৭৭৩৮৪১১৩৪</h5>
                                 <span>৭ দিন ২৪ ঘন্টা  স্বাস্থ সহায়তা </span>
                             </div>
                         </div>
@@ -357,7 +357,7 @@
                         </div>
                         <ul>
                             <li>ঠিকানা: ঢাকা,বাংলাদেশ</li>
-                            <li>মোবাইল: +৮৮০১</li>
+                            <li>মোবাইল: +৮৮০১৭৭৩৮৪১১৩৪</li>
                             <li>ইমেল: support@aim2bwell.com</li>
                         </ul>
                     </div>

@@ -141,7 +141,7 @@
                                     <div><h4>Select payment method</h4></div>
                                     <label for="HandCash">
                                         Hand Cash
-                                        <input type="checkbox" id="HandCash" value="handcash" name="payment_type">
+                                        <input type="checkbox" id="HandCash" value="Hand Cash" name="payment_type">
                                          
                                         <span class="checkmark"></span>
                                        
@@ -153,7 +153,7 @@
                                 <div class="checkout__input__checkbox">
                                     <label for="bkash">
                                         bkash
-                                        <input type="checkbox" id="bkash" value="bkash" name="payment_type">
+                                        <input type="checkbox" id="bkash" value="B kash" name="payment_type">
 
                                         <span class="checkmark"></span>
                                         
