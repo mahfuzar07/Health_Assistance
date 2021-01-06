@@ -30,10 +30,11 @@
                                                     <thead>
                                                         <tr> 
                                                             <th>Order</th>
+                                                            <th>Order Date</th>
                                                             <th>Invoice No.</th>
                                                             <th>Payment Type</th>
                                                             <th>Sub Total</th>
-                                                            <th>Discount</th>
+                                                            
                                                             <th>Total</th>
                                                             <th>Status</th>
                                                             
@@ -51,6 +52,7 @@
                                                         @foreach($orders as $order)
                                                         <tr>
                                                             <td>{{ $i ++ }}</td>
+                                                            <td> {{ $order-> created_at }}</td>
                                                             <td>{{ $order-> invoice_no }}</td>
 
                                                             <td>{{ $order-> payment_type }}</td>
@@ -60,14 +62,14 @@
                                                             
 
 
-                                                            <td>
+                                                           {{--  <td>
                                                                 @if($order-> discount == NULL)
                                                                 <span class="badge badge-danger">No Discount</span>
                                                                 @else
                                                                 <span class="badge badge-success">{{ $order-> discount }} %</span>
                                                                 @endif
 
-                                                            </td>
+                                                            </td> --}}
                                                             
                                                             <td>Tk. {{ $order-> total }}</td>
 
@@ -81,7 +83,7 @@
                                                             </td>
 
                                                             <td>
-                                                                <a href="{{ url('user/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
+                                                                <a href="{{ url('user/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> Full View</a>
                                                             </td>
 
                                                             

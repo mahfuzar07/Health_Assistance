@@ -25,14 +25,14 @@ class CouponController extends Controller
    	    $request-> validate([
            
            'coupon_code' =>'required|unique:coupons,coupon_code',
-           'discount' =>'required|discount'
+           'discount' =>'required|discount',
 
    	    ]);
 
    	    Coupon::insert([
-        'coupon_code'=> $request-> coupon_code,
-        'discount'=> $request-> discount,
-        'created_at' => Carbon::now()
+        'coupon_code'=>$request-> coupon_code,
+        'discount' =>$request-> discount,
+        'created_at'=> Carbon::now()
 
    	    ]);
    	    return Redirect() -> back();

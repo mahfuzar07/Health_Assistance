@@ -28,15 +28,14 @@
                                         <form action="{{ route('store.coupon') }}" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                <label class="sr-only">Coupon Code</label>
-                                                <input type="text" name="coupon_code" class="form-control"  placeholder="Enter coupon code">
+                                               <input type="text" name="coupon_code" class="form-control"  placeholder="Enter coupon code">
 
                                                 @error('coupon_code')
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
                                             </div>
                                            <div class="form-group">
-                                                <label class="sr-only">Discount</label>
+                                                
                                                 <input type="text" name="discount" class="form-control"  placeholder="Discount amount">
 
                                                 @error('discount')

@@ -29,6 +29,7 @@
                                                     <thead>
                                                         <tr> 
                                                             <th>SL.No</th>
+                                                            <th>Order Date</th>
                                                             <th>Invoice No</th>
                                                             <th>Payment Type</th>
                                                             <th>Sub Total</th>
@@ -50,6 +51,7 @@
                                                         @foreach($orders as $order)
                                                         <tr>
                                                             <td>{{ $i ++ }}</td>
+                                                            <td>{{ $order-> created_at }}</td>
                                                             <td>{{ $order-> invoice_no }}</td>
 
                                                             <td>{{ $order-> payment_type }}</td>
