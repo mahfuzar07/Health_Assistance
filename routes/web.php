@@ -127,9 +127,14 @@ Route::get('admin/user/delete/{user_id}', 'Admin\UmanageController@Delete');
 
 
 //consultantController
-Route::get('consultan/home', 'ConsultantController@index');
-Route::get('consultant','Consultant\LoginController@showLoginForm')->name('login.consultant');
-Route::post('consultant','Consultant\LoginController@login');
+Route::get('consultant/login','Consultant\LoginController@loginFrom')->name('consultant.login');
+Route::post('checkConsultant/login','Consultant\LoginController@constantLogin')->name('verify-consultant.login');
+Route::get('consultant/register','Consultant\RegistrationController@regFrom')->name('consultant.registetion');
+Route::post('consultant/register/submit','Consultant\RegistrationController@consultantReg')->name('consultant.registered');
+
+Route::get('consultant/home','ConsultantController@index')->name('consultant-home');
+
+
 
 //userpanel
 

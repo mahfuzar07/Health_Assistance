@@ -2,56 +2,58 @@
 
 namespace App\Http\Controllers\Consultant;
 
+use Validator;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
-
+use Auth;
+use Session;
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+	public function loginFrom()
+	{
+		try {
+			return view('consultant.login');
+		} catch (\Exception $e) {
+			return $e->getMessage();
+		}
+	}
 
-    use AuthenticatesUsers;
+	public function constantLogin(Request $request)
+	{
+		$rules = array(
+			'email'    => 'required|',
+			'password' => 'required|',
+		);
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = 'consultant/home';
+		$validator = Validator::make($request->all(), $rules);
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest:consultant')->except('logout');
-    }
+		if ($validator->fails()) {
+			echo "Error";
+			return Redirect::to('/consultant/login')
+				->withErrors($validator) //
+				->withInput($request->all());
+		} else {
+			$responsedata = array(
+				'email'     => $request->email,
+				'password'  => $request->password
+			);
 
-   public function showLoginForm(){
-   	    return view('consultant.login');
-   }
+			if (Auth::guard('consultant')->attempt($responsedata)) {
 
-   /**
-     * Get the guard to be used during authentication.
-     *
-     * @return \Illuminate\Contracts\Auth\StatefulGuard
-     */
-    protected function guard()
-    {
-        return Auth::guard('consultant');
-    }
+				return Redirect(route('consultant-home'));
+			} else {
+				Session::flash('message', 'Email OR Password not matched');
+				return Redirect::to('consultant/login');
+			}
+		}
+	}
+
+	public function logout()
+	{
+		Auth::guard('consultant')->logout();
+		session_destory();
+		return redirect()->route('consultant.login');
+	}
 }
-
- 

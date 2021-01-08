@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
@@ -59,13 +59,13 @@ class CategoryController extends Controller
         'updated_at' => Carbon::now()
 
         ]);
-        return Redirect() -> route('admin.category');
+        return Redirect() -> route('admin.category') -> with('update','category Updated');
    }
 
    public function Delete($cat_id){
 
         Category::find($cat_id)->delete();
-        return Redirect() -> back();
+        return Redirect() -> back() ;
           
      } 
 //category status

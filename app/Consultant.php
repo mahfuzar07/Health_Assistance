@@ -1,14 +1,16 @@
 <?php
 
 namespace App;
+use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class Consultant extends Authenticatable
 {
     use Notifiable;
+    protected $guard = 'consultant';
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +18,7 @@ class Consultant extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','avatar','status'
     ];
 
     /**
@@ -37,4 +39,3 @@ class Consultant extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
-

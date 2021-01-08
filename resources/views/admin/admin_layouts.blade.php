@@ -22,6 +22,14 @@
 
         <!-- animate css -->
         <link href="{{ asset('backend') }}/css/animate.css" rel="stylesheet" />
+        <!--google font-->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+         <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+
+    
 
         <!-- Waves-effect -->
         <link href="{{ asset('backend') }}/css/waves-effect.css" rel="stylesheet">
@@ -35,10 +43,10 @@
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+        {{-- [if lt IE 9]> --}}
+        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        {{-- <![endif] --}}
 
         <script src="{{ asset('backend') }}/js/modernizr.min.js"></script>
 
@@ -325,11 +333,17 @@
         <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
         <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
 
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
        
 
         <script src="{{ asset('backend') }}/assets/summernote/summernote.min.js"></script>
 
         <script type="text/javascript">
+
+
+
 
 
             /* ==============================================
@@ -367,6 +381,8 @@
 
             });
         </script>
+
+      
 	
 
 

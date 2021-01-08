@@ -5,12 +5,24 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
+                       
+                            @if(session('update'))
+                <div class="alert alert-success alart-dismissible fade show" role="alert">
+                  <strong>{{ (session('update')) }}</strong>
+
+                  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times</span>
+                </button>
+                </div>
+                                    
+                @endif
+                      
 
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <h4 class="pull-left page-title">Categories Table</h4>
-                                <ol class="breadcrumb pull-right">
+                                    <ol class="breadcrumb pull-right">
                                     
                                     <li><a href="#">Admin</a></li>
                                     <li class="active">Categories</li>
@@ -19,11 +31,14 @@
                         </div>
 
 
+
+
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Categories</h3></div>
                                     <div class="panel-body">
+
                                     
                                         <form action="{{ route('store.category') }}" method="POST">
                                             @csrf
@@ -43,11 +58,16 @@
                             </div> <!-- col -->
                              
                         </div>
+                         <hr>
+                         
+                            
+
+                       
+
 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
-                                    
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">

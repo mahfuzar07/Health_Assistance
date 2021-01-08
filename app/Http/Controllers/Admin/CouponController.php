@@ -25,7 +25,7 @@ class CouponController extends Controller
    	    $request-> validate([
            
            'coupon_code' =>'required|unique:coupons,coupon_code',
-           'discount' =>'required|discount',
+           'discount' =>'required',
 
    	    ]);
 

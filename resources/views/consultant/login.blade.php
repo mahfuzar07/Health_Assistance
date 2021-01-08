@@ -8,20 +8,23 @@
 
 <div class="wrapper-page">
             <div class="panel panel-color panel-primary panel-pages">
-                <div class="panel-heading bg-img"> 
+                <div class="panel-heading bg-img">
                     <div class="bg-overlay"></div>
                     <h3 class="text-center m-t-10 text-white"> Sign In to <strong>Consultant</strong> </h3>
-                </div> 
+                </div>
 
 
                 <div class="panel-body">
-                <form class="form-horizontal m-t-20" method="POST" action="{{ route('login.consultant') }}">
-                    
+                    @if(Session::has('message'))
+                    <p class="alert alert-info">{{ Session::get('message') }}</p>
+                    @endif
+                <form class="form-horizontal m-t-20" method="POST" action="{{ route('verify-consultant.login') }}">
+
                     @csrf
-                    
+
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="form-control input-lg " id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input class="form-control input-lg " id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -51,10 +54,10 @@
                                     Remember me
                                 </label>
                             </div>
-                            
+
                         </div>
                     </div>
-                    
+
                     <div class="form-group text-center m-t-40">
                         <div class="col-xs-12">
                             <button class="btn btn-primary btn-lg w-lg waves-effect waves-light" type="submit">LogIn</button>
@@ -75,12 +78,12 @@
                                 <a  href="{{ route('register') }}"><i class="fa fa-user"></i> Create an account</a>
                             @endif
 
-                            
+
                         </div>
                     </div>
-                </form> 
-                </div>                                 
-                
+                </form>
+                </div>
+
             </div>
         </div>
 
