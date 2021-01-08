@@ -101,7 +101,7 @@
 
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control input-lg" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input class="form-control input-lg" id="password" placeholder="Password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                             @error('password')
                                     <span class="invalid-feedback" role="alert">

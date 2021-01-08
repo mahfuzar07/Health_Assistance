@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Consultant;
 use Session;
+use Image;
 
 class RegistrationController extends Controller
 {

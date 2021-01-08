@@ -75,7 +75,7 @@
                         <div class="col-sm-5 text-right">
 
                              @if (Route::has('register'))
-                                <a  href="{{ route('register') }}"><i class="fa fa-user"></i> Create an account</a>
+                                <a  href="{{ route('consultant.registetion') }}"><i class="fa fa-user"></i> Create an account</a>
                             @endif
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Consultant;
 
 class ConsultantController extends Controller
 {
@@ -23,8 +24,16 @@ class ConsultantController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+
     {
-        return view('consultant.home');
+        $consultants = Consultant::latest()->get();
+        return view('consultant.home', compact('consultants'));
+    }
+
+    public function Logout()
+    {
+        Auth::logout();
+        return redirect()-> route('consultant.login');
     }
 }
 

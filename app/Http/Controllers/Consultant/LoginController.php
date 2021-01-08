@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use Session;
+
 class LoginController extends Controller
 {
 	public function loginFrom()
@@ -50,7 +51,7 @@ class LoginController extends Controller
 		}
 	}
 
-	public function logout()
+	public function  logout()
 	{
 		Auth::guard('consultant')->logout();
 		session_destory();
