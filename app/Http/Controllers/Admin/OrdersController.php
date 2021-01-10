@@ -49,4 +49,12 @@ class OrdersController extends Controller
           return Redirect() -> back();
             
        } 
+
+
+        public function Delete($order_id){
+
+        Order::find($order_id)->delete();
+        return Redirect() -> back() ;
+          
+     }
 }

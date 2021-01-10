@@ -1,15 +1,52 @@
-@extends('user.user_layouts')
-@section('Orders') active @endsection
+@extends('layouts.frontend_layouts')
+@section('content')
 
-@section('user_content')
+</div>
+</div>
+</section>
 
-<div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container">
-                            <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-default">
+
+    <section class="breadcrumb-section set-bg" data-setbg="{{ asset('frontend') }}/img/breadcrumb.jpg">
+        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <div class="breadcrumb__text">
+	                        <h2>Profile</h2>
+	                        <div class="breadcrumb__option">
+	                            <a href="{{ url('/home') }}">Home</a>
+	                            <span>Shop</span>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+        </div>
+    </section>
+
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-5">
+                    <div class="sidebar">
+                        <div class="sidebar__item">
+                            <h4>Profile Menu</h4>
+                            <ul>
+                                <li>
+                                  <a href="{{ route('user.profile') }}"><i class="fa fa-address-card" aria-hidden="true"></i></i> Dashboard</a>
+                                  <a href="{{ route('user.orders') }}"><i class="fa fa-truck" aria-hidden="true"></i></i> Orders Details</a>
+                                  <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Create Question</a>
+
+                                </li>
+                              </ul>
+                        </div>
+                        <hr>
+                     </div>
+                </div>
+
+                <div class="col-lg-9 col-md-7">
+
+                  <div class="panel panel-default">
                                     <div class="panel-body">
                                         <div class="clearfix">
                                             <div class="pull-left">
@@ -102,28 +139,27 @@
 
                                         </div>
                                          <hr>
-                                         <div class="row" style="border-radius: 5px;">
-                                            <div class="col-md-3 col-md-offset-9">
-                                                <p class="text-right"><b>Sub-total: </b>{{ $order->subtotal }}</p>
+
+                                      
+
+                                         <div class="pull-right m-t-30">
+                                                <p class="text-right m-t-30"><b>Sub-total: </b>{{ $order->subtotal }}</p>
                                                 <p class="text-right"><b>Discount: </b>
                                                     @if($order-> discount == NULL)
                                                                 <span class="badge badge-danger">No Discount</span>
                                                                 @else
                                                                 <span class="badge badge-success">{{ $order-> discount }} %</span>
                                                                 @endif</p>
-
-
-                                                                
-
-                                                          
                                                 <hr>
-                                                
-                                                <h3 class="text-right ">Total: {{ $order->total }}</h3>
-                                            </div>
-                                        </div>
-                                        <hr>
+
+                                                <h4 class="text-right m-t-30"><b>Total: </b>{{ $order->total }}</h4>
+                                             </div>
+                                            
+                                        
+                                    
+
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 
                                                 <div class="pull-left m-t-30">
                                                     
@@ -136,34 +172,24 @@
 
                                             </div>
                                         </div>
-                                        <hr>
-                                        <div class="hidden-print">
-                                            <div class="pull-right">
-                                                <a href="#" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-print"></i></a>
-                                             </div>
-                                        </div>
+                                        
                                        
-
                                     </div>
                                 </div>
-
-                            </div>
-
-                        </div>
-
-                        
-
-
-                        
-
-                               
-                </div> <!-- content -->
-
-                
+                </div>
 
             </div>
         </div>
+    </section>
+    <!-- Product Section End -->
 
 
 
- @endsection
+
+
+
+
+
+
+
+@endsection

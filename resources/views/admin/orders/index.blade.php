@@ -92,7 +92,11 @@
                                                                 <a href="{{ url('admin/orders/pending/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
                                                                     
                                                                 </i> </a>
+
                                                                 @endif
+
+                                                                <a href="{{ url('admin/orders/delete/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-trash"></i>
+                                                            </a>
 
                                                             </td>
 

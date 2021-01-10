@@ -109,6 +109,8 @@ Route::get('admin/orders/view/{id}', 'Admin\OrdersController@viewOrders')->name(
 Route::get('admin/orders/pending/{order_id}', 'Admin\OrdersController@Pending');
 Route::get('admin/orders/success/{order_id}', 'Admin\OrdersController@Success');
 
+Route::get('admin/orders/delete/{order_id}', 'Admin\OrdersController@Delete');
+
 
 
 

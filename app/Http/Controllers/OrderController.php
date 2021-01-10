@@ -13,6 +13,7 @@ use App\OrderItem;
 
 
 
+
 class OrderController extends Controller
 {
     public function storeOrder(Request $request)
@@ -78,6 +79,8 @@ class OrderController extends Controller
 
 
     }
+
+    
 
       public function orderSuccess()
     {

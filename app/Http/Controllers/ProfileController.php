@@ -24,14 +24,14 @@ class ProfileController extends Controller
 
     {    
         
-        return view('user.uprofile');
+        return view('user.dashboard');
 
     }
     public function uOrders()
 
     {
         $orders = Order::latest()-> get();
-        return view('user.uorders',compact('orders'));
+      return view('user.detailsorder',compact('orders'));
 
     }
 
@@ -42,9 +42,11 @@ class ProfileController extends Controller
         $orderItems = OrderItem::where('order_id',$order_id)->get();
         $shipping = Shipping::where('order_id',$order_id)->first();
 
-        return view('user.ordersview', compact('order','orderItems','shipping'));
+        return view('user.vieworder', compact('order','orderItems','shipping'));
 
     }
+        
+    
 
 
 }
