@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Consultant;
 
 class UmanageController extends Controller
 {
@@ -25,5 +27,11 @@ class UmanageController extends Controller
         User::find($user_id)->delete();
         return Redirect() -> back();
 }
+
+public function consultantManage(){
+        $consultants = Consultant::latest()-> get();
+         
+        return view('admin.allconsultant',compact('consultants'));
+   }
 
 }

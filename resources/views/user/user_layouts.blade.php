@@ -22,14 +22,6 @@
 
         <!-- animate css -->
         <link href="{{ asset('backend') }}/css/animate.css" rel="stylesheet" />
-        <!--google font-->
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-         <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
-    
 
         <!-- Waves-effect -->
         <link href="{{ asset('backend') }}/css/waves-effect.css" rel="stylesheet">
@@ -43,10 +35,10 @@
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        {{-- [if lt IE 9]> --}}
-        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        {{-- <![endif] --}}
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 
         <script src="{{ asset('backend') }}/js/modernizr.min.js"></script>
 
@@ -68,7 +60,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="{{ url('admin/home') }}" class="logo"><i class="md md-terrain"></i> <span>Aim 2Be Well  </span></a>
+                        <a href="{{ route('home') }}" class="logo"><i class="md md-terrain"></i> <span>Aim 2Be Well  </span></a>
                     </div>
                 </div>
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -155,12 +147,6 @@
                                 <li class="dropdown">
                                      <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">[{{ Auth::user()->name }}] {{-- <img src="" alt="user-img" class="img-circle"> </a> --}}
                                     
-                                    <ul class="dropdown-menu">
-                                        
-                                        
-                                        
-                                        <li><a href="{{ route('admin.logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -173,7 +159,7 @@
 
      @endguest
 
- @yield('admin_content')
+ @yield('user_content')
 
             <!-- ========== Left Sidebar Start ========== -->
     @guest
@@ -185,63 +171,17 @@
                         <ul>
                             <li>
 
-                                <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
+                                <a href="{{ route('home') }}" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
-                                <a href="{{ url('admin/home') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
-
-                                <a href="{{ route('admin.umanage') }}" class=" @yield('all user')" class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
-
-                                <a href="{{ route('admin.consultant') }}" class=" @yield('All Consultant')" class="waves-effect"><i class="md md-group"></i><span> All Consultant</span></a>
-                                
-
-                                <a href="{{ route('admin.category') }}" class=" @yield('category')" class="waves-effect"><i class="md md-view-list"></i><span> Categories</span></a>
+                                <a href="{{ route('user.profile') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
 
                                 
-
-                                <a href="{{ route('admin.coupon') }}" class=" @yield('coupon')" class="waves-effect"><i class="md md-view-list"></i><span> Coupons</span></a>
-
-                                <a href="{{ route('admin.orders') }}" class=" @yield('orders')" class="waves-effect"><i class="md md-view-list"></i><span> Orders Details</span></a>
 
 
 
                             </li>
                             
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span>Products</span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a class=" @yield('productadd')"  class="waves-effect" href="{{ route('add-product') }}">Add Product</a></li>
-                                    <li><a class=" @yield('productmn')"  class="waves-effect" href="{{ route('view-product') }}">Manage Products</a></li>
-                                    
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Create Post</a></li>
-                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Manage Post</a></li>
-                                   
-                                </ul>
-                            </li>
-
-                          
-
-                            {{-- <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul>
-                                    <li class="has_sub">
-                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                        <ul style="">
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-                                    </li>
-                                </ul>
-                            </li> --}}
+                            
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -335,17 +275,11 @@
         <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
         <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
        
 
         <script src="{{ asset('backend') }}/assets/summernote/summernote.min.js"></script>
 
         <script type="text/javascript">
-
-
-
 
 
             /* ==============================================
@@ -383,13 +317,11 @@
 
             });
         </script>
-
-      
-	
+    
 
 
 
 
 
-	</body>
+    </body>
 </html>

@@ -35,5 +35,8 @@ class ConsultantController extends Controller
         Auth::logout();
         return redirect()-> route('consultant.login');
     }
+
+    
+
 }
 

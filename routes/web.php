@@ -119,6 +119,9 @@ Route::get('admin/user', 'Admin\UmanageController@index')->name('admin.umanage')
 Route::get('admin/user/delete/{user_id}', 'Admin\UmanageController@Delete');
 
 
+Route::get('admin/consultant', 'Admin\UmanageController@consultantManage')->name('admin.consultant');
+
+
 
 
 
