@@ -44,7 +44,7 @@
                      </div>
                 </div>
                 <div class="col-lg-9 col-md-7">
-                  <div><h4>Profile Details</h4></div>
+                  <div><h4>User Information Details</h4></div>
                   <hr>
                  <div class="row">
                  <div class="col-md-12">
@@ -52,8 +52,8 @@
                    <div class="pull-left m-t-30">
                                                    
                     <address>
-                     <strong>Name :</strong><br>
-                     <strong>Email: </strong ><br>
+                     <strong>Name :</strong> {{ Auth::user()->name }}<br>
+                     <strong>Email: </strong > {{ Auth::user()->email }}<br>
                       <strong>Address: </strong> <br>
                      </address>
                   </div>

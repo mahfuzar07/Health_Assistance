@@ -45,19 +45,19 @@
                                                         @php
                                                             $i =1;
                                                         @endphp
-                                                        @foreach($consultants as $row)
+                                                        @foreach($consultants as $con)
                                                         <tr>
                                                             <td>{{ $i ++ }}</td>
                                                             <td>
-                                                                <a href=""><img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}" 
+                                                                <a href=""><img src="{{asset('uploads/documents/consultant/'. $con-> avatar) }}" 
                                         style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a>
                                                             </td>
-                                                            <td>{{ $row-> name }} </td>
-                                                            <td>{{ $row-> email }}</td>
-                                                            <td>{{ $row-> phone_number }}</td>
-                                                            <td>{{ $row-> profession }}</td>
+                                                            <td>{{ $con-> name }} </td>
+                                                            <td>{{ $con-> email }}</td>
+                                                            <td>{{ $con-> phone_number }}</td>
+                                                            <td>{{ $con-> profession }}</td>
                                                             <td>
-                                                                @if($row-> status == 1)
+                                                                @if($con-> status == 1)
                                                                 <span class="badge badge-success">Active</span>
                                                                 @else
                                                                 <span class="badge badge-danger">Inactive</span>
@@ -68,16 +68,16 @@
 
                                                             <td>
                                                                 
-                                                                <a href=""class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
+                                                                <a href="{{ url('admin/consultant/view/'.$con-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
 
-                                                                <a href=""class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i> Delete</a>
+                                                                <a href="{{ url('admin/consultant/delete/'.$con-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i> Delete</a>
                                                                 
-                                                                @if($row-> status == 1)
-                                                                <a href=""class="btn btn-danger"><i class="fa fa-toggle-on">
+                                                                @if($con-> status == 1)
+                                                                <a href="{{ url('admin/consultant/inactive/'.$con-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
                                                                     
-                                                                </i>  </a>
+                                                                </i></a>
                                                                 @else
-                                                                <a href=""class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                <a href="{{ url('admin/consultant/active/'.$con-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
                                                                     
                                                                 </i>  Active</a>
                                                                 @endif

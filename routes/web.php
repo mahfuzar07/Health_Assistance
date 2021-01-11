@@ -120,6 +120,11 @@ Route::get('admin/user/delete/{user_id}', 'Admin\UmanageController@Delete');
 
 
 Route::get('admin/consultant', 'Admin\UmanageController@consultantManage')->name('admin.consultant');
+//consultant manage
+Route::get('admin/consultant/view/{con_id}', 'Admin\UmanageController@cView');
+Route::get('admin/consultant/delete/{con_id}', 'Admin\UmanageController@cDelete');
+Route::get('admin/consultant/inactive/{con_id}', 'Admin\UmanageController@cInactive');
+Route::get('admin/consultant/active/{con_id}', 'Admin\UmanageController@cActive');
 
 
 

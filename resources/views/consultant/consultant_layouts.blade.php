@@ -156,8 +156,9 @@
                                  
                                 <li class="dropdown">
                                     @foreach ($consultants as $row)
-                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ $row-> name }} <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}" 
-                                        style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a>
+                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ Auth::user()->name }} 
+                                        {{-- <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}" --}} 
+                                        {{-- style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a> --}}
                                     
                                     <ul class="dropdown-menu">
                                         
@@ -194,6 +195,8 @@
                                 <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
                                 <a href="" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+
+                                <a href="" class=" @yield('inbox')" class="waves-effect"><i class="md md-home"></i><span> Inbox</span></a>
 </ul>
                         <div class="clearfix"></div>
                     </div>

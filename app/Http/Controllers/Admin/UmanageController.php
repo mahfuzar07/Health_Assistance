@@ -34,4 +34,38 @@ public function consultantManage(){
         return view('admin.allconsultant',compact('consultants'));
    }
 
+   public function cDelete($con_id){
+
+        Consultant::find($con_id)->delete();
+        return Redirect() -> back() ;
+          
+     } 
+//category status
+
+
+  public function cInactive($con_id){
+
+          Consultant::find($con_id)->update(['status' => 0]);
+          return Redirect() -> back();
+            
+       } 
+
+
+
+   public function cActive($con_id){
+
+          Consultant::find($con_id)->update(['status' => 1]);
+          return Redirect() -> back();
+            
+       } 
+       public function cView($con_id){
+
+          $consultants = Consultant::findOrfail($con_id);
+          
+          // $consultants = Consultant::where('con_id',$con_id)->get();
+         
+        return view('admin.allconview',compact('consultants'));
+            
+       }
+
 }
