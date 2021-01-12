@@ -82,7 +82,10 @@
                                                             </td>
 
                                                             <td>
-                                                                <a href="{{ url('admin/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
+                                                                <a href="{{ url('admin/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> </a>
+
+                                                                <a href="{{ url('admin/orders/delete/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-trash"></i>
+                                                                </a>
 
                                                                 @if($order-> status == 1)
                                                                 <a href="{{ url('admin/orders/success/'.$order-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
@@ -95,8 +98,7 @@
 
                                                                 @endif
 
-                                                                <a href="{{ url('admin/orders/delete/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-trash"></i>
-                                                            </a>
+                                                                
 
                                                             </td>
 

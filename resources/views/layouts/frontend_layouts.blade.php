@@ -30,6 +30,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    
+
 
 </head>
 
@@ -166,13 +168,60 @@
                         <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            {{-- <li class="nav-item">
-                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li> --}}
+                            
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <i class="fa fa-user"></i> সাইন-ইন / রেজিস্টার 
+</button>
 
-                            <div class="header__top__right__auth">
-                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i>সাইন-ইন / রেজিস্টার  </a></li>
-                            </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">আপনার অংশে প্রবেশ করুন </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+      <div class="modal-body">
+        
+
+      <div class="row">
+      <div class="col-lg-6 ">
+      <div class="card" style="width: 11.5rem;">
+  <img src="{{ asset('frontend/img/user.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text"></p>
+    <a href="{{ route('login') }}"><button  type="button" class="btn btn-primary"><i class="fa fa-user"></i> ইউজার   </button></a>
+  </div>
+</div>
+</div>
+        
+
+     <div class="col-lg-6 ">
+     <div class="card" style="width: 10rem;">
+  <img src="{{ asset('frontend/img/consultant.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text"></p>
+
+    <a href="{{ route('consultant.login') }}"><button  type="button" class="btn btn-primary"><i class="fa fa-user"></i> পরামর্শদাতা </button></a>
+  </div>
+</div>
+</div>
+
+  </div>
+      </div>
+     </div>
+
+  </div>
+</div>
+
+                            
                              
                              
 
@@ -416,9 +465,18 @@
     <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    
+
+
+
 
 
 

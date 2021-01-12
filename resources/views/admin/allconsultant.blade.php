@@ -58,9 +58,9 @@
                                                             <td>{{ $con-> profession }}</td>
                                                             <td>
                                                                 @if($con-> status == 1)
-                                                                <span class="badge badge-success">Active</span>
+                                                                <span class="badge badge-danger"> Inactive</span>
                                                                 @else
-                                                                <span class="badge badge-danger">Inactive</span>
+                                                                <span class="badge badge-success">Active</span>
                                                                 @endif
                                                             </td>
                                                             
@@ -68,18 +68,18 @@
 
                                                             <td>
                                                                 
-                                                                <a href="{{ url('admin/consultant/view/'.$con-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
+                                                                <a href="{{ url('admin/consultant/view/'.$con-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i></a>
 
-                                                                <a href="{{ url('admin/consultant/delete/'.$con-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i> Delete</a>
+                                                                <a href="{{ url('admin/consultant/delete/'.$con-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
                                                                 
                                                                 @if($con-> status == 1)
+                                                                <a href="{{ url('admin/consultant/active/'.$con-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                    
+                                                                </i> Active</a>
+                                                                @else
                                                                 <a href="{{ url('admin/consultant/inactive/'.$con-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
                                                                     
                                                                 </i></a>
-                                                                @else
-                                                                <a href="{{ url('admin/consultant/active/'.$con-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
-                                                                    
-                                                                </i>  Active</a>
                                                                 @endif
 
                                                                 

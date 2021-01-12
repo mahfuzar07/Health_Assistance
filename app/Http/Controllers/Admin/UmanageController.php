@@ -45,7 +45,7 @@ public function consultantManage(){
 
   public function cInactive($con_id){
 
-          Consultant::find($con_id)->update(['status' => 0]);
+          Consultant::find($con_id)->update(['status' => 1]);
           return Redirect() -> back();
             
        } 
@@ -54,7 +54,7 @@ public function consultantManage(){
 
    public function cActive($con_id){
 
-          Consultant::find($con_id)->update(['status' => 1]);
+          Consultant::find($con_id)->update(['status' => 0]);
           return Redirect() -> back();
             
        } 
