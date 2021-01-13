@@ -46,6 +46,8 @@ Route::get('user/profile','ProfileController@uProfile')->name('user.profile');
 //user Orders
 Route::get('user/Orders-Details/','ProfileController@uOrders')->name('user.orders');
 Route::get('user/orders/view/{id}','ProfileController@ordersView')->name('view-orders');
+//user consultant
+Route::get('user/consultant', 'ProfileController@consultantManage')->name('user.consultant');
 
 
 

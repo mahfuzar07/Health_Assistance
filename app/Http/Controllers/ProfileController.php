@@ -7,6 +7,7 @@ use App\Order;
 use App\OrderItem;
 use App\Shipping;
 use Carbon\Carbon;
+use App\Consultant;
 
 class ProfileController extends Controller
 {
@@ -45,7 +46,11 @@ class ProfileController extends Controller
         return view('user.vieworder', compact('order','orderItems','shipping'));
 
     }
-        
+        public function consultantManage(){
+        $consultants = Consultant::latest()-> get();
+         
+        return view('user.uconview',compact('consultants'));
+   }
     
 
 

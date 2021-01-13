@@ -19,6 +19,8 @@
     </section>
 <!-- Hero Section End -->
 
+
+
  <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
@@ -40,6 +42,10 @@
         </div>
     </section>
     <!-- Categories Section End -->
+
+
+
+
 
     <!-- Featured Section Begin -->
     <section class="featured spad">
@@ -104,12 +110,17 @@
     </section>
     <!-- Featured Section End -->
 
+
+
+
+
+
     
     <!-- Latest Product Section Begin -->
     <section class="latest-product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="latest-product__text">
                         <h4>নতুন পণ্য</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -146,7 +157,7 @@
                 </div>
                 
 
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="latest-product__text">
                         <h4>নতুন স্বাস্থ্য  বার্তা</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -188,6 +199,40 @@
         </div>
     </section>
     <!-- Latest Product Section End -->
+
+                  <!--consultant Section Begin -->
+    <section class="latest-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6">
+                    <div class="section-title">
+                        <h2>আমাদের স্বাস্থ্য পরামর্শক  গণ</h2>
+                    </div>
+                    <div class="categories__slider owl-carousel">
+
+                    @foreach($consultants as $row)
+                    <div class="col-lg-3">
+                        <div class="card" style="width: 13rem;">
+                <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 13rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="fa fa-user-md"></i> {{ $row-> name }} </h5>
+                  <p class="card-text"><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
+                  <a href=""><button  type="button" class="btn btn-primary"><i class="fa fa-envelope"></i> বার্তা পাঠান  </button></a>
+                </div>
+                
+              </div>
+                    </div>
+                    @endforeach
+                   </div>
+                </div>
+                </div>
+                
+              </div>
+        </div>
+    </section>
+    <!-- consultant Section End -->
+
+
 
 
 

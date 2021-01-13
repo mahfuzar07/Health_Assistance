@@ -292,11 +292,14 @@
                            
                             <li  class=" @yield('blog')"><a href="">স্বাস্থ্য বার্তা </a></li>
 
-                            <li  class=" @yield('contact')"><a href="./contact.html">যোগাযোগ করুন</a></li>
+                            <li  class=" @yield('contact')"><a href="">যোগাযোগ করুন</a></li>
                             
                             @guest
                             @else
-                            <li  class=" @yield('cart')"><a  href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i>Cart</a></li>
+                            <li  class=" @yield('cart')"><a  href="{{ route('user.profile') }}"><i class="fa fa-user"></i> প্রোফাইল</a></li>
+
+                            {{-- <li  class=" @yield('cart')"><a  href="{{ url('cart') }}"><i class="fa fa-user"></i>Cart</a></li> --}}
+
                             @endguest
 
                         </ul>

@@ -1,6 +1,5 @@
-@extends('user.user_layouts')
-
-@section('user_content')
+@extends('admin.admin_layouts')
+@section('admin_content')
 
 
 
