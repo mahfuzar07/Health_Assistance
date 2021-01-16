@@ -153,7 +153,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">[{{ Auth::user()->name }}] {{-- <img src="" alt="user-img" class="img-circle"> </a> --}}
+                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">WELCOME <i class="fa fa-user"></i>  {{ Auth::user()->name }}{{-- <img src="" alt="user-img" class="img-circle"> </a> --}}
                                     
                                     <ul class="dropdown-menu">
                                         
@@ -218,7 +218,7 @@
                             <li class="has_sub">
                                 <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-poll"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a class=" @yield('category')"  class="waves-effect" href="">Categories</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Categories</a></li>
                                     <li><a class=" @yield('blog post')"  class="waves-effect" href="">Create Post</a></li>
                                     <li><a class=" @yield('blog post')"  class="waves-effect" href="">Manage Post</a></li>
                                    

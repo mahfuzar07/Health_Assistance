@@ -24,23 +24,20 @@
     <section class="product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-5">
-                    <div class="sidebar">
-                        <div class="sidebar__item">
-                            <h4>প্রোফাইল মেনু</h4>
-                            <ul>
-                                <li>
-                                  <a href="{{ route('user.profile') }}"><i class="fa fa-address-card" aria-hidden="true"></i></i> ড্যাশবোর্ড</a>
-                                  <a href="{{ route('user.orders') }}"><i class="fa fa-truck" aria-hidden="true"></i></i> অর্ডার তথ্য বিবরণ</a>
-                                  <a href="{{ route('user.consultant') }}"><i class="fa fa-user-md" aria-hidden="true"></i>  স্বাস্থ্য পরামর্শদাতা</a>
-                                  <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> ইনবক্স</a>
-
-                                </li>
-                              </ul>
-                        </div>
-                        <hr>
-                     </div>
-                </div>
+               <div class="col-lg-3 col-md-5" {{-- style="margin-top: 6%;" --}}>
+                <div><h4>প্রোফাইল মেন্যু </h4></div>
+                  <hr>
+                    
+                      <div class="list-group">
+  <a href="{{ route('user.profile') }}" class="list-group-item list-group-item-action "><i class="fa fa-address-card" aria-hidden="true"></i> 
+    ড্যাশবোর্ড
+  </a>
+  <a href="{{ route('user.orders') }}" class="list-group-item list-group-item-action"><i class="fa fa-truck" aria-hidden="true"></i> অর্ডার তথ্য বিবরণ</a>
+  <a href="{{ route('user.consultant') }}" class="list-group-item list-group-item-action active"><i class="fa fa-user-md" aria-hidden="true"></i> স্বাস্থ্য পরামর্শদাতা</a>
+  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-envelope" aria-hidden="true"></i> ইনবক্স</a>
+ {{--  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> --}}
+</div>
+   </div>
 
 
                 <div class="col-lg-9 col-md-7">
@@ -53,10 +50,10 @@
                   
                   <div class="row">
                     @foreach ($consultants as $row)
-                  <div class="col-lg-4 ">
+                  <div class="col-lg-3 ">
                     
                   <div class="card" style="width: 13rem;">
-                <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 13rem;">
+                <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 8.5rem;">
                 <div class="card-body">
                   <h5 class="card-title"><i class="fa fa-user-md"></i> {{ $row-> name }} </h5>
                   <p class="card-text"><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
@@ -64,8 +61,9 @@
                 </div>
                 
               </div>
-              
+              <hr>
               </div>
+
               @endforeach
 
 

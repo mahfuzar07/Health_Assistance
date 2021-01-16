@@ -155,18 +155,17 @@
                                 
                                  
                                 <li class="dropdown">
-                                    @foreach ($consultants as $row)
-                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ Auth::user()->name }} 
-                                        {{-- <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}" --}} 
-                                        {{-- style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a> --}}
-                                    
+                                   <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ Auth::user()->name }} 
+                                        <img src="{{asset('uploads/documents/consultant/'.   
+                                        Auth::user()-> avatar) }}"
+                                       style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a>                                    
                                     <ul class="dropdown-menu">
                                         
                                         
                                         
                                         <li><a href="{{ route('consultant.logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
                                     </ul>
-                                    @endforeach
+                                    
                                 </li>
                                 
                             </ul>
