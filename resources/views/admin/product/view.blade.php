@@ -76,9 +76,9 @@
 
                                                             </td>
                                                             <td>
-                                                                <a href="{{ url('admin/product/edit/'.$row-> id) }}"class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                                                                <a href="{{ url('admin/product/edit/'.$row-> id) }}"class="btn btn-primary"><i class="fa fa-edit"></i></a>
 
-                                                                <a href="{{ url('admin/product/delete/'.$row-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i> Delete</a>
+                                                                <a href="{{ url('admin/product/delete/'.$row-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
                                                                 
                                                                 @if($row-> status == 1)
                                                                 <a href="{{ url('admin/product/inactive/'.$row-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">

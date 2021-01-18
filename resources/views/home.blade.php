@@ -7,8 +7,8 @@
                         <div class="hero__text">
                             <span>aim2bwell.com</span>
                             <h2>Your Health <br/>Is Our Priority</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <p>আপনার ঔষধ খুঁজুন, অর্ডার করুন এবং দ্রুত ডেলিভারী নিন </p>
+                            <a href="{{ route('shop.page') }}" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -18,6 +18,45 @@
 
     </section>
 <!-- Hero Section End -->
+
+     
+   
+        <div class="container">
+          <div class="card text-center">
+  <div class="card-header">
+    একনজরে বাংলাদেশের করোনা পরিস্থিতি
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ Carbon\Carbon::now()->format('l j F Y') }}</h5>
+    <div class="row">
+    <div class="col-lg-3">
+        
+    </div>
+    <div class="col-lg-3">
+        
+    </div>
+    <div class="col-lg-3">
+        
+    </div>
+    <div class="col-lg-3">
+        
+    </div>
+
+    </div>
+  </div>
+  
+</div>
+            
+           
+        </div>
+   
+    
+
+
+
+
+
+
 
 
 
@@ -296,6 +335,8 @@
         </div>
     </section>
     <!-- Blog Section End -->
+
+
 
 
 @endsection

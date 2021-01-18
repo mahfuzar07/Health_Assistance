@@ -153,7 +153,7 @@
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i>support@aim2bewell.com</li>
-                                <li>৫০০ টাকার  অর্ডারের জন্য বিনামূল্যে শিপিং</li>
+                                <li>{{ Carbon\Carbon::now()->format('l j F Y') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -398,6 +398,8 @@
     
 
 @yield('content')
+
+
  
 
     <!-- Footer Section Begin -->
@@ -457,6 +459,8 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+
+
 
     <!-- Js Plugins -->
     <script src="{{ asset('frontend/js/jquery-3.3.1.min.js') }}"></script>
