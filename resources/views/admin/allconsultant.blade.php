@@ -68,7 +68,7 @@
 
                                                             <td>
                                                                 
-                                                                <a href="{{ url('admin/consultant/view/'.$con-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                                                <a href="{{ url('admin/consultant/view/'.$con-> id) }}"class="btn btn-info"><i class="fa fa-eye"></i></a>
 
                                                                 <a href="{{ url('admin/consultant/delete/'.$con-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
                                                                 

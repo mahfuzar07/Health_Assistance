@@ -19,36 +19,50 @@
                         </div>
 
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Add Coupon</h3></div>
-                                    <div class="panel-body">
-                                    
-                                        <form action="{{ route('store.coupon') }}" method="POST">
-                                            @csrf
-                                            <div class="form-group">
-                                               <input type="text" name="coupon_code" class="form-control"  placeholder="Enter coupon code">
+                         <!-- Button trigger modal -->
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+  <i class="fa fa-plus-square"></i> ADD COUPON
+</button>
+<hr>
 
-                                                @error('coupon_code')
-                                                    <strong class="text-danger">{{ $message }}</strong>
-                                                    @enderror
-                                            </div>
-                                           <div class="form-group">
-                                                
-                                                <input type="text" name="discount" class="form-control"  placeholder="Discount amount">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Coupon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('store.coupon') }}" method="POST">
+         @csrf
+            <div class="form-group">
+                <input type="text" name="coupon_code" class="form-control"  placeholder="Enter coupon code">
 
-                                                @error('discount')
-                                                    <strong class="text-danger">{{ $message }}</strong>
-                                                    @enderror
-                                            </div>
-                                            <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">ADD COUPON</button>
-                                        </form>
-                                    </div> <!-- panel-body -->
-                                </div> <!-- panel -->
-                            </div> <!-- col -->
-                             
-                        </div>
+                @error('coupon_code')
+                <strong class="text-danger">{{ $message }}</strong>
+                @enderror
+            </div>
+            <div class="form-group">
+                <input type="text" name="discount" class="form-control"  placeholder="Discount amount">
+                @error('discount')
+                <strong class="text-danger">{{ $message }}</strong>
+                 @enderror
+            </div>
+            <button type="submit" class="btn btn-success  waves-effect waves-light m-l-10 pull-right">ADD</button>
+        </form>
+        
+      </div>
+      
+    </div>
+  </div>
+</div> 
+                    
+
+
+                       
 
                         <div class="row">
                             <div class="col-md-12">
@@ -89,7 +103,7 @@
 
                                                             </td>
                                                             <td>
-                                                                <a href="{{ url('admin/coupon/edit/'.$coupon-> id) }}"class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                                <a href="{{ url('admin/coupon/edit/'.$coupon-> id) }}"class="btn btn-info"><i class="fa fa-edit"></i></a>
 
                                                                 <a href="{{ url('admin/coupon/delete/'.$coupon-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
                                                                 

@@ -21,34 +21,7 @@
 
      
    
-        <div class="container">
-          <div class="card text-center">
-  <div class="card-header">
-    একনজরে বাংলাদেশের করোনা পরিস্থিতি
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{ Carbon\Carbon::now()->format('l j F Y') }}</h5>
-    <div class="row">
-    <div class="col-lg-3">
-        
-    </div>
-    <div class="col-lg-3">
-        
-    </div>
-    <div class="col-lg-3">
-        
-    </div>
-    <div class="col-lg-3">
-        
-    </div>
 
-    </div>
-  </div>
-  
-</div>
-            
-           
-        </div>
    
     
 
@@ -335,6 +308,67 @@
         </div>
     </section>
     <!-- Blog Section End -->
+
+            <div class="container">
+          <div class="card text-center">
+  <div class="card-header ">
+    <h5 class="text-secondary">একনজরে বাংলাদেশের করোনা পরিস্থিতি</h5>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-secondary">{{ Carbon\Carbon::now()->format('l j F Y') }}</h5>
+    <div class="row">
+    <div class="col-lg-3">
+      <div class="card" style="width: 13rem;">
+                 <div class="card-body bg-light" >
+                  <h5 class="card-title text-info"> পরীক্ষা</h5>
+                  <p class="card-text text-info">0000</p>
+                  
+                </div>
+                
+              </div>  
+    </div>
+    <div class="col-lg-3">
+      <div class="card" style="width: 13rem;">
+                 <div class="card-body bg-light">
+                  <h5 class="card-title text-info"> শনাক্ত </h5>
+                  <p class="card-text text-info">0000</p>
+                  
+                </div>
+                
+              </div>   
+    </div>
+    <div class="col-lg-3">
+      <div class="card" style="width: 13rem;">
+                 <div class="card-body bg-light">
+                  <h5 class="card-title text-success">  আরোগ্য</h5>
+                  <p class="card-text text-success">0000</p>
+                  
+                </div>
+                
+              </div>   
+    </div>
+    <div class="col-lg-3">
+      <div class="card" style="width: 13rem;">
+                 <div class="card-body bg-light">
+                  <h5 class="card-title text-danger"> মৃত্যু </h5>
+                  <p class="card-text text-danger">0000</p>
+                  
+                </div>
+                
+              </div>   
+    </div>
+
+    </div>
+  </div>
+
+  <div class="card-footer text-muted text-left" >
+    সোর্স : 
+  </div>
+  
+</div>
+            
+           
+        </div>
 
 
 

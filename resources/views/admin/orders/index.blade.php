@@ -82,7 +82,7 @@
                                                             </td>
 
                                                             <td>
-                                                                <a href="{{ url('admin/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> </a>
+                                                                <a href="{{ url('admin/orders/view/'.$order-> id) }}"class="btn btn-info"><i class="fa fa-eye"></i> </a>
 
                                                                 <a href="{{ url('admin/orders/delete/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-trash"></i>
                                                                 </a>
