@@ -49,6 +49,7 @@ Route::get('user/orders/view/{id}','ProfileController@ordersView')->name('view-o
 //user consultant
 Route::get('user/consultant', 'ProfileController@consultantManage')->name('user.consultant');
 
+//
 
 
 
@@ -58,11 +59,13 @@ Route::get('user/consultant', 'ProfileController@consultantManage')->name('user.
 
 
 
-
-
+//blog page
+Route::get('blog', 'HomeController@blog')->name('blog.page');
 
 //shop page
 Route::get('shop', 'HomeController@shop')->name('shop.page');
+//blood page
+Route::get('blood', 'HomeController@blood')->name('blood.page');
 
 //categorywise product show
 Route::get('category/product-show/{id}', 'HomeController@catWp');

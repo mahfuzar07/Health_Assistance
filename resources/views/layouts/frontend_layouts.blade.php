@@ -290,9 +290,9 @@
 
                             <li  class=" @yield('shop')"><a href="{{ route('shop.page') }}">শপ </a></li>
                            
-                            <li  class=" @yield('blog')"><a href="">স্বাস্থ্য বার্তা </a></li>
+                            <li  class=" @yield('blog')"><a href="{{ route('blog.page') }}">স্বাস্থ্য বার্তা </a></li>
 
-                            <li  class=" @yield('contact')"><a href="">যোগাযোগ করুন</a></li>
+                            <li  class=" @yield('blood')"><a href="{{ route('blood.page') }}"> ব্লাড ব্যাংক</a></li>
                             
                             @guest
                             @else

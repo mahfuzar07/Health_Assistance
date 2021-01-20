@@ -74,4 +74,19 @@ class HomeController extends Controller
        
 
     }
+
+
+    public function blood()
+       {
+        
+        return view('pages.blood');
+        
+     }
+
+     public function blog()
+       {
+        
+        return view('pages.blog');
+        
+     }
 }
