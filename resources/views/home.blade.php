@@ -19,21 +19,7 @@
     </section>
 <!-- Hero Section End -->
 
-     
-   
-
-   
-    
-
-
-
-
-
-
-
-
-
- <!-- Categories Section Begin -->
+<!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
             <div class="row">

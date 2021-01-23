@@ -28,7 +28,7 @@ class RegistrationController extends Controller
 				[
 					'name' => 'required|string|max:255',
 					'email' => 'required|string|email|max:255|unique:consultants,email',
-					'phone_number' => 'required|digits:11',
+					'phone_number' => 'required|digits:12',
 					'address' => 'required|max:191',
 					'avatar' => 'required|',
 					'password' => 'required|string|min:6|',
