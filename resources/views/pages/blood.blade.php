@@ -47,40 +47,62 @@
         </button>
       </div>
       <div class="modal-body">
-      	<form action="" method="POST">
+      	<form action="{{ route('store-blood') }}" method="POST">
          @csrf
          <div class="row">
                         <div class="col-lg-12 col-md-6">
                          <div class="checkout__input">
                                         <p>রোগীর নাম</p>
-                                        <input type="text">
+                                        <input type="text" name="full_name" placeholder="রোগীর নাম লিখুন" >
+                                                    @error('full_name')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
                                     </div>
                             <div class="checkout__input">
                                 <p>হাসপাতালের নাম </p>
-                                <input type="text">
+                                <input type="text" name="hospital_name" placeholder="রোগীর নাম লিখুন" >
+                                                    @error('hospital_name')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
+
                             </div>
                             <div class="checkout__input">
                                 <p>ঠিকানা</p>
-                                <input type="text" placeholder="সড়ক নং , উপজেলা, জেলা " class="checkout__input__add">
+                                <input type="text" name="address" placeholder="সড়ক নং , উপজেলা, জেলা " class="checkout__input__add">
+                               
+                                     @error('address')
+                                     <strong class="text-danger">{{ $message }}</strong>
+                                      @enderror
                              </div>
                              <div class="row">
                                 <div class="col-lg-9">
                                     <div class="checkout__input">
                                         <p>মোবাইল নং</p>
-                                        <input type="text">
+                                        <input type="text" name="phone" placeholder="রোগীর নাম লিখুন" >
+                                                    @error('phone')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="checkout__input">
                                       <p>ব্লাড গ্রুপ </p>
-                                        <input type="text">
+                                        <input type="text" name="blood_group" placeholder="" >
+                                                    @error('blood_group')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout__input">
                                 <p>রোগীর অতিরিক্ত বিবরণ</p>
-                                <input type="text"
+                                <input type="text" name="note"
                                     placeholder="রোগীর অতিরিক্ত কিছু বিবরণ থাকলে এখানে লিখুন">
+
+                                
+                                                    @error('note')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                    @enderror
                             </div>
                             
                         </div>
@@ -114,21 +136,32 @@
                 </div>
 
                 <div class="col-lg-8 col-md-7">
+                    <div class="section-title">
+                        <h2>জরুরী রক্তের প্রয়োজন</h2>
+                    </div>
                     <div class="row">
+                        @foreach ($bloods as $blood)
                         <div class="col-lg-6 col-md-6 col-sm-6">
+
                             <div class="blog__item">
                                <div class="blog__item__text">
+                                    <h6>রোগীর নাম : {{ $blood-> full_name  }}</h6>
+                                    <h6>হাসপাতাল : {{ $blood->  hospital_name }}</h6>
+                                    <h6>রক্তের গ্ৰুপ: <b>{{ $blood-> blood_group  }}</b></h6>
+                                    <h6>যোগাযোগের ঠিকানা:  {{ $blood-> address  }}</h6>
+                                    
+                                    <h6>মোবাইল নং: {{ $blood->  phone }}</h6>
+                                    <h6> রোগীর অতিরিক্ত বিবরণ:{{ $blood->  note }}</h6>
+
                                     <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        
+                                        <li><i class="fa fa-calendar-o"></i> {{ $blood-> created_at->format('l j F Y ')  }}</li>
+                                        <li><i class="fa fa-comment-o"> কমেন্ট </i> 5</li>
                                     </ul>
-                                    <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
                                     
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                        
                         <div class="col-lg-12">
                             <div class="product__pagination blog__pagination">

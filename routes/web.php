@@ -64,8 +64,12 @@ Route::get('blog', 'HomeController@blog')->name('blog.page');
 
 //shop page
 Route::get('shop', 'HomeController@shop')->name('shop.page');
-//blood page
-Route::get('blood', 'HomeController@blood')->name('blood.page');
+
+
+//blood controller
+Route::get('blood', 'BloodController@blood')->name('blood.page');
+Route::post('blood/store','BloodController@Storeblood')->name('store-blood');
+
 
 //categorywise product show
 Route::get('category/product-show/{id}', 'HomeController@catWp');
