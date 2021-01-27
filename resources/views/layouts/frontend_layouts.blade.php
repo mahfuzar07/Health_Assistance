@@ -162,7 +162,7 @@
                      <div class="col-lg-6 col-md-6">
                          <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                         <div class="container">
-                            <div  class="site-name">Aim 2 Be Well . Com</div>
+                            <div  class="site-name"> WELCOME </div>
                
                  <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -235,7 +235,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   WELCOME  <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                                   <i class="fa fa-user"></i> {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

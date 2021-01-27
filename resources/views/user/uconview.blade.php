@@ -11,7 +11,7 @@
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
 	                    <div class="breadcrumb__text">
-	                        <h2> স্বাস্থ পরামর্শকগণ </h2>
+	                        <h2> স্বাস্থ্য  পরামর্শকগণ </h2>
 	                        
 	                    </div>
 	                </div>
@@ -42,7 +42,7 @@
 
 
                 <div class="col-lg-9 col-md-7">
-                  <div><h4>স্বাস্থ পরামর্শকগণের তথ্য বিবরণ</h4></div>
+                  <div><h4>স্বাস্থ্য  পরামর্শকগণের তথ্য বিবরণ</h4></div>
                   <hr>
                    @php
                             $consultants = App\Consultant::where('status',0)->latest()-> get();

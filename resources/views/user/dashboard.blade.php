@@ -54,7 +54,7 @@
                     <address>
                      <strong> নাম :</strong> {{ Auth::user()->name }}<br>
                      <strong> ই-মেল: </strong > {{ Auth::user()->email }}<br>
-                     <strong> ঠিকানা: </strong> <br>
+                     {{-- <strong> ঠিকানা: </strong> <br> --}}
                      </address>
                   </div>
                  <div class="pull-right m-t-30">

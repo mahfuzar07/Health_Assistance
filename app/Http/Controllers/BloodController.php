@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Blood;
 use Carbon\Carbon;
 
+
 class BloodController extends Controller
 {
      public function __construct()
@@ -17,8 +18,9 @@ class BloodController extends Controller
 
     public function blood()
        {
-        $bloods = Blood::latest()-> get();
-        return view('pages.blood',compact('bloods'));
+        $bloods = Blood::latest()->paginate(6);
+        
+          return view('pages.blood',compact('bloods'));
         
      }
 

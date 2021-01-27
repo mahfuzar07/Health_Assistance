@@ -13,6 +13,7 @@
 	                <div class="col-lg-12 text-center">
 	                    <div class="breadcrumb__text">
 	                        <h2> ব্লাড ব্যাংক </h2>
+                            <h5 class="text-white"><i class="fa fa-heart"></i> আমার রক্তে যদি সহযোগিতা করে মুমূর্ষ রোগীর প্রাণ তাহলে আমি কেন করবোনা স্বেচ্ছায় রক্ত দেন <i class="fa fa-heart"></i></h5>
 	                        
 	                    </div>
 	                </div>
@@ -25,7 +26,7 @@
     <section class="blog spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-5">
+                <div class="col-lg-2 col-md-5">
                     <div class="blog__sidebar">
 
                     	<!-- Button trigger modal -->
@@ -60,7 +61,7 @@
                                     </div>
                             <div class="checkout__input">
                                 <p>হাসপাতালের নাম </p>
-                                <input type="text" name="hospital_name" placeholder="রোগীর নাম লিখুন" >
+                                <input type="text" name="hospital_name" placeholder="হাসপাতালের নাম লিখুন" >
                                                     @error('hospital_name')
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
@@ -78,7 +79,7 @@
                                 <div class="col-lg-9">
                                     <div class="checkout__input">
                                         <p>মোবাইল নং</p>
-                                        <input type="text" name="phone" placeholder="রোগীর নাম লিখুন" >
+                                        <input type="text" name="phone" placeholder="মোবাইল নং" >
                                                     @error('phone')
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
@@ -120,59 +121,56 @@
 </div>
 <hr>
                             <div class="blog__sidebar__item">
-                            <h4>রিসেন্ট ব্লাড পোস্ট </h4>
-                            <div class="blog__sidebar__recent">
-                                <a href="#" class="blog__sidebar__recent__item">
-                                   <div class="blog__sidebar__recent__item__text">
-                                        <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-                                        <span>MAR 05, 2019</span>
-                                    </div>
-                                </a>
-                               
-                            </div>
+                           
+                        
+                  
+                            
                         </div>
                         
                     </div>
                 </div>
 
-                <div class="col-lg-8 col-md-7">
+                <div class="col-lg-10 col-md-7 ">
                     <div class="section-title">
                         <h2>জরুরী রক্তের প্রয়োজন</h2>
+
+
                     </div>
+
                     <div class="row">
+
                         @foreach ($bloods as $blood)
                         <div class="col-lg-6 col-md-6 col-sm-6">
 
                             <div class="blog__item">
                                <div class="blog__item__text">
-                                    <h6>রোগীর নাম : {{ $blood-> full_name  }}</h6>
+                                    <h5>রোগীর নাম : {{ $blood-> full_name  }}</h5>
                                     <h6>হাসপাতাল : {{ $blood->  hospital_name }}</h6>
                                     <h6>রক্তের গ্ৰুপ: <b>{{ $blood-> blood_group  }}</b></h6>
                                     <h6>যোগাযোগের ঠিকানা:  {{ $blood-> address  }}</h6>
                                     
-                                    <h6>মোবাইল নং: {{ $blood->  phone }}</h6>
+                                    <h6>মোবাইল নং: <b>{{ $blood->  phone }}</b> </h6>
                                     <h6> রোগীর অতিরিক্ত বিবরণ:{{ $blood->  note }}</h6>
 
                                     <ul>
-                                        <li><i class="fa fa-calendar-o"></i> {{ $blood-> created_at->format('l j F Y ')  }}</li>
-                                        <li><i class="fa fa-comment-o"> কমেন্ট </i> 5</li>
+                                        
+                                    <li><i class="fa fa-calendar-o"></i> {{ $blood-> created_at->diffForHumans()  }}</li>
+
+                                        {{-- <li><i class="fa fa-comment-o"> কমেন্ট </i> 5</li> --}}
                                     </ul>
                                     
                                 </div>
                             </div>
                         </div>
                         @endforeach
-                       
-                        <div class="col-lg-12">
-                            <div class="product__pagination blog__pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                            </div>
-                        </div>
+                         
+                       </div>
+
+                       <div>
+                      {{ $bloods->links() }}
+                     
                     </div>
-                </div>
+
             </div>
         </div>
     </section>
