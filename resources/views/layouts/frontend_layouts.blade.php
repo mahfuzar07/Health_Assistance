@@ -409,7 +409,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="{{ asset('frontend') }}/img/logo.png" alt=""></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('frontend') }}/img/logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>ঠিকানা: ঢাকা,বাংলাদেশ</li>

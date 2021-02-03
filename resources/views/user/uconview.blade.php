@@ -42,7 +42,7 @@
 
 
                 <div class="col-lg-9 col-md-7">
-                  <div><h4>স্বাস্থ্য  পরামর্শকগণের তথ্য বিবরণ</h4></div>
+                  <div><h4 class="text-center">স্বাস্থ্য  পরামর্শকগণের তথ্য বিবরণ</h4></div>
                   <hr>
                    @php
                             $consultants = App\Consultant::where('status',0)->latest()-> get();

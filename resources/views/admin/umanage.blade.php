@@ -31,7 +31,9 @@
                                                         	<th>Serial No.</th>
                                                             <th>Name</th>
                                                             <th>Email</th>
-                                                            {{-- <th>Status</th> --}}
+                                                            <th>Phone No.</th>
+                                                            <th>Blood Group</th>
+                                                            
                                                             <th>Action</th>
                                                             
                                                         </tr>
@@ -47,6 +49,8 @@
                                                         	<td>{{ $i ++ }}</td>
                                                             <td>{{ $user-> name }}</td>
                                                             <td>{{ $user-> email}}</td>
+                                                            <td>{{ $user-> phone}}</td>
+                                                            <td>{{ $user-> blood_grp}}</td>
                                                             {{-- <td>
                                                                 @if($user-> status==1 )
                                                                 <span class="badge badge-success">Active</span>

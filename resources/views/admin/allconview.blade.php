@@ -37,9 +37,9 @@
 
                                                     <p><strong>Activity Status: </strong > 
                                                         @if($consultants-> status == 1)
-                                                                <span class="badge badge-success ">Active</span>
-                                                                @else
                                                                 <span class="badge badge-danger"> Pending</span>
+                                                                @else
+                                                                <span class="badge badge-success ">Active</span>
                                                                 @endif</p>
 
 
@@ -53,9 +53,9 @@
                                                 <h4><strong>Activity Status: </strong >
 
                                                  @if($consultants-> status == 1)
-                                                                <span class="badge badge-success ">Active</span>
-                                                                @else
                                                                 <span class="badge badge-danger"> Pending</span>
+                                                                @else
+                                                                <span class="badge badge-success ">Active</span>
                                                                 @endif
                                              </h4>
 

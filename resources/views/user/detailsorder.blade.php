@@ -49,12 +49,11 @@
 
                                                       <thead>
                                                           <tr> 
-                                                              <th>Order</th>
+                                                              <th>Order#</th>
                                                               <th>Order Date</th>
                                                               <th>Invoice No.</th>
                                                               <th>Payment Type</th>
                                                               <th>Sub Total</th>
-                                                              
                                                               <th>Total</th>
                                                               <th>Status</th>
                                                            </tr>

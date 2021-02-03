@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Order;
 use App\OrderItem;
 use App\Shipping;
 use Carbon\Carbon;
 use App\Consultant;
+use App\User;
+
 
 class ProfileController extends Controller
 {
@@ -31,7 +35,7 @@ class ProfileController extends Controller
     public function uOrders()
 
     {
-        $orders = Order::latest()-> get();
+        $orders = Order::where('user_id',Auth::id())->latest()-> get();
       return view('user.detailsorder',compact('orders'));
 
     }

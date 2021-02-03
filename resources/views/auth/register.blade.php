@@ -41,6 +41,34 @@
                         </div>
                     </div>
 
+
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <label for="email" class="col-md-8 col-form-label text-md-right">{{ __('Phone Number') }}</label>
+                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone"><br>
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+                    
+                    <div class="form-group ">
+                       <div class="col-xs-12">
+                            <label for="blood_grp" class="col-md-12 col-form-label text-md-right">{{ __('Blood Group') }}</label>
+                            <input id="blood_grp" type="text" class="form-control @error('blood_grp') is-invalid @enderror" name="blood_grp" value="{{ old('blood_grp') }}" required autocomplete="blood_grp"><br>
+
+                                @error('blood_grp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+                    
+
                     <div class="form-group">
                         <div class="col-xs-12">
                             <label for="password" class="col-md-8 col-form-label text-md-right">{{ __('Password') }}</label>

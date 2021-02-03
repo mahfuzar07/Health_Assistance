@@ -44,27 +44,91 @@
                   <div class="col-md-9">
                   <div class="tab-content" id="nav-tabContent">
 
-                  <div><h4>আপনার তথ্য বিবরণ</h4></div>
+                  <div><h4 class="text-center">আপনার তথ্য বিবরণ</h4></div>
                   <hr>
-                 <div class="row">
-                 <div class="col-md-10">
-                                                
-                   <div class="pull-left m-t-30">
+                   <div class="card bg-secondary text-center">
+  
+  <div class="card-body">
+    <div class="row">
+    <div class="col-lg-4">
+      <div class="card" style="width: 15rem;">
+                 <div class="card-body bg-primary" >
+                  <h5 class="card-title text-white">অর্ডার করেছেন</h5>
+                  <p class="card-text text-white">[ 0 ]</p>
+                  
+                </div>
+                
+              </div>  
+    </div>
+    <div class="col-lg-4">
+      <div class="card" style="width: 15rem;">
+                 <div class="card-body bg-primary">
+                  <h5 class="card-title text-white"> পরামর্শ সেবা নিয়েছেন </h5>
+                  <p class="card-text text-white">[ 0 ]</p>
+                  
+                </div>
+                
+              </div>   
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="card" style="width: 15rem;">
+                 <div class="card-body bg-primary">
+                  <h5 class="card-title text-white"> পোস্ট করেছেন</h5>
+                  <p class="card-text text-white">[ 0 ]</p>
+                  
+                </div>
+                
+              </div>   
+    </div>
+
+    </div>
+  </div>
+  
+</div>
+<hr>
+                <div class="card">
+  
+                  <div class="card-body ">
+                    <div class="row ">
+                  <div class="col-md-5" >
+                    <div class="pull-left m-t-30 " >
                                                    
                     <address>
-                     <strong> নাম :</strong> {{ Auth::user()->name }}<br>
-                     <strong> ই-মেল: </strong > {{ Auth::user()->email }}<br>
-                     {{-- <strong> ঠিকানা: </strong> <br> --}}
+                     <strong>নাম </strong><br>
+                     <strong>ই-মেল</strong ><br>
+                     <strong>মোবাইল নং</strong ><br>
+                     <strong>ব্লাড গ্রুপ</strong ><br>
+                     
                      </address>
                   </div>
+
                  <div class="pull-right m-t-30">
-                                                   
-                  
-                                                   
-                                                    
-               </div>
-             </div>
-             </div>
+                      <address>
+                     <strong>: {{ Auth::user()->name }}</strong> <br>
+                     <strong>: {{ Auth::user()->email }} </strong> <br>
+                     <strong>: {{ Auth::user()->phone }} </strong> <br>
+                     <strong>: {{ Auth::user()->blood_grp }} </strong> <br>
+                     
+                     </address>                             
+                  </div>
+                   </div>
+
+                  <div class="col-md-7 ">
+                                                
+                   
+
+                  </div>
+                     
+              </div>
+    
+  </div>
+  
+</div>
+
+
+
+                 
 
 
                     

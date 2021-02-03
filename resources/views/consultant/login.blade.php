@@ -10,6 +10,7 @@
             <div class="panel panel-color panel-primary panel-pages">
                 <div class="panel-heading bg-img">
                     <div class="bg-overlay"></div>
+                    <h2 class="text-center m-t-10 text-white"> Aim 2Be Well </h2>
                     <h3 class="text-center m-t-10 text-white"> Sign In to <strong>Consultant</strong> </h3>
                 </div>
 
@@ -24,6 +25,7 @@
 
                     <div class="form-group ">
                         <div class="col-xs-12">
+                            <label for="email" class="col-md-8 col-form-label text-md-right">{{ __('E-MAIL ') }}</label>
                             <input class="form-control input-lg " id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -36,6 +38,7 @@
 
                     <div class="form-group">
                         <div class="col-xs-12">
+                            <label for="email" class="col-md-8 col-form-label text-md-right">{{ __('PASSWORD  ') }}</label>
                             <input class="form-control input-lg" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                             @error('password')
