@@ -28,8 +28,8 @@ class ProfileController extends Controller
      public function uProfile()
 
     {    
-        
-        return view('user.dashboard');
+        $orders = Order::where('user_id',Auth::id())-> count();
+        return view('user.dashboard',compact('orders'));
 
     }
     public function uOrders()

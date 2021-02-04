@@ -54,7 +54,7 @@
       <div class="card" style="width: 15rem;">
                  <div class="card-body bg-primary" >
                   <h5 class="card-title text-white">অর্ডার করেছেন</h5>
-                  <p class="card-text text-white">[ 0 ]</p>
+                  <p class="card-text text-white">[ {{ $orders }} ]</p>
                   
                 </div>
                 
@@ -86,6 +86,7 @@
   </div>
   
 </div>
+
 <hr>
                 <div class="card">
   

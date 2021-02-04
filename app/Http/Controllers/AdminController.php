@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\User;
+use App\Consultant;
+use App\Order;
+
 class AdminController extends Controller
 {
     /**
@@ -24,8 +28,12 @@ class AdminController extends Controller
      */
     
     public function index()
+
     {
-        return view('admin.home');
+        $consultants =Consultant::where('status', 0)-> count();
+        $users =User::count();
+        $orders =Order::count();
+        return view('admin.home',compact('consultants','users','orders'));
     }
 
      public function Logout()

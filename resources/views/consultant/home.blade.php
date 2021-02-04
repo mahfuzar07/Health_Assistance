@@ -2,192 +2,356 @@
 @section('Dashboard') active @endsection
 
 @section('consultant_content')
+
 <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
-                    <div class="container">
+                    
+                
 
-                        <!-- Page-Title -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 class="pull-left page-title">Welcome !</h4>
-                                <ol class="breadcrumb pull-right">
-                                    <li><a href="#">Consultant</a></li>
-                                    <li class="active">Dashboard</li>
-                                </ol>
+                <div class="wraper container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="bg-picture text-center" style="background-image:url('images/big/bg.jpg')">
+                                <div class="bg-picture-overlay"></div>
+                                <div class="profile-info-name">
+                                    <img src="{{asset('uploads/documents/consultant/'.   
+                                        Auth::user()-> avatar) }}"class="thumb-lg img-circle img-thumbnail" alt="profile-image">
+                                    <h3 class="text-white">{{ Auth::user()->name }} </h3>
+                                </div>
                             </div>
+                            <!--/ meta -->
                         </div>
+                    </div>
+                    <div class="row user-tabs">
+                        <div class="col-lg-6 col-md-9 col-sm-9">
+                            <ul class="nav nav-tabs tabs">
+                            <li class="active tab">
+                                <a href="#home-2" data-toggle="tab" aria-expanded="false" class="active"> 
+                                    <span class="visible-xs"><i class="fa fa-home"></i></span> 
+                                    <span class="hidden-xs">About Me</span> 
+                                </a> 
+                            </li> 
+                           {{--  <li class="tab"> 
+                                <a href="#profile-2" data-toggle="tab" aria-expanded="false"> 
+                                    <span class="visible-xs"><i class="fa fa-user"></i></span> 
+                                    <span class="hidden-xs">Activities</span> 
+                                </a> 
+                            </li> --}} 
+                            <li class="tab"> 
+                                <a href="#messages-2" data-toggle="tab" aria-expanded="true"> 
+                                    <span class="visible-xs"><i class="fa fa-envelope-o"></i></span> 
+                                    <span class="hidden-xs">Blog Post</span> 
+                                </a> 
+                            </li> 
+                            <li class="tab" > 
+                                <a href="#settings-2" data-toggle="tab" aria-expanded="false"> 
+                                    <span class="visible-xs"><i class="fa fa-cog"></i></span> 
+                                    <span class="hidden-xs">Settings</span> 
+                                </a> 
+                            </li> 
+                        <div class="indicator"></div></ul> 
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12"> 
+                        
+                        <div class="tab-content profile-tab-content"> 
+                            <div class="tab-pane active" id="home-2"> 
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <!-- Personal-Information -->
+                                        <div class="panel panel-default panel-fill">
+                                            <div class="panel-heading"> 
+                                                <h3 class="panel-title">Personal Information</h3> 
+                                            </div> 
+                                            <div class="panel-body"> 
+                                                <div class="about-info-p">
+                                                    <strong>Full Name</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> name }}</p>
+                                                </div>
+                                                <div class="about-info-p">
+                                                    <strong>Email</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> email }}</p>
+                                                </div>
+                                                <div class="about-info-p">
+                                                    <strong>Mobile</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> phone_number }}</p>
+                                                </div>
+                                                <div class="about-info-p">
+                                                    <strong>Profession</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> profession }}</p>
+                                                </div>
+                                                <div class="about-info-p">
+                                                    <strong>Institute</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> institute }}</p>
+                                                </div>
+                                                <div class="about-info-p">
+                                                    <strong>Joinning Date</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> created_at->format(' j F Y') }}</p>
+                                                </div>
 
-
-
-
-
-
-                        <div class="row">
-                            <!-- INBOX -->
-                            <div class="col-lg-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">Inbox</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="inbox-widget nicescroll mx-box">
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-1.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Chadengle</p>
-                                                    <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                    <p class="inbox-item-date">13:40 PM</p>
+                                                <div class="about-info-p m-b-0">
+                                                    <strong>Address</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> address }}</p>
                                                 </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-2.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Tomaslau</p>
-                                                    <p class="inbox-item-text">I've finished it! See you so...</p>
-                                                    <p class="inbox-item-date">13:34 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-3.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Stillnotdavid</p>
-                                                    <p class="inbox-item-text">This theme is awesome!</p>
-                                                    <p class="inbox-item-date">13:17 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-4.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Kurafire</p>
-                                                    <p class="inbox-item-text">Nice to meet you</p>
-                                                    <p class="inbox-item-date">12:20 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-5.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Shahedk</p>
-                                                    <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                    <p class="inbox-item-date">10:15 AM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-6.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Adhamdannaway</p>
-                                                    <p class="inbox-item-text">This theme is awesome!</p>
-                                                    <p class="inbox-item-date">9:56 AM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-8.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Arashasghari</p>
-                                                    <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                    <p class="inbox-item-date">10:15 AM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-9.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Joshaustin</p>
-                                                    <p class="inbox-item-text">I've finished it! See you so...</p>
-                                                    <p class="inbox-item-date">9:56 AM</p>
-                                                </div>
-                                            </a>
+                                            </div> 
                                         </div>
+                                        <!-- Personal-Information -->
+                                    </div>
+
+
+                                    <div class="col-md-8">
+                                        <!-- Personal-Information -->
+                                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-3">
+                                <div class="mini-stat clearfix bx-shadow">
+                                    <span class="mini-stat-icon bg-info"><i class="fa fa-question"></i></span>
+                                    <div class="mini-stat-info text-right text-muted">
+                                        <span class="counter">52</span>
+                                        Total Question
                                     </div>
                                 </div>
-                            </div> <!-- end col -->
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-3">
+                                <div class="mini-stat clearfix bx-shadow">
+                                    <span class="mini-stat-icon bg-warning"><i class="fa fa-file-text"></i></span>
+                                    <div class="mini-stat-info text-right text-muted">
+                                        <span class="counter">56</span>
+                                        Total Post
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-3">
+                                <div class="mini-stat clearfix bx-shadow">
+                                    <span class="mini-stat-icon bg-pink"><i class="fa fa-user"></i></span>
+                                    <div class="mini-stat-info text-right text-muted">
+                                        <span class="counter">10</span>
+                                        Total Users
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-3">
+                                <div class="mini-stat clearfix bx-shadow">
+                                    <span class="mini-stat-icon bg-success"><i class="fa fa-eye"></i></span>
+                                    <div class="mini-stat-info text-right text-muted">
+                                        <span class="counter">44</span>
+                                       Total  viewers
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End row-->
+                                        <!-- Personal-Information -->
 
-                            <!-- CHAT -->
-                            <div class="col-lg-4">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"> 
-                                        <h3 class="panel-title">Chat</h3> 
-                                    </div> 
-                                    <div class="panel-body"> 
-                                        <div class="chat-conversation">
-                                            <ul class="conversation-list nicescroll">
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="male">
-                                                        <i>10:00</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>John Deo</i>
-                                                            <p>
-                                                                Hello!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        {{-- <img src="{{ asset('backend') }}/images/users/avatar-5.jpg" alt="Female"> --}}
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Smith</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="male">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>John Deo</i>
-                                                            <p>
-                                                                Yeah everything is fine
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <i>10:02</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Smith</i>
-                                                            <p>
-                                                                Wow that's great
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="row">
-                                                <div class="col-sm-9 chat-inputbar">
-                                                    <input type="text" class="form-control chat-input" placeholder="Enter your text">
-                                                </div>
-                                                <div class="col-sm-3 chat-send">
-                                                    <button type="submit" class="btn btn-info btn-block waves-effect waves-light">Send</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
+                                        
+
+                                    </div>
+
                                 </div>
                             </div> 
 
-                        </div> <!-- end row -->
 
-                    </div> <!-- container -->
+
+
+                            <div class="tab-pane" id="profile-2">
+                                <!-- Personal-Information -->
+                                <div class="panel panel-default panel-fill">
+                                    
+                                    <div class="panel-body"> 
+                                        <div class="timeline-2">
+                                        <div class="time-item">
+                                            <div class="item-info">
+                                                <div class="text-muted">5 minutes ago</div>
+                                                <p><strong><a href="#" class="text-info">John Doe</a></strong> Uploaded a photo <strong>"DSC000586.jpg"</strong></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="time-item">
+                                            <div class="item-info">
+                                                <div class="text-muted">30 minutes ago</div>
+                                                <p><a href="" class="text-info">Lorem</a> commented your post.</p>
+                                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="time-item">
+                                            <div class="item-info">
+                                                <div class="text-muted">59 minutes ago</div>
+                                                <p><a href="" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
+                                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="time-item">
+                                            <div class="item-info">
+                                                <div class="text-muted">5 minutes ago</div>
+                                                <p><strong><a href="#" class="text-info">John Doe</a></strong>Uploaded 2 new photos</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="time-item">
+                                            <div class="item-info">
+                                                <div class="text-muted">30 minutes ago</div>
+                                                <p><a href="" class="text-info">Lorem</a> commented your post.</p>
+                                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="time-item">
+                                            <div class="item-info">
+                                                <div class="text-muted">59 minutes ago</div>
+                                                <p><a href="" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
+                                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    </div> 
+                                </div>
+                                <!-- Personal-Information -->
+                            </div> 
+
+
+
+                            <div class="tab-pane" id="messages-2">
+                                <!-- Personal-Information -->
+                                <div class="panel panel-default panel-fill">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">My Projects</h3> 
+                                    </div> 
+                                    <div class="panel-body"> 
+                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>#</th>
+                                                                        <th>Project Name</th>
+                                                                        <th>Start Date</th>
+                                                                        <th>Due Date</th>
+                                                                        <th>Status</th>
+                                                                        <th>Assign</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Moltran Admin</td>
+                                                                        <td>01/01/2015</td>
+                                                                        <td>07/05/2015</td>
+                                                                        <td><span class="label label-info">Work in Progress</span></td>
+                                                                        <td>Coderthemes</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Moltran Frontend</td>
+                                                                        <td>01/01/2015</td>
+                                                                        <td>07/05/2015</td>
+                                                                        <td><span class="label label-success">Pending</span></td>
+                                                                        <td>Coderthemes</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Moltran Admin</td>
+                                                                        <td>01/01/2015</td>
+                                                                        <td>07/05/2015</td>
+                                                                        <td><span class="label label-pink">Done</span></td>
+                                                                        <td>Coderthemes</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>Moltran Frontend</td>
+                                                                        <td>01/01/2015</td>
+                                                                        <td>07/05/2015</td>
+                                                                        <td><span class="label label-purple">Work in Progress</span></td>
+                                                                        <td>Coderthemes</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>5</td>
+                                                                        <td>Moltran Admin</td>
+                                                                        <td>01/01/2015</td>
+                                                                        <td>07/05/2015</td>
+                                                                        <td><span class="label label-warning">Coming soon</span></td>
+                                                                        <td>Coderthemes</td>
+                                                                    </tr>
+                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+                                    </div> 
+                                </div>
+                                <!-- Personal-Information -->
+                            </div> 
+
+
+                            <div class="tab-pane" id="settings-2">
+                                <!-- Personal-Information -->
+                                <div class="panel panel-default panel-fill">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Edit Profile</h3> 
+                                    </div> 
+                                    <div class="panel-body"> 
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <label for="FullName">Full Name</label>
+                                                <input type="text" value="{{ Auth::user()-> name }}" id="name" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Email">Email</label>
+                                                <input type="email" value="{{ Auth::user()-> email }}" id="Email" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Username">phone</label>
+                                                <input type="text" value="{{ Auth::user()-> phone_number }}" id="Username" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Username">Profession</label>
+                                                <input type="text" value="{{ Auth::user()-> profession }}" id="Username" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Username">Institute</label>
+                                                <input type="text" value="{{ Auth::user()-> institute }}" id="Username" class="form-control">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="Username">Address</label>
+                                                <input type="text" value="{{ Auth::user()-> address }}" id="Username" class="form-control">
+                                            </div>
+                                           
+                                            
+                                            
+                                            <button class="btn btn-primary waves-effect waves-light w-md" type="submit">Update Profile</button>
+
+                                             <button class="btn btn-danger waves-effect waves-light w-md pull-right" type="submit">Delete Your Account</button>
+
+                                        </form>
+
+
+                                    </div> 
+                                </div>
+                                <!-- Personal-Information -->
+                            </div> 
+                        </div> 
+                    </div>
+                    </div>
+                </div> <!-- container -->
                                
                 </div> <!-- content -->
 
-                
+                <footer class="footer text-right">
+                    2015 © Moltran.
+                </footer>
 
             </div>
+
 @endsection
 
 

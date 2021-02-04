@@ -155,6 +155,7 @@ Route::post('consultant/register/submit','Consultant\RegistrationController@cons
 
 
 Route::get('consultant/home','ConsultantController@index')->name('consultant-home');
+Route::get('consultant/inbox','ConsultantController@inbox')->name('consultant-inbox');
 
 
 

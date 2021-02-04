@@ -24,7 +24,7 @@
                                 <div class="mini-stat clearfix bx-shadow">
                                     <span class="mini-stat-icon bg-purple"><i class="ion-ios7-cart"></i></span>
                                     <div class="mini-stat-info text-right text-muted">
-                                        <span class="counter">6</span>
+                                        <span class="counter">{{ $orders }}</span>
                                         Total  Orders
                                     </div>
                                     <div class="tiles-progress">
@@ -43,7 +43,7 @@
                                 <div class="mini-stat clearfix bx-shadow">
                                     <span class="mini-stat-icon bg-primary"><i class="ion-android-contacts"></i></span>
                                     <div class="mini-stat-info text-right text-muted">
-                                        <span class="counter">2</span>
+                                        <span class="counter">{{ $users }}</span>
                                         Total Users
                                     </div>
                                     <div class="tiles-progress">
@@ -62,7 +62,7 @@
                                 <div class="mini-stat clearfix bx-shadow">
                                     <span class="mini-stat-icon bg-success"><i class="ion-android-contacts"></i></span>
                                     <div class="mini-stat-info text-right text-muted">
-                                        <span class="counter">2</span>
+                                        <span class="counter">{{ $consultants }}</span>
                                         Total Consultants
                                     </div>
                                     <div class="tiles-progress">

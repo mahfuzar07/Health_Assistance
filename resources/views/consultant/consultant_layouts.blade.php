@@ -71,6 +71,7 @@
                         <a href="{{ url('admin/home') }}" class="logo"><i class="md md-terrain"></i> <span>Aim 2Be Well  </span></a>
                     </div>
                 </div>
+                
                 <!-- Button mobile view to collapse sidebar menu -->
                 <div class="navbar navbar-default" role="navigation">
                     <div class="container">
@@ -81,14 +82,8 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
-                            <form class="navbar-form pull-left" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control search-bar" placeholder="Type here for search...">
-                                </div>
-                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-                            </form>
 
-                            <ul class="nav navbar-nav navbar-right pull-right">
+                              <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                         <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span>
@@ -193,9 +188,9 @@
 
                                 <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit Site</span></a>
 
-                                <a href="" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                                <a href="{{ url('consultant/home') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
 
-                                <a href="" class=" @yield('inbox')" class="waves-effect"><i class="md md-home"></i><span> Inbox</span></a>
+                                <a href="{{ url('consultant/inbox') }}" class=" @yield('inbox')" class="waves-effect"><i class="md md-home"></i><span> Inbox</span></a>
 </ul>
                         <div class="clearfix"></div>
                     </div>

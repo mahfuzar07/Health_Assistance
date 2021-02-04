@@ -30,6 +30,13 @@ class ConsultantController extends Controller
         return view('consultant.home', compact('consultants'));
     }
 
+    public function inbox()
+
+    {
+        
+        return view('consultant.inbox');
+    }
+
     public function Logout()
     {
         Auth::logout();
