@@ -20,6 +20,11 @@ class FrontendController extends Controller
         return view('pages.index',compact('products','categories','lts_p'));
     }
 
+ public function chat()
+    {
+    	
+        return view('chat');
+    }
     
 
      

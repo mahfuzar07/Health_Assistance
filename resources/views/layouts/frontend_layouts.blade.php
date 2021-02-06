@@ -203,7 +203,7 @@
         
 
      <div class="col-lg-6 ">
-     <div class="card" style="width: 10rem;">
+     <div class="card" style="width: 11.5rem;">
   <img src="{{ asset('frontend/img/consultant.jpg') }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"></h5>

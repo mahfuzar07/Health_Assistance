@@ -51,7 +51,7 @@ class HomeController extends Controller
     public function shop()
 
 
-    {
+    {   
         $products = Product::where('status',1)-> latest()-> get();
         $productsp = Product::where('status',1)-> latest()-> paginate(12);
         $lts_p = Product::where('status',1)-> latest()->limit(3)-> get();

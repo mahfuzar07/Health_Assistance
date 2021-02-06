@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //==========================frontend route=========================================
 //FrontendController
 Route::get('/', 'FrontendController@index');
+Route::get('/chat', 'FrontendController@chat')->name('chatcon');
 //FrontentController End
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
