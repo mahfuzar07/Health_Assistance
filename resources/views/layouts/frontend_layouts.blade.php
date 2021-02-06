@@ -373,9 +373,9 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="GET">
-                               
-                                <input  type="text" placeholder="What do yo u need?">
+                            <form method="get" action="{{ route('search') }}" >
+                       
+                                <input  type="search" name="search" placeholder="What do yo u need?">
                                 <button type="submit" class="site-btn"> <i class="fa fa-search"> </i> খুঁজুন </button>
                             </form>
                         </div>

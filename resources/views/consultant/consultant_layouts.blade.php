@@ -44,8 +44,8 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         {{-- [if lt IE 9]> --}}
-        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+       {{--  <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="{{ asset('backend') }}/https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> --}}
         {{-- <![endif] --}}
 
         <script src="{{ asset('backend') }}/js/modernizr.min.js"></script>
@@ -190,8 +190,18 @@
 
                                 <a href="{{ url('consultant/home') }}" class=" @yield('Dashboard')" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
 
-                                <a href="{{ url('consultant/inbox') }}" class=" @yield('inbox')" class="waves-effect"><i class="md md-home"></i><span> Inbox</span></a>
-</ul>
+                                <a href="{{ url('consultant/inbox') }}" class=" @yield('inbox')" class="waves-effect"><i class="md md-inbox "></i><span> Inbox</span></a>
+                            </li>
+                            <li class="has_sub">
+                                <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-description"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a class=" @yield('category')"  class="waves-effect" href="{{ route('consultant.category') }}">Categories</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Create Post</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Manage Post</a></li>
+                                   
+                                </ul>
+                            </li>
+                          </ul>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"></div>
@@ -284,9 +294,9 @@
         <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
         <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       {{--  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
+ --}}
        
 
         <script src="{{ asset('backend') }}/assets/summernote/summernote.min.js"></script>

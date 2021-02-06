@@ -26,7 +26,7 @@
     <section class="blog spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-5">
+                <div class="col-lg-2 col-md-5">
                     <div class="blog__sidebar">
 
                     	<!-- Button trigger modal -->
@@ -45,8 +45,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-info text-white">
-        <h5 class="modal-title text-center" id="exampleModalLabel"> ব্লাড এর জন্য পোস্ট করুন
-        <p> <i class="fa fa-heart"></i> আপনার প্রয়োজনে আমরা সকলেই আপনার পাশেই আছি <i class="fa fa-heart"></i></p> </h5>
+        <h5 class="modal-title text-center" id="exampleModalLabel"> ব্লাড এর জন্য পোস্ট করুন </h5>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -127,15 +126,16 @@
 
 
 <div class="blog__sidebar__item">
-     <div class=" col-lg-10 form-group">
-    <a href="{{ route('user.blood') }}"><button class="btn btn-primary"> সকল রক্ত দাতা </button></a>
+     <div class=" col-lg-12 form-group">
+    <form method="get" action="{{ route('search.blood') }}" >
+               <input  type="search" name="search" class="form-control">
+
+               <button style="margin-top:10px" class="btn btn-primary" type="submit">ব্লাড খুঁজুন</button>
+               </form>
+
                  </div> 
 
-                        
-                        
-                  
-                            
-</div>
+              </div>
 
 
                      
@@ -143,46 +143,46 @@
                     </div>
                 </div>
 
-                <div class="col-lg-9 col-md-7 ">
+                <div class="col-lg-10 col-md-7 ">
                     <div class="section-title">
-                        <h2>জরুরী রক্তের প্রয়োজন</h2>
+                        <h2>রক্তের জন্য যোগাযোগ করুন</h2>
 
                       
                     </div>
+                    <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Mark</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">blood group</th>
+                              <th scope="col">Contacts number</th>
+                              <th scope="col">Email</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @php
+                              $i =1;
+                               @endphp
+                            @foreach ($users as $user)
+                            <tr>
+                              <td>{{ $i ++ }}</td>
+                              <td><input type="checkbox" id="" value="" name=""></td>
+                              <td>{{ $user-> name  }}</td>
+                              <td><b>{{ $user-> blood_grp  }}</b></td>
+                              <td>{{ $user->  phone }}</td>
+                              <td>{{ $user->  email }}</td>
+                            </tr>
+                            @endforeach
+                            
+                          </tbody>
+                        </table>
 
-                    <div class="row">
 
-                        @foreach ($bloods as $blood)
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-
-                            <div class="blog__item">
-                               <div class="blog__item__text">
-                                    <h5>রোগীর নাম : {{ $blood-> full_name  }}</h5>
-                                    <h6>হাসপাতাল : {{ $blood->  hospital_name }}</h6>
-                                    <h6>রক্তের গ্ৰুপ: <b>{{ $blood-> blood_group  }}</b></h6>
-                                    <h6>যোগাযোগের ঠিকানা:  {{ $blood-> address  }}</h6>
-                                    
-                                    <h6>মোবাইল নং: <b>{{ $blood->  phone }}</b> </h6>
-                                    <h6> রোগীর অতিরিক্ত বিবরণ:{{ $blood->  note }}</h6>
-
-                                    <ul>
-                                        
-                                    <li><i class="fa fa-calendar-o"></i> {{ $blood-> created_at->diffForHumans()  }}</li>
-
-                                        {{-- <li><i class="fa fa-comment-o"> কমেন্ট </i> 5</li> --}}
-                                    </ul>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                         
-                       </div>
-
-                       <div>
+                       {{-- <div>
                       {{ $bloods->links() }}
                      
-                    </div>
+                    </div> --}}
 
             </div>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\User;
 use App\Blood;
 use Carbon\Carbon;
 
@@ -19,10 +20,19 @@ class BloodController extends Controller
     public function blood()
        {
         $bloods = Blood::latest()->paginate(6);
-        
-          return view('pages.blood',compact('bloods'));
+        return view('pages.blood',compact('bloods'));
         
      }
+
+     public function userblood()
+       {
+        
+        $users = User::latest()-> get();
+        
+          return view('pages.userblood',compact('users'));
+        
+     }
+
 
     public function Storeblood(Request $request){
 
@@ -55,5 +65,18 @@ class BloodController extends Controller
 
 
     }
+
+
+     public function search(Request $request)
+       {
+        $search = $request->get('search') ;
+        $users = User::where('blood_grp','like','%'.$search.'%')->
+        orwhere('name','like','%'.$search.'%')
+        // orwhere('address','like','%'.$search.'%')
+        -> paginate(6);
+        
+        return view('pages.userblood',compact('users','search'));
+        
+     }
 
 }

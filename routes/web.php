@@ -41,6 +41,9 @@ Route::get('order/success', 'OrderController@orderSuccess');
 
 //product details
 Route::get('product/details/{product_id}', 'HomeController@productDetail');
+//search
+Route::get('/search', 'HomeController@search')->name('search');
+
 
 //user profile
 Route::get('user/profile','ProfileController@uProfile')->name('user.profile');
@@ -69,7 +72,9 @@ Route::get('shop', 'HomeController@shop')->name('shop.page');
 
 //blood controller
 Route::get('blood', 'BloodController@blood')->name('blood.page');
+Route::get('/user/blood', 'BloodController@userblood')->name('user.blood');
 Route::post('blood/store','BloodController@Storeblood')->name('store-blood');
+Route::get('blood/search','BloodController@search')->name('search.blood');
 
 
 //categorywise product show
@@ -157,6 +162,25 @@ Route::post('consultant/register/submit','Consultant\RegistrationController@cons
 
 Route::get('consultant/home','ConsultantController@index')->name('consultant-home');
 Route::get('consultant/inbox','ConsultantController@inbox')->name('consultant-inbox');
+
+
+//consultant blog 
+Route::get('consultant/categories', 'Consultant\BlogcategoryController@index')->name('consultant.category');
+Route::post('consultant/categories-store', 'Consultant\BlogcategoryController@storecat')->name('store.category');
+Route::get('consultant/categories/edit/{cat_id}', 'Consultant\BlogcategoryController@Edit');
+Route::post('consultant/categories-update', 'Consultant\BlogcategoryController@UpdateCat')->name('update.category');
+Route::get('consultant/categories/delete/{cat_id}', 'Consultant\BlogcategoryController@Delete');
+
+
+
+// Route::get('consultant/post/add', 'Admin\ProductController@Addproduct')->name('add-product');
+// Route::post('consultant/post/store', 'Admin\ProductController@Storeproduct')->name('store-product');
+// Route::get('consultant/post/view', 'Admin\ProductController@Viewproduct')->name('view-product');
+// Route::get('consultant/post/edit/{post_id}', 'Admin\ProductController@editproduct');
+// Route::post('consultant/post/update', 'Admin\ProductController@Updateproduct')->name('update-product');
+// Route::get('consultant/post/delete/{post_id}', 'Admin\ProductController@Delete');
+// Route::get('consultant/post/inactive/{post_id}', 'Admin\ProductController@Inactive');
+// Route::get('consultant/post/active/{post_id}', 'Admin\ProductController@Active');
 
 
 

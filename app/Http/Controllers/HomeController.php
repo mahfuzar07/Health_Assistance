@@ -53,7 +53,7 @@ class HomeController extends Controller
 
     {   
         $products = Product::where('status',1)-> latest()-> get();
-        $productsp = Product::where('status',1)-> latest()-> paginate(12);
+        $productsp = Product::where('status',1)-> latest()-> paginate(6);
         $lts_p = Product::where('status',1)-> latest()->limit(3)-> get();
         $categories = Category::where('status',1)-> latest()-> get();
         return view('pages.shop',compact('products','categories','lts_p','productsp'));
@@ -61,6 +61,19 @@ class HomeController extends Controller
        
 
     }
+//search start
+    public function search(Request $request)
+       {
+        $search = $request->get('search') ;
+        $products = Product::where('product_name','like','%'.$search.'%')-> paginate(6);
+        $productsp = Product::where('product_name','like','%'.$search.'%')-> paginate(6);
+        $lts_p = Product::where('status',1)-> latest()->limit(3)-> get();
+        $categories = Category::where('category_name','like','%'.$search.'%')-> paginate(6);
+        
+        return view('pages.shop',compact('products','search','categories','lts_p','productsp'));
+        
+     }
+//search end
     
 //gategorywise product show
     public function catWp($row_id){
@@ -76,12 +89,14 @@ class HomeController extends Controller
     }
 
 
-    public function blood()
-       {
+
+
+    // public function blood()
+    //    {
         
-        return view('pages.blood');
+    //     return view('pages.blood');
         
-     }
+    //  }
 
      public function blog()
        {
