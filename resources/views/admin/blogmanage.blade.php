@@ -1,5 +1,5 @@
 @extends('admin.admin_layouts')
-@section('productmn') active @endsection
+@section('blog') active @endsection
 @section('admin_content')
 <div class="content-page">
                 <!-- Start content -->
@@ -29,14 +29,12 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr> 
-                                                        	<th>SL.No</th>
-                                                            <th>Product Image</th>
-                                                            <th>Category</th>
-                                                            <th>Product Name</th>
-                                                            
-                                                            <th>product Code</th>
-                                                            <th>Quantity</th>
-                                                            <th>Price</th>
+                                                            <th>SL.No</th>
+                                                            <th>Author Name</th>
+                                                            <th>Post Category</th>
+                                                            <th>Post Title</th>
+                                                            <th>Post Create</th>
+                                                            <th>Post Update</th>
                                                             
                                                             <th>Status</th>
                                                             
@@ -52,42 +50,38 @@
                                                         @php
                                                             $i =1;
                                                         @endphp
-                                                        @foreach($products as $row)
+                                                        @foreach($blogs as $row)
                                                         <tr>
                                                             <td>{{ $i ++ }}</td>
-                                                            <td>
-                                 <img src="{{ asset($row->image_1) }}" width="50px" height="50px" alt="">
-
-                                                            </td>
-
+                                                            <td>{{ $row-> joincon-> name}}</td>
                                                             <td>{{ $row-> join-> category_name}}</td>
 
-                                                            <td>{{ $row-> product_name }}</td>
+                                                            <td>{{ $row-> post_title }}</td>
 
-                                                            <td>{{ $row-> product_code }}</td>
-                                                            <td>{{ $row-> product_quantity }}</td>
-                                                            <td>{{ $row-> price }}</td>
+                                                            <td>{{ $row-> created_at }}</td>
+                                                            <td>{{ $row-> updated_at }}</td>
+                                                            
                                                             <td>
                                                                 @if($row-> status == 1)
-                                                                <span class="badge badge-success">Active</span>
+                                                                <span class="badge badge-danger">Pending</span>
                                                                 @else
-                                                                <span class="badge badge-danger">Inactive</span>
+                                                                <span class="badge badge-success">Published</span>
                                                                 @endif
 
                                                             </td>
                                                             <td>
-                                                                <a href="{{ url('admin/product/edit/'.$row-> id) }}"class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                                                <a href="{{ url('admin/post/view/'.$row-> id) }}"class="btn btn-info"><i class="fa fa-eye"></i></a>
 
-                                                                <a href="{{ url('admin/product/delete/'.$row-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
+                                                                <a href="{{ url('admin/post/delete/'.$row-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
                                                                 
                                                                 @if($row-> status == 1)
-                                                                <a href="{{ url('admin/product/inactive/'.$row-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
+                                                                <a href="{{ url('admin/post/inactive/'.$row-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
                                                                     
-                                                                </i> </a>
+                                                                </i>Published </a>
                                                                 @else
-                                                                <a href="{{ url('admin/product/active/'.$row-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                <a href="{{ url('admin/post/active/'.$row-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
                                                                     
-                                                                </i>  Active</a>
+                                                                </i></a>
                                                                 @endif
 
 

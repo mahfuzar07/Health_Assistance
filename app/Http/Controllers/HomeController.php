@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Blog;
+use App\Blogcategory;
 use App\Consultant;
 use Carbon\Carbon;
 
@@ -34,7 +36,8 @@ class HomeController extends Controller
         $lts_p = Product::where('status',1)-> latest()->limit(3)-> get();
         $categories = Category::where('status',1)-> latest()-> get();
         $consultants = Consultant::where('status',0)->latest()-> get();
-        return view('home',compact('products','categories','lts_p','consultants'));
+        $blogs = Blog::where('status',0)-> latest()-> get();
+        return view('home',compact('products','categories','lts_p','consultants','blogs'));
 
     }
     //product details page
@@ -89,8 +92,6 @@ class HomeController extends Controller
     }
 
 
-
-
     // public function blood()
     //    {
         
@@ -100,8 +101,22 @@ class HomeController extends Controller
 
      public function blog()
        {
-        
-        return view('pages.blog');
+        $blogs = Blog::where('status',0)-> latest()-> get();
+        $blogcategories = Blogcategory::latest()-> get();
+        return view('pages.blog',compact('blogs','blogcategories'));
         
      }
+
+
+
+     //  public function filter_price(Request $request){
+
+     //    $min_price = $request->get('min') ;
+     //    $max_price = $request->get('max') ;
+     //    $products = Product::wherebetween('price',[$min_price,$max_price])->OrderBy('price',ASC)->get();
+        
+        
+     //    return response->json($product);
+        
+     // }
 }

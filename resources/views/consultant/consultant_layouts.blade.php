@@ -196,8 +196,8 @@
                                 <a href="#" class=" @yield('blog post')" class="waves-effect"><i class="md md-description"></i><span> Blog Post </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a class=" @yield('category')"  class="waves-effect" href="{{ route('consultant.category') }}">Categories</a></li>
-                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Create Post</a></li>
-                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="">Manage Post</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="{{ route('add.post') }}">Create Post</a></li>
+                                    <li><a class=" @yield('blog post')"  class="waves-effect" href="{{ route('view-post') }}">Manage Post</a></li>
                                    
                                 </ul>
                             </li>

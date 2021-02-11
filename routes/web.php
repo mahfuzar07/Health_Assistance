@@ -79,6 +79,7 @@ Route::get('blood/search','BloodController@search')->name('search.blood');
 
 //categorywise product show
 Route::get('category/product-show/{id}', 'HomeController@catWp');
+// Route::get('', 'HomeController@');
 
 
 
@@ -141,7 +142,14 @@ Route::get('admin/consultant/delete/{con_id}', 'Admin\UmanageController@cDelete'
 Route::get('admin/consultant/inactive/{con_id}', 'Admin\UmanageController@cInactive');
 Route::get('admin/consultant/active/{con_id}', 'Admin\UmanageController@cActive');
 
+//admin blog manage
+Route::get('admin/blog/manage', 'Admin\BlogmanageController@index')->name('admin.blog');
 
+Route::get('admin/post/view/{post_id}', 'Admin\BlogmanageController@Postview');
+
+Route::get('admin/post/delete/{post_id}', 'Admin\BlogmanageController@Delete');
+Route::get('admin/post/inactive/{post_id}', 'Admin\BlogmanageController@Inactive');
+Route::get('admin/post/active/{post_id}', 'Admin\BlogmanageController@Active');
 
 
 
@@ -173,14 +181,15 @@ Route::get('consultant/categories/delete/{cat_id}', 'Consultant\BlogcategoryCont
 
 
 
-// Route::get('consultant/post/add', 'Admin\ProductController@Addproduct')->name('add-product');
-// Route::post('consultant/post/store', 'Admin\ProductController@Storeproduct')->name('store-product');
-// Route::get('consultant/post/view', 'Admin\ProductController@Viewproduct')->name('view-product');
-// Route::get('consultant/post/edit/{post_id}', 'Admin\ProductController@editproduct');
-// Route::post('consultant/post/update', 'Admin\ProductController@Updateproduct')->name('update-product');
-// Route::get('consultant/post/delete/{post_id}', 'Admin\ProductController@Delete');
-// Route::get('consultant/post/inactive/{post_id}', 'Admin\ProductController@Inactive');
-// Route::get('consultant/post/active/{post_id}', 'Admin\ProductController@Active');
+Route::get('consultant/post/add', 'Consultant\BlogController@index')->name('add.post');
+Route::post('consultant/post/store', 'Consultant\BlogController@Storepost')->name('store-post');
+Route::get('consultant/post/view', 'Consultant\BlogController@Viewpost')->name('view-post');
+Route::get('consultant/post/edit/{post_id}', 'Consultant\BlogController@Editpost');
+Route::post('consultant/post/update', 'Consultant\BlogController@Updatepost')->name('update-post');
+Route::get('consultant/post/delete/{post_id}', 'Consultant\BlogController@Delete');
+
+
+
 
 
 
