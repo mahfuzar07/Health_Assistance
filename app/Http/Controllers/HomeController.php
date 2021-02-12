@@ -36,7 +36,8 @@ class HomeController extends Controller
         $lts_p = Product::where('status',1)-> latest()->limit(3)-> get();
         $categories = Category::where('status',1)-> latest()-> get();
         $consultants = Consultant::where('status',0)->latest()-> get();
-        $blogs = Blog::where('status',0)-> latest()-> get();
+        $blogs = Blog::where('status',0)-> latest()->limit(3)-> get();
+        
         return view('home',compact('products','categories','lts_p','consultants','blogs'));
 
     }
@@ -92,20 +93,39 @@ class HomeController extends Controller
     }
 
 
-    // public function blood()
-    //    {
-        
-    //     return view('pages.blood');
-        
-    //  }
 
      public function blog()
        {
         $blogs = Blog::where('status',0)-> latest()-> get();
         $blogcategories = Blogcategory::latest()-> get();
-        return view('pages.blog',compact('blogs','blogcategories'));
+        $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+        return view('pages.blog',compact('blogs','blogcategories','lts_b'));
         
      }
+
+     public function postDetail($post_id)
+
+    {
+        $blogs = Blog::findOrFail($post_id);
+        $blogcategory_id = $blogs->blogcategory_id;
+        $blogs = Blog::where('status',0)-> latest()-> get();
+        // $related_p = Product::where('category_id',$category_id)-> latest()-> get();
+        $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+        return view('pages.blogpost',compact('blogs','lts_b','blogs'));
+
+    }
+
+    public function catWb($row_id){
+        
+        $blogs = Blog::where('blogcategory_id', $row_id)->where('status',0)-> latest()-> paginate(2);
+        $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+        $blogcategories = Blogcategory:: latest()-> get();
+
+        return view('pages.catwblog', compact('blogs','blogcategories','lts_b'));
+        
+       
+
+    }
 
 
 

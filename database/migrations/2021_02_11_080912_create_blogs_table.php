@@ -19,7 +19,6 @@ class CreateBlogsTable extends Migration
             $table->integer('user_id');
             $table->string('post_title');
             $table->string('short');
-            $table->string('post_slug');
             $table->text('post_body');
             $table->string('image');
             $table->integer('status')->default(1);

@@ -67,7 +67,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label">Short Description</label>
                                                 <div class="col-md-10">
-                                                    <input type="text" name="short" placeholder="Post Title" class="form-control" value="">
+                                                    <input type="text" name="short" placeholder="Post Short Description" class="form-control" value="">
                                                     @error('short')
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
@@ -79,7 +79,7 @@
                                            <div class="form-group">
                                                 <label class="col-md-2 control-label">Post Body</label>
                                                 <div class="col-md-10">
-                                                    <textarea name="post_body" placeholder="Write Product Long Description...." class="summernote"></textarea>
+                                                    <textarea name="post_body" placeholder="Write Post Long Description...." class="summernote"></textarea>
 
                                                     @error('post_body')
                                                     <strong class="text-danger">{{ $message }}</strong>

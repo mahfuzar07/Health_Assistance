@@ -66,12 +66,14 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
-                                    <img src="{{ $post-> image }}" alt="">
+                                    <img src="{{ asset($post-> image) }}" alt="">
                                 </div>
                                 <div class="blog__item__text">
                                     <ul>
-                                        <li><i class="fa fa-calendar-o"></i>{{ $post-> created_at }}</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
+                                        <li><i class="fa fa-calendar-o"></i>{{ $post-> created_at->format(' j F Y') }}</li>
+                                        <li><i class="fa fa-calendar-o"></i> {{ $post-> created_at->diffForHumans() }}</li>
+
+                                        <li><i class="fa fa-comment-o"></i>5</li>
                                     </ul>
                                     <h5><a href="{{ url('post/details/'.$post->id) }}">{{ $post-> post_title }}</a></h5>
                                     <p>{{ $post-> short}}</p>
@@ -83,6 +85,10 @@
 
 
                         <div class="col-lg-12">
+                            <div>
+                      {{ $blogs->links() }}
+                     
+                    </div>
                             
                         </div>
                     </div>

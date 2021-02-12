@@ -157,31 +157,31 @@
 
                 <div class="col-lg-6 col-md-6">
                     <div class="latest-product__text">
-                        <h4>নতুন স্বাস্থ্য  বার্তা</h4>
+                        <h4>নতুন স্বাস্থ্য বার্তা</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
+                                @foreach ($blogs as $blog)
+                                <a href="{{ url('post/details/'.$blog->id) }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
+                                        <img src="{{ asset($blog-> image) }}" style="height:100px;width:100px;" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
+                                        <h6>{{ $blog-> post_title }}</h6>
+                                        <span>{{ $blog-> created_at->format(' j F Y')  }}</span>
                                     </div>
                                 </a>
                                 @endforeach
                                 
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                @foreach ($lts_p as $product)
-                                <a href="#" class="latest-product__item">
+                                @foreach ($blogs as $blog)
+                                <a href="{{ url('post/details/'.$blog->id) }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ asset($product->image_1) }}" style="height:100px;width:100px;" alt="">
+                                        <img src="{{ asset($blog-> image) }}" style="height:100px;width:100px;" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>{{ $product->product_name }}</h6>
-                                        <span>{{ $product->price }} ৳</span>
+                                        <h6>{{ $blog-> post_title }}</h6>
+                                        <span>{{ $blog-> created_at->format(' j F Y')  }}</span>
                                     </div>
                                 </a>
                                 @endforeach
@@ -246,8 +246,7 @@
             </div>
             <div class="row">
                 @foreach ($blogs as $row)
-                    {{-- expr --}}
-                
+                   
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
@@ -258,7 +257,7 @@
                                 <li><i class="fa fa-calendar-o"></i>{{ $row-> created_at }}</li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
-                            <h5><a href="#">{{ $row-> post_title }}</a></h5>
+                            <h5><a href="{{ url('post/details/'.$row->id) }}">{{ $row-> post_title }}</a></h5>
                             <p>{{ $row-> short }}</p>
                         </div>
                     </div>

@@ -58,18 +58,6 @@ Route::get('user/consultant', 'ProfileController@consultantManage')->name('user.
 
 
 
-
-
-
-
-
-//blog page
-Route::get('blog', 'HomeController@blog')->name('blog.page');
-
-//shop page
-Route::get('shop', 'HomeController@shop')->name('shop.page');
-
-
 //blood controller
 Route::get('blood', 'BloodController@blood')->name('blood.page');
 Route::get('/user/blood', 'BloodController@userblood')->name('user.blood');
@@ -77,9 +65,23 @@ Route::post('blood/store','BloodController@Storeblood')->name('store-blood');
 Route::get('blood/search','BloodController@search')->name('search.blood');
 
 
+
+
+//blog page
+Route::get('blog', 'HomeController@blog')->name('blog.page');
+Route::get('post/details/{post_id}', 'HomeController@postDetail');
+
+//shop page
+Route::get('shop', 'HomeController@shop')->name('shop.page');
+
+
+
+
+
 //categorywise product show
 Route::get('category/product-show/{id}', 'HomeController@catWp');
-// Route::get('', 'HomeController@');
+Route::get('category/post-show/{id}', 'HomeController@catWb');
+
 
 
 

@@ -28,7 +28,7 @@ class BlogController extends Controller
         $request-> validate([
            
            'blogcategory_id' =>'required|max:255',
-           'post_title' =>'required|max:255',
+           'post_title' =>'required',
            'short' =>'required',
            'post_body' =>'required',
            'image' =>'required|mimes:jpg,jpeg,png,gif',
@@ -55,8 +55,6 @@ class BlogController extends Controller
         'blogcategory_id'=> $request-> blogcategory_id,
         'post_title'=> $request-> post_title,
         'short'=> $request-> short,
-        'post_slug'=> strtolower(str_replace('','-',$request->post_title)),
-        
         'post_body'=> $request-> post_body,
         'image'=> $img_url,
         
@@ -93,8 +91,6 @@ class BlogController extends Controller
         'blogcategory_id'=> $request-> blogcategory_id,
         'post_title'=> $request-> post_title,
         'short'=> $request-> short,
-        'post_slug'=> strtolower(str_replace('','-',$request->post_title)),
-        
         'post_body'=> $request-> post_body,
         
         'update_at' => Carbon::now()
