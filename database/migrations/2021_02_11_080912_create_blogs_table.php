@@ -17,11 +17,12 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->integer('blogcategory_id');
             $table->integer('user_id');
-            $table->string('post_title');
-            $table->string('short');
+            $table->text('post_title');
+            $table->text('short');
             $table->text('post_body');
             $table->string('image');
             $table->integer('status')->default(1);
+            $table->integer('view')->default(0);
 
             $table->timestamps();
         });

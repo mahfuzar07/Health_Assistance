@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Product;
 use App\Category;
 use App\Blog;
@@ -99,7 +100,8 @@ class HomeController extends Controller
         $blogs = Blog::where('status',0)-> latest()-> get();
         $blogcategories = Blogcategory::latest()-> get();
         $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
-        return view('pages.blog',compact('blogs','blogcategories','lts_b'));
+
+      return view('pages.blog',compact('blogs','blogcategories','lts_b'));
         
      }
 
@@ -109,8 +111,17 @@ class HomeController extends Controller
         $blogs = Blog::findOrFail($post_id);
         $blogcategory_id = $blogs->blogcategory_id;
         $blogs = Blog::where('status',0)-> latest()-> get();
+ 
+         // $blogkey = 'blog_' . $blogs->id;
+         // if(!Session::has($blogkey)){
+         //    $blogs->increment('view');
+         //    Session::put($blogkey,1);
+         // } 
+
         // $related_p = Product::where('category_id',$category_id)-> latest()-> get();
         $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+
+
         return view('pages.blogpost',compact('blogs','lts_b','blogs'));
 
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
       protected $fillable = [
-        'blogcategory_id','user_id','post_title','short','post_body','image','status'
+        'blogcategory_id','user_id','post_title','short','post_body','image','status','view'
     ];
 
      public function join(){

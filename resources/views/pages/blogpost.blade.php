@@ -58,6 +58,7 @@
                                     <div class="blog__sidebar__recent__item__text">
                                         <h6>{{ $blog-> post_title }}</h6>
                                         <span>{{ $blog-> created_at->diffForHumans() }}</span>
+                                        {{-- <span>{{ $blog-> view }}</span> --}}
                                     </div>
                                 </a>
                                @endforeach

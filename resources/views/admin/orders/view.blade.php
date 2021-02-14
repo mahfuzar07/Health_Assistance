@@ -162,6 +162,21 @@
                                                 {{-- <a href="#" class="btn btn-primary waves-effect waves-light">Submit</a> --}}
                                             </div>
                                         </div>
+
+                                        <div class="hidden-print">
+                                            <div class="pull-left">
+                                                 @if($order-> status == 1)
+                                                                <a href="{{ url('admin/orders/success/'.$order-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                    
+                                                                </i>  Success</a>
+                                                                @else
+                                                                <a href="{{ url('admin/orders/pending/'.$order-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
+                                                                    
+                                                                </i> Pending</a>
+
+                                                                @endif
+                                            </div>
+                                        </div>
                                        
 
                                     </div>

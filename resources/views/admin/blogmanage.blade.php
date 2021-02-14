@@ -32,6 +32,7 @@
                                                             <th>SL.No</th>
                                                             <th>Author Name</th>
                                                             <th>Post Category</th>
+                                                            {{-- <th>View Post</th> --}}
                                                             <th>Post Title</th>
                                                             <th>Post Create</th>
                                                             <th>Post Update</th>
@@ -56,6 +57,7 @@
                                                             <td>{{ $row-> joincon-> name}}</td>
                                                             <td>{{ $row-> join-> category_name}}</td>
 
+                                                           {{--  <td>{{ $row-> view }}</td> --}}
                                                             <td>{{ $row-> post_title }}</td>
 
                                                             <td>{{ $row-> created_at }}</td>
@@ -74,7 +76,7 @@
 
                                                                 <a href="{{ url('admin/post/delete/'.$row-> id) }}"class="btn btn-danger" onclick="return confirm('Are you sure to Delete This Item')"><i class="fa fa-trash"></i></a>
                                                                 
-                                                                @if($row-> status == 1)
+                                                              {{--   @if($row-> status == 1)
                                                                 <a href="{{ url('admin/post/inactive/'.$row-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
                                                                     
                                                                 </i>Published </a>
@@ -82,7 +84,7 @@
                                                                 <a href="{{ url('admin/post/active/'.$row-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
                                                                     
                                                                 </i></a>
-                                                                @endif
+                                                                @endif --}}
 
 
 

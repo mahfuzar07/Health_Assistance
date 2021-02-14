@@ -86,9 +86,23 @@
                                                     <br/>
                                                     <p class="text-muted">{{ $blogs-> updated_at }}</p>
                                                 </div>
+
+                                                <div class="about-info-p">
+                                                  @if($blogs-> status == 1)
+                                                                <a href="{{ url('admin/post/inactive/'.$blogs-> id) }}"class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                    
+                                                                </i> Published </a>
+                                                                @else
+                                                                <a href="{{ url('admin/post/active/'.$blogs-> id) }}"class="btn btn-danger"><i class="fa fa-toggle-on">
+                                                                    
+                                                                </i> Pending</a>
+                                                                @endif
+                                                </div>
+                                                
                                                
                                                 
                                             </div> 
+                                            
                                         </div>
                                         
                                     </div>

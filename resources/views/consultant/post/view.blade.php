@@ -32,6 +32,7 @@
                                                         	<th>SL.No</th>
                                                             <th>Post Image</th>
                                                             <th>Post Category</th>
+                                                            <th>Total views</th>
                                                             <th>Post Title</th>
                                                             <th>Post Create</th>
                                                             <th>Post Update</th>
@@ -60,6 +61,7 @@
 
                                                             <td>{{ $row-> join-> category_name}}</td>
 
+                                                            <td>{{ $row-> view}}</td>
                                                             <td>{{ $row-> post_title }}</td>
 
                                                             <td>{{ $row-> created_at }}</td>
