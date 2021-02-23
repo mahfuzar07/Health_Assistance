@@ -26,11 +26,12 @@
                 <div class="col-lg-4 col-md-5">
                     <div class="blog__sidebar">
                       <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
+                            <h4>ব্লগ ক্যাটাগরি </h4>
                             @php
                             $blogcategories = App\Blogcategory::latest()-> get();
                         @endphp
                             <ul>
+                                <li><a href="{{ route('blog.page') }}">সকল পোস্ট </a></li>
                              @foreach($blogcategories as $row)
                             <li><a href="{{ url('category/post-show/'.$row-> id) }}">{{ $row-> category_name }}</a></li>
                             @endforeach
@@ -39,7 +40,7 @@
                             </ul>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Recent News</h4>
+                            <h4>সাম্প্রতিক স্বাস্থ্য বার্তা</h4>
                             <div class="blog__sidebar__recent">
                                 @foreach ($lts_b as $blog)
                                 <a href="{{ url('post/details/'.$blog->id) }}" class="blog__sidebar__recent__item">

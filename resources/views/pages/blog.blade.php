@@ -25,12 +25,19 @@
             <div class="row">
                 <div class="col-lg-4 col-md-5">
                     <div class="blog__sidebar">
+                        <div class="blog__sidebar__search">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button type="submit"><span class="icon_search"></span></button>
+                            </form>
+                        </div>
                       <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
+                            <h4>ব্লগ ক্যাটাগরি </h4>
                             @php
                             $blogcategories = App\Blogcategory::latest()-> get();
                         @endphp
                             <ul>
+                            
                              @foreach($blogcategories as $row)
                             <li><a href="{{ url('category/post-show/'.$row-> id) }}">{{ $row-> category_name }}</a></li>
                             @endforeach
@@ -39,7 +46,7 @@
                             </ul>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Recent News</h4>
+                            <h4>সাম্প্রতিক স্বাস্থ্য বার্তা</h4>
                             <div class="blog__sidebar__recent">
                                 @foreach ($lts_b as $blog)
                                 <a href="{{ url('post/details/'.$blog->id) }}" class="blog__sidebar__recent__item">
@@ -73,9 +80,9 @@
                                         <li><i class="fa fa-calendar-o"></i>{{ $post-> created_at }}</li>
                                         <li><i class="fa fa-comment-o"></i> 5</li>
                                     </ul>
-                                    <h5><a href="{{ url('post/details/'.$post->id) }}">{{ $post-> post_title }}</a></h5>
+                                    <h5><a href="{{ url('post/details/'.$post-> id) }}">{{ $post-> post_title }}</a></h5>
                                     <p>{{ $post-> short}}</p>
-                                    <a href="{{ url('post/details/'.$post->id) }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                    <a href="{{ url('post/details/'.$post-> id) }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
