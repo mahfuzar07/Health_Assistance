@@ -211,9 +211,10 @@
                     @foreach($consultants as $row)
                     <div class="col-lg-3">
                         <div class="card" style="width: 13rem;">
-                <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 13rem;">
+                <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 9rem;">
                 <div class="card-body">
                   <h5 class="card-title"><i class="fa fa-user-md"></i> {{ $row-> name }} </h5>
+                  <h6 class="card-title  text-primary"> {{ $row-> specialist }} </h6>
                   <p class="card-text"><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
                   <a href="{{ route('chatcon') }}"><button  type="button" class="btn btn-primary"><i class="fa fa-envelope"></i> বার্তা পাঠান  </button></a>
                 </div>

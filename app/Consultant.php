@@ -18,7 +18,7 @@ class Consultant extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','avatar','status'
+        'name', 'email', 'password','avatar','specialist','status'
     ];
 
     /**

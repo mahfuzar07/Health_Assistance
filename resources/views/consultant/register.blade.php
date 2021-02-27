@@ -64,6 +64,23 @@
                                 @enderror
                         </div>
                     </div>
+                    
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control input-lg " placeholder="Specialist" name="specialist"  class="form-control  "  required  autofocus>
+
+                            @error('specialist')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+
+
+
+
+
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <input class="form-control input-lg "  placeholder="Work Institute" name="work_institute"   type="text" class="form-control  "  required  autofocus>
