@@ -40,7 +40,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">Question & Answer </div>
-         <?php $questionList = \App\Model\Message::where('user_id',Auth::user()->id)->where('consultant_id',$consaltant->id)->get();?>
+         <?php $questionList = \App\Model\Message::where('user_id',Auth::user()->id)->where('consultant_id',$consaltant->id)->paginate(20);?>
                 <div class="card-body">
 
                     <div class="form-group">
@@ -53,6 +53,7 @@
                        </div>
                 </div>
             </div>
+            {{$questionList->links()}}
         </div>
     </div>
 </div>
