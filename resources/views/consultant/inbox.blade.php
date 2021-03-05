@@ -1,188 +1,55 @@
-@extends('consultant.consultant_layouts')
-@section('inbox') active @endsection
+@extends('layouts.app')
 
-@section('consultant_content')
-<div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container">
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="card-header"> <span class="badge badge-success">Question List</span> </div>
+            <div class="card">
+            <div class="card-header">  <span class="badge badge-success">Question & Answer List</span>  </div>
+         <?php $questionList = \App\Model\Message::where('consultant_id',Auth::guard('consultant')->user()->id)->paginate(1);?>
+                <div class="card-body">
+                    @foreach($questionList as $in_fo)
+                    <?php $user_info = \App\User::where('id',$in_fo->user_id)->first();?>
+                    <div class="form-group">
+                       <label class="col-md-2 control-label"></label>
+                       <div class="col-md-10">
+                           <h5> <span class="badge badge-success"> Name </span> ::  {{$user_info->name}}</h5>
+                           <h5> <span class="badge badge-success"> Phone Number </span> ::  {{$user_info->phone}}</h5>
+                           <h5> <span class="badge badge-success"> Blood Gruop </span> ::  {{$user_info->blood_grp}}</h5>
+                           <h5> <span class="badge badge-success"> Question </span> ::  {{$in_fo->question}} </h5>
 
-                        <!-- Page-Title -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 class="pull-left page-title">Welcome !</h4>
-                                <ol class="breadcrumb pull-right">
-                                    <li><a href="#">Consultant</a></li>
-                                    <li class="active">inbox</li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <!-- INBOX -->
-                            <div class="col-lg-5">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">Inbox</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="inbox-widget nicescroll mx-box">
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-1.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Chadengle</p>
-                                                    <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                    <p class="inbox-item-date">13:40 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-2.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Tomaslau</p>
-                                                    <p class="inbox-item-text">I've finished it! See you so...</p>
-                                                    <p class="inbox-item-date">13:34 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-3.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Stillnotdavid</p>
-                                                    <p class="inbox-item-text">This theme is awesome!</p>
-                                                    <p class="inbox-item-date">13:17 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-4.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Kurafire</p>
-                                                    <p class="inbox-item-text">Nice to meet you</p>
-                                                    <p class="inbox-item-date">12:20 PM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-5.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Shahedk</p>
-                                                    <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                    <p class="inbox-item-date">10:15 AM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-6.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Adhamdannaway</p>
-                                                    <p class="inbox-item-text">This theme is awesome!</p>
-                                                    <p class="inbox-item-date">9:56 AM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-8.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Arashasghari</p>
-                                                    <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                    <p class="inbox-item-date">10:15 AM</p>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-img"><img src="{{ asset('backend') }}/images/users/avatar-9.jpg" class="img-circle" alt=""></div>
-                                                    <p class="inbox-item-author">Joshaustin</p>
-                                                    <p class="inbox-item-text">I've finished it! See you so...</p>
-                                                    <p class="inbox-item-date">9:56 AM</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
+                       </div>
+                      <div class="col-md-10">
+                          @if($in_fo->replay==!null)
+                          <h5><span class="badge badge-success"> Answer  </span> ::  {{$in_fo->replay}}  </h5>
+                          @else
+                         <h5><span class="badge badge-success"> Answer :: </span> </h5>
+                           <form class="form-horizontal"  action="{{ route('send-replay',$in_fo->id) }}" method="POST" enctype="multipart/form-data"  >
+                            @csrf
+                           <div class="form-group">
+                              <label class="col-md-2 control-label"></label>
+                              <div class="col-md-10">
+                                  <textarea  name="replay" placeholder="Ask question" class="summernote"></textarea>
 
-                            <!-- CHAT -->
-                            <div class="col-lg-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"> 
-                                        <h3 class="panel-title">Chat</h3> 
-                                    </div> 
-                                    <div class="panel-body"> 
-                                        <div class="chat-conversation">
-                                            <ul class="conversation-list nicescroll">
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="male">
-                                                        <i>10:00</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>John Deo</i>
-                                                            <p>
-                                                                Hello!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        {{-- <img src="{{ asset('backend') }}/images/users/avatar-5.jpg" alt="Female"> --}}
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Smith</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="{{ asset('backend') }}/images/avatar-1.jpg" alt="male">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>John Deo</i>
-                                                            <p>
-                                                                Yeah everything is fine
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <i>10:02</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Smith</i>
-                                                            <p>
-                                                                Wow that's great
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="row">
-                                                <div class="col-sm-9 chat-inputbar">
-                                                    <input type="text" class="form-control chat-input" placeholder="Enter your text">
-                                                </div>
-                                                <div class="col-sm-3 chat-send">
-                                                    <button type="submit" class="btn btn-info btn-block waves-effect waves-light">Send</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div> 
-
-                        </div> <!-- end row -->
-
-                    </div> <!-- container -->
-                               
-                </div> <!-- content -->
-
-                
-
+                                  @error('description')
+                                  <strong class="text-danger">{{ $message }}</strong>
+                                  @enderror
+                              </div>
+                          </div>
+                          <div class="form-group">
+                          <label class="col-md-3 control-label"></label>
+                              <button type="submit"  class="btn btn-success waves-effect waves-light m-l-10  col-md-5">   Send </button>
+                          </div>
+                          </from>
+                          @endif
+                      </div>
+                    @endforeach
+                </div>
             </div>
+            {{$questionList->links()}}
+
+    </div>
+</div>
+</div>
 @endsection
-
-

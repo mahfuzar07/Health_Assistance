@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Consultant;
 
 
 class FrontendController extends Controller
@@ -20,10 +21,10 @@ class FrontendController extends Controller
         return view('pages.index',compact('products','categories','lts_p'));
     }
 
- public function chat()
+ public function chat($id)
     {
-    	
-        return view('chat');
+    	$consaltant = Consultant::find($id);
+        return view('chat',compact('consaltant'));
     }
     
 

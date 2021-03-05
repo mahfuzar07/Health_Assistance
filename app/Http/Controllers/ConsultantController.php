@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Consultant;
+use App\User;
 
 class ConsultantController extends Controller
 {
@@ -33,8 +34,16 @@ class ConsultantController extends Controller
     public function inbox()
 
     {
-        
-        return view('consultant.inbox');
+        try {
+            $messageableList  = User::get();
+            return view('consultant.inbox',compact('messageableList'));
+            //code...
+        } catch (\Throwable $th) {
+            return $e;
+            //throw $th;
+        }
+     
+
     }
 
     public function Logout()

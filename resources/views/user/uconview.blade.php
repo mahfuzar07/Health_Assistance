@@ -12,7 +12,7 @@
 	                <div class="col-lg-12 text-center">
 	                    <div class="breadcrumb__text">
 	                        <h2> স্বাস্থ্য  পরামর্শকগণ </h2>
-	                        
+
 	                    </div>
 	                </div>
 	            </div>
@@ -27,9 +27,9 @@
                <div class="col-lg-3 col-md-5" {{-- style="margin-top: 6%;" --}}>
                 <div><h4>প্রোফাইল মেন্যু </h4></div>
                   <hr>
-                    
+
                       <div class="list-group">
-  <a href="{{ route('user.profile') }}" class="list-group-item list-group-item-action "><i class="fa fa-address-card" aria-hidden="true"></i> 
+  <a href="{{ route('user.profile') }}" class="list-group-item list-group-item-action "><i class="fa fa-address-card" aria-hidden="true"></i>
     ড্যাশবোর্ড
   </a>
   <a href="{{ route('user.orders') }}" class="list-group-item list-group-item-action"><i class="fa fa-truck" aria-hidden="true"></i> অর্ডার তথ্য বিবরণ</a>
@@ -48,19 +48,19 @@
                             $consultants = App\Consultant::where('status',0)->latest()-> get();
                         @endphp
 
-                  
+
                   <div class="row">
                     @foreach ($consultants as $row)
                   <div class="col-lg-3 ">
-                    
+
                   <div class="card" style="width: 13rem;">
                 <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 8.5rem;">
                 <div class="card-body">
                   <h5 class="card-title"><i class="fa fa-user-md"></i> {{ $row-> name }} </h5>
                   <p class="card-text"><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
-                  <a href="{{ route('chatcon') }}"><button  type="button" class="btn btn-primary"><i class="fa fa-envelope"></i> বার্তা পাঠান  </button></a>
+                  <a href="{{ route('chatcon',$row->id.'-'.str_slug($row->name)) }}"><button  type="button" class="btn btn-primary"><i class="fa fa-envelope"></i> বার্তা পাঠান  </button></a>
                 </div>
-                
+
               </div>
               <hr>
               </div>
@@ -68,22 +68,22 @@
               @endforeach
 
 
-               
+
               </div>
-              
 
 
 
 
 
-                    
-           
-                    
+
+
+
+
 
 
 
                     </div>
-                    
+
                 </div>
             </div>
         </div>

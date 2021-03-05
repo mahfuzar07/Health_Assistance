@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-     
+
      <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 
-    
+
 
         <!-- Waves-effect -->
         <link href="{{ asset('backend') }}/css/waves-effect.css" rel="stylesheet">
@@ -51,18 +51,18 @@
         <script src="{{ asset('backend') }}/js/modernizr.min.js"></script>
 
         <link href="{{ asset('backend') }}/assets/summernote/summernote.css" rel="stylesheet" />
-        
+
     </head>
 
 
      @guest
      @else
-    
+
     <body class="fixed-left">
-        
+
         <!-- Begin page -->
         <div id="wrapper">
-        
+
             <!-- Top Bar Start -->
             <div class="topbar">
                 <!-- LOGO -->
@@ -71,7 +71,7 @@
                         <a href="{{ url('admin/home') }}" class="logo"><i class="md md-terrain"></i> <span>Aim 2Be Well  </span></a>
                     </div>
                 </div>
-                
+
                 <!-- Button mobile view to collapse sidebar menu -->
                 <div class="navbar navbar-default" role="navigation">
                     <div class="container">
@@ -85,59 +85,36 @@
 
                               <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
+                                    <?php $notifications = \App\Model\Message::where('consultant_id',Auth::guard('consultant')->user()->id)
+                                                                              ->where('is_seen',0)->latest()->limit(5)->get(); ?>
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span>
+                                        <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">{{count($notifications)}}</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg">
                                         <li class="text-center notifi-title">Notification</li>
                                         <li class="list-group">
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
+
+
+                                           @foreach($notifications as $data)<!-- list item-->
+                                           <a href="{{route('seen-update',$data->id)}}" class="list-group-item">
                                               <div class="media">
                                                  <div class="pull-left">
                                                     <em class="fa fa-user-plus fa-2x text-info"></em>
                                                  </div>
                                                  <div class="media-body clearfix">
-                                                    <div class="media-heading">New user registered</div>
+                                                    <div class="media-heading">A new question come here </div>
                                                     <p class="m-0">
-                                                       <small>You have 10 unread messages</small>
+                                                       <small>{{$data->created_at->diffForHumans()}}</small>
                                                     </p>
                                                  </div>
                                               </div>
                                            </a>
-                                           <!-- list item-->
-                                            <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left">
-                                                    <em class="fa fa-diamond fa-2x text-primary"></em>
-                                                 </div>
-                                                 <div class="media-body clearfix">
-                                                    <div class="media-heading">New settings</div>
-                                                    <p class="m-0">
-                                                       <small>There are new settings available</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                            </a>
-                                            <!-- list item-->
-                                            <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left">
-                                                    <em class="fa fa-bell-o fa-2x text-danger"></em>
-                                                 </div>
-                                                 <div class="media-body clearfix">
-                                                    <div class="media-heading">Updates</div>
-                                                    <p class="m-0">
-                                                       <small>There are
-                                                          <span class="text-primary">2</span> new updates available</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                            </a>
+                                           @endforeach
+
                                            <!-- last list item -->
-                                            <a href="javascript:void(0);" class="list-group-item">
+                                            <!-- <a href="javascript:void(0);" class="list-group-item">
                                               <small>See all notifications</small>
-                                            </a>
+                                            </a> -->
                                         </li>
                                     </ul>
                                 </li>
@@ -147,22 +124,22 @@
                                 <li class="hidden-xs">
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
                                 </li>
-                                
-                                 
+
+
                                 <li class="dropdown">
-                                   <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ Auth::user()->name }} 
-                                        <img src="{{asset('uploads/documents/consultant/'.   
-                                        Auth::user()-> avatar) }}"
-                                       style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a>                                    
+                                   <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">{{ Auth::user()->name }}
+                                        <img src="{{asset('uploads/documents/consultant/'.
+                                        Auth::guard('consultant')->user()-> avatar) }}"
+                                       style="height:60px;width:60px;" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        
-                                        
-                                        
+
+
+
                                         <li><a href="{{ route('consultant.logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
                                     </ul>
-                                    
+
                                 </li>
-                                
+
                             </ul>
                         </div>
                         <!--/.nav-collapse -->
@@ -198,7 +175,7 @@
                                     <li><a class=" @yield('category')"  class="waves-effect" href="{{ route('consultant.category') }}">Categories</a></li>
                                     <li><a class=" @yield('blog post')"  class="waves-effect" href="{{ route('add.post') }}">Create Post</a></li>
                                     <li><a class=" @yield('blog post')"  class="waves-effect" href="{{ route('view-post') }}">Manage Post</a></li>
-                                   
+
                                 </ul>
                             </li>
                           </ul>
@@ -208,8 +185,8 @@
                 </div>
             </div>
 
-   
-            <!-- Left Sidebar End --> 
+
+            <!-- Left Sidebar End -->
 
             <!-- Right Sidebar -->
             <div class="side-bar right-bar nicescroll">
@@ -226,8 +203,8 @@
                             </a>
                             <span class="clearfix"></span>
                         </li>
- 
-                    </ul>  
+
+                    </ul>
                 </div>
             </div>
 
@@ -242,7 +219,7 @@
         {{-- <footer class="footer text-right">
                     2020 © Aim 2B Well.
                 </footer> --}}
-    
+
         <script>
             var resizefunc = [];
         </script>
@@ -278,7 +255,7 @@
         <!-- Counter-up -->
         <script src="{{ asset('backend') }}/assets/counterup/waypoints.min.js" type="text/javascript"></script>
         <script src="{{ asset('backend') }}/assets/counterup/jquery.counterup.min.js" type="text/javascript"></script>
-        
+
         <!-- CUSTOM JS -->
         <script src="{{ asset('backend') }}/js/jquery.app.js"></script>
 
@@ -297,7 +274,7 @@
        {{--  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
  --}}
-       
+
 
         <script src="{{ asset('backend') }}/assets/summernote/summernote.min.js"></script>
 
@@ -325,26 +302,26 @@
         </script>
 
 
-        
+
 
         <script>
 
             jQuery(document).ready(function(){
-                
+
                 $('.summernote').summernote({
-                    height:200,                 
+                    height:200,
 
-                    minHeight: null,             
-                    maxHeight: null,             
+                    minHeight: null,
+                    maxHeight: null,
 
-                    focus: true                
+                    focus: true
                 });
 
             });
         </script>
 
-      
-    
+
+
 
 
 

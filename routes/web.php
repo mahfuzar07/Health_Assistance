@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //==========================frontend route=========================================
 //FrontendController
 Route::get('/', 'FrontendController@index');
-Route::get('/chat', 'FrontendController@chat')->name('chatcon');
+Route::get('/chat/{id}', 'FrontendController@chat')->name('chatcon');
 //FrontentController End
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -54,6 +54,7 @@ Route::get('user/orders/view/{id}','ProfileController@ordersView')->name('view-o
 Route::get('user/consultant', 'ProfileController@consultantManage')->name('user.consultant');
 
 //
+Route::get('inbox', 'Message\MessageController@inbox')->name('customer.inbox');
 
 
 
@@ -174,7 +175,7 @@ Route::get('consultant/home','ConsultantController@index')->name('consultant-hom
 Route::get('consultant/inbox','ConsultantController@inbox')->name('consultant-inbox');
 
 
-//consultant blog 
+//consultant blog
 Route::get('consultant/categories', 'Consultant\BlogcategoryController@index')->name('consultant.category');
 Route::post('consultant/categories-store', 'Consultant\BlogcategoryController@storecat')->name('store.category');
 Route::get('consultant/categories/edit/{cat_id}', 'Consultant\BlogcategoryController@Edit');
@@ -194,8 +195,9 @@ Route::get('consultant/post/delete/{post_id}', 'Consultant\BlogController@Delete
 
 
 
+Route::post('send-replay/{id}', 'Message\MessageController@sendReplay')->name('send-replay');
+
+Route::post('post-message', 'Message\MessageController@postMessage')->name('messsage-post');
+Route::get('seen-message/{id}', 'Message\MessageController@seenUpdate')->name('seen-update');
 
 //userpanel
-
-
-
