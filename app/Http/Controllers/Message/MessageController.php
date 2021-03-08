@@ -71,6 +71,11 @@ class MessageController extends Controller
         try {
 
             $replayValue =   Message::find($id);
+            if ($request->hasFile('docs_file')) {
+				$file_name = 'sugestion_file' . $request->docs_file->getClientOriginalExtension();
+				$replayValue->docs_file = $file_name;
+				$request->docs_file->move(public_path('/uploads/documents/Consultant'), $file_name);
+			}
             $replayValue->replay = $request->replay;
             $replayValue->save();
             return back();

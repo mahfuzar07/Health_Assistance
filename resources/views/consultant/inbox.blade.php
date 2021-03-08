@@ -30,11 +30,14 @@
                            <div class="form-group">
                               <label class="col-md-2 control-label"></label>
                               <div class="col-md-10">
-                                  <textarea  name="replay" placeholder="Ask question" class="summernote"></textarea>
+                                  <textarea  name="replay" placeholder="Replay" class="summernote"></textarea>
 
                                   @error('description')
                                   <strong class="text-danger">{{ $message }}</strong>
                                   @enderror
+                              </div>
+                              <div class="col-md-10">
+                                  <input type="file" name="docs_file" class="from-control">
                               </div>
                           </div>
                           <div class="form-group">
