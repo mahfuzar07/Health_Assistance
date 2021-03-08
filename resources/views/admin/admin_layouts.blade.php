@@ -89,10 +89,11 @@
                             </form>
 
                             <ul class="nav navbar-nav navbar-right pull-right">
-                                <li class="dropdown hidden-xs">
+                               {{--  <li class="dropdown hidden-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                         <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span>
                                     </a>
+
                                     <ul class="dropdown-menu dropdown-menu-lg">
                                         <li class="text-center notifi-title">Notification</li>
                                         <li class="list-group">
@@ -145,7 +146,10 @@
                                             </a>
                                         </li>
                                     </ul>
+
                                 </li>
+ --}}
+                                
                                 <li class="hidden-xs">
                                     <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
                                 </li>

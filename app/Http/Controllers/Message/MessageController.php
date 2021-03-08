@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Message;
 
+
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use App\Consultant;
 use App\Model\Message;

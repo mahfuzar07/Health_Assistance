@@ -86,7 +86,7 @@
                               <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <?php $notifications = \App\Model\Message::where('consultant_id',Auth::guard('consultant')->user()->id)
-                                                                              ->where('is_seen',0)->latest()->limit(5)->get(); ?>
+                                                                              ->where('is_seen',0)->latest()->limit(20)->get(); ?>
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                         <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">{{count($notifications)}}</span>
                                     </a>
@@ -99,7 +99,7 @@
                                            <a href="{{route('seen-update',$data->id)}}" class="list-group-item">
                                               <div class="media">
                                                  <div class="pull-left">
-                                                    <em class="fa fa-user-plus fa-2x text-info"></em>
+                                                    <em class="fa fa-inbox fa-2x text-info"></em>
                                                  </div>
                                                  <div class="media-body clearfix">
                                                     <div class="media-heading">A new question come here </div>

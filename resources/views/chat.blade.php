@@ -34,7 +34,7 @@
                 </div>
 
                 </div>
-                </from>
+                </form>
             </div>
         </div>
         <div class="col-md-6">
@@ -47,7 +47,7 @@
                        <label class="col-md-2 control-label"></label>
                        <div class="col-md-10">
                            @foreach($questionList as $in_fo)
-                           <h5> <span class="badge badge-success"> Name </span> ::  {{$in_fo->question}} </h5>
+                           <h5> <span class="badge badge-success"> Question</span> ::  {{$in_fo->question}} </h5>
                            <h5> <span class="badge badge-success"> Answer  </span> :: {{$in_fo->replay}}</h5>
                            @if($in_fo->docs_file)
                            <h5> <span class="badge badge-success"> Sugestion file  </span> ::
