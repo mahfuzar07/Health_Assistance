@@ -30,6 +30,7 @@
                                                     <p><strong>Phone No: </strong > {{ $consultants-> phone_number }}</p>
 
                                                     <p><strong>Profession: </strong > {{ $consultants-> profession }}</p>
+                                                    <p><strong>Specialist: </strong > {{ $consultants-> specialist }}</p>
 
                                                     <p><strong>Institute: </strong > {{ $consultants-> institute }}</p>
 

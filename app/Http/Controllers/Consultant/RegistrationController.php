@@ -30,6 +30,7 @@ class RegistrationController extends Controller
 					'email' => 'required|string|email|max:255|unique:consultants,email',
 					'phone_number' => 'required|digits:11',
 					'address' => 'required|max:191',
+					'specialist' => 'required',
 					'avatar' => 'required|',
 					'password' => 'required|string|min:6|',
 				]
@@ -52,6 +53,7 @@ class RegistrationController extends Controller
 				$register->phone_number = $request->phone_number;
 				$register->address = $request->address;
 				$register->profession = $request->profession;
+				$register->specialist = $request->specialist;
 				$register->institute = $request->work_institute;
 				$register->avatar = $image_name;
 				$register->password = bcrypt($request['password']);
