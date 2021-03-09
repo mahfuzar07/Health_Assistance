@@ -118,6 +118,7 @@
                                         </li>
                                     </ul>
                                 </li>
+                                
                                 <li class="hidden-xs">
                                     <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
                                 </li>
