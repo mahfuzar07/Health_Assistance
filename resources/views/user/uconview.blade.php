@@ -33,9 +33,10 @@
     ড্যাশবোর্ড
   </a>
   <a href="{{ route('user.orders') }}" class="list-group-item list-group-item-action"><i class="fa fa-truck" aria-hidden="true"></i> অর্ডার তথ্য বিবরণ</a>
+  
   <a href="{{ route('user.consultant') }}" class="list-group-item list-group-item-action active"><i class="fa fa-user-md" aria-hidden="true"></i> স্বাস্থ্য পরামর্শদাতা</a>
-  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-envelope" aria-hidden="true"></i> ইনবক্স</a>
-  <a href="{{ route('blood.page') }}" class="list-group-item list-group-item-action"><i class="fa fa-hospital-o" aria-hidden="true"></i> ব্লাড ব্যাংক</a>
+  
+  <a href="{{ route('blood.page') }}" class="list-group-item list-group-item-action"><i class="fa fa-hospital-o" aria-hidden="true"></i> ব্লাড অনুসন্ধান</a>
  {{--  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> --}}
 </div>
    </div>
@@ -57,7 +58,8 @@
                 <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 8.5rem;">
                 <div class="card-body">
                   <h5 class="card-title"><i class="fa fa-user-md"></i> {{ $row-> name }} </h5>
-                  <h6 class="card-title  text-primary"> {{ $row-> specialist }} </h6>
+                  <h5 class="card-title"> {{ $row-> profession }} </h5>
+                  <h5 class="card-title  text-primary"> {{ $row-> specialist }} </h5>
                   <p class="card-text"><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
                   <a href="{{ route('chatcon',$row->id.'-'.str_slug($row->name)) }}"><button  type="button" class="btn btn-primary"><i class="fa fa-envelope"></i> বার্তা পাঠান  </button></a>
                 </div>

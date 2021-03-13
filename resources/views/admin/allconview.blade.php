@@ -34,7 +34,9 @@
 
                                                     <p><strong>Institute: </strong > {{ $consultants-> institute }}</p>
 
-                                                    <p><strong>Join Date: </strong > {{ $consultants-> created_at }}</p>
+                                                    <p><strong>Join Date: </strong > {{ $consultants-> created_at->format('j F Y') }}</p>
+
+                                                    <p><strong>Address: </strong > {{ $consultants-> address }}</p>
 
                                                     <p><strong>Activity Status: </strong > 
                                                         @if($consultants-> status == 1)

@@ -292,7 +292,7 @@
                            
                             <li  class=" @yield('blog')"><a href="{{ route('blog.page') }}">স্বাস্থ্য বার্তা </a></li>
 
-                            <li  class=" @yield('blood')"><a href="{{ route('blood.page') }}"> ব্লাড ব্যাংক</a></li>
+                            <li  class=" @yield('blood')"><a href="{{ route('blood.page') }}"> ব্লাড অনুসন্ধান</a></li>
                             
                             @guest
                             @else

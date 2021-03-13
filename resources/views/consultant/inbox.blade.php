@@ -20,7 +20,7 @@
                         </div>
 
                        <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-lg-12 col-sm-12">
                                 <div class="panel panel-default">
                                      <div class="panel-body">
                                         <?php $questionList = \App\Model\Message::where('consultant_id',Auth::guard('consultant')->user()->id)->paginate(10);?>
@@ -30,20 +30,22 @@
                     <?php $user_info = \App\User::where('id',$in_fo->user_id)->first();?>
                     <div class="form-group">
                        <label class="col-md-2 control-label"></label>
-                       <div class="col-sm-12">
-                           <h5> <span class="badge badge-success"> Name </span> ::  {{isset($user_info)?$user_info->name:''}}</h5>
-                           <h5> <span class="badge badge-success"> Contact Number </span> ::  {{isset($user_info)?$user_info->phone:''}}</h5>
+                       <div class="col-lg-12 col-sm-12">
+                           <h5> <span class="badge badge-success"> Name </span> :  {{isset($user_info)?$user_info->name:''}}</h5>
+                           <h5> <span class="badge badge-success"> Contact Number </span> :  {{isset($user_info)?$user_info->phone:''}}</h5>
 
                            {{-- <h5> <span class="badge badge-success"> Blood Gruop </span> ::  {{isset($user_info)?$user_info->blood_grp:''}}</h5> --}}
 
                            <h5> <span class="badge badge-success"> Question </span> ::  {{$in_fo->question}} </h5>
 
                        </div>
+
+
                        <div class="col-sm-12">
                           @if($in_fo->replay==!null)
-                          <h5><span class="badge badge-success"> Answer  </span> ::  {{$in_fo->replay}}  </h5>
+                          <h5 ><span class="badge badge-success"> Answer  </span> ::   {!! $in_fo->replay  !!}  </h5>
                           @else
-                         <h5><span class="badge badge-success"> Answer :: </span> </h5>
+                         <h5 ><span class="badge badge-success"> Answer :: </span> </h5>
 
                            <form class="form-horizontal"  action="{{ route('send-replay',$in_fo->id) }}" method="POST" enctype="multipart/form-data"  >
                             @csrf
@@ -67,12 +69,16 @@
                           </form>
                           @endif
                       </div>
-                   </div>  <!-- End form group -->
+                   </div>
+                    <!-- End form group -->
                    @endforeach
 
 
-               </div>   <!-- card-body -->
-           </div>  <!-- panel-body -->
+
+               </div>
+                  <!-- card-body -->
+           </div> 
+           <hr> <!-- panel-body -->
            {{$questionList->links()}}
                                       
 

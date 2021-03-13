@@ -12,7 +12,7 @@
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
 	                    <div class="breadcrumb__text">
-	                        <h2> ব্লাড ব্যাংক </h2>
+	                        <h2> ব্লাড অনুসন্ধান </h2>
                             {{-- <h5 class="text-white"><i class="fa fa-heart"></i> আমার রক্তে যদি সহযোগিতা করে মুমূর্ষ রোগীর প্রাণ তাহলে আমি কেন করবোনা স্বেচ্ছায় রক্ত দেন <i class="fa fa-heart"></i></h5> --}}
 	                        
 	                    </div>

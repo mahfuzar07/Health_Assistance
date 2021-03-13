@@ -32,9 +32,10 @@
     ড্যাশবোর্ড
   </a>
   <a href="{{ route('user.orders') }}" class="list-group-item list-group-item-action active"><i class="fa fa-truck" aria-hidden="true"></i> অর্ডার তথ্য বিবরণ</a>
+  
   <a href="{{ route('user.consultant') }}" class="list-group-item list-group-item-action"><i class="fa fa-user-md" aria-hidden="true"></i> স্বাস্থ্য পরামর্শদাতা</a>
-  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-envelope" aria-hidden="true"></i> ইনবক্স</a>
-  <a href="{{ route('blood.page') }}" class="list-group-item list-group-item-action"><i class="fa fa-hospital-o" aria-hidden="true"></i> ব্লাড ব্যাংক</a>
+  
+  <a href="{{ route('blood.page') }}" class="list-group-item list-group-item-action"><i class="fa fa-hospital-o" aria-hidden="true"></i> ব্লাড অনুসন্ধান</a>
  {{--  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> --}}
 </div>
       </div>
