@@ -39,7 +39,7 @@
   
 
             <div class="card-body">
-                <h5  class="card-title"> {{ $consaltant-> name }}</h5>
+                <h5  class="card-title text-center"> {{ $consaltant-> name }}</h5>
                 <address>
                 <p><strong>Email: </strong > {{ $consaltant-> email }}</p>
                 <p><strong>Phone No: </strong > {{ $consaltant-> phone_number }}</p>

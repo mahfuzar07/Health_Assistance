@@ -33,6 +33,8 @@
                                                             <th>Email</th>
                                                             <th>Phone No.</th>
                                                             <th>Blood Group</th>
+                                                            <th>Gender</th>
+                                                            <th>DOB</th>
                                                             
                                                             <th>Action</th>
                                                             
@@ -51,6 +53,8 @@
                                                             <td>{{ $user-> email}}</td>
                                                             <td>{{ $user-> phone}}</td>
                                                             <td>{{ $user-> blood_grp}}</td>
+                                                            <td>{{ $user-> gender}}</td>
+                                                            <td>{{ $user-> birth}}</td>
                                                             {{-- <td>
                                                                 @if($user-> status==1 )
                                                                 <span class="badge badge-success">Active</span>

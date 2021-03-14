@@ -89,9 +89,24 @@
                                                     <p class="text-muted">{{ Auth::user()-> profession }}</p>
                                                 </div>
                                                 <div class="about-info-p">
+                                                    <strong>Specialist</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> specialist}}</p>
+                                                </div>
+                                                <div class="about-info-p">
                                                     <strong>Institute</strong>
                                                     <br/>
                                                     <p class="text-muted">{{ Auth::user()-> institute }}</p>
+                                                </div>
+
+                                                <div class="about-info-p">
+                                                    <strong>Identification Number</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> idn }}</p>
+                                                </div><div class="about-info-p">
+                                                    <strong>Registration Number (BMDC)</strong>
+                                                    <br/>
+                                                    <p class="text-muted">{{ Auth::user()-> reg }}</p>
                                                 </div>
                                                 <div class="about-info-p">
                                                     <strong>Joinning Date</strong>

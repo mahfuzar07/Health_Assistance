@@ -104,6 +104,32 @@
                                 @enderror
                         </div>
                     </div>
+
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control input-lg " placeholder="Identification Number Ex:(NId/Passport)" name="idn" type="text" class="form-control  "  required  autofocus>
+
+                            @error('idn')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control input-lg " placeholder="Registration Number (BMDC)" name="reg" type="text" class="form-control  "  required  autofocus>
+
+                            @error('reg')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+
+
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <input class="form-control input-lg" type="file" name="avatar" placeholder="Avatar" class="form-control"   required  autofocus>

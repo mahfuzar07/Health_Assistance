@@ -91,26 +91,31 @@
                     <div class="pull-left m-t-30 " >
 
                     <address>
-                     <strong>নাম </strong><br>
-                     <strong>ই-মেল</strong ><br>
-                     <strong>মোবাইল নং</strong ><br>
-                     <strong>ব্লাড গ্রুপ</strong ><br>
+                     <strong>Full Name</strong><br>
+                     <strong>E-mail</strong ><br>
+                     <strong>Contact Number</strong ><br>
+                     <strong>Blood Group</strong ><br>
+                     <strong>Gender</strong ><br>
+                     <strong>Date Of Birth</strong ><br>
 
                      </address>
                   </div>
 
                  <div class="pull-right m-t-30">
                       <address>
-                     <strong>: {{ Auth::user()->name }}</strong> <br>
-                     <strong>: {{ Auth::user()->email }} </strong> <br>
-                     <strong>: {{ Auth::user()->phone }} </strong> <br>
-                     <strong>: {{ Auth::user()->blood_grp }} </strong> <br>
+                     <strong>:  {{ Auth::user()->name }}</strong> <br>
+                     <strong>:  {{ Auth::user()->email }} </strong> <br>
+                     <strong>:  {{ Auth::user()->phone }} </strong> <br>
+                     <strong>:  {{ Auth::user()->blood_grp }} </strong> <br>
+                     <strong>:  {{ Auth::user()->gender }} </strong> <br>
+                     <strong>:  {{ Auth::user()->birth }} </strong> <br>
 
                      </address>
                   </div>
                    </div>
 
                   <div class="col-md-7 ">
+
 
 
 

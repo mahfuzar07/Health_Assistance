@@ -67,6 +67,46 @@
                                 @enderror
                         </div>
                     </div>
+
+                    <div class="row">
+                    <div class="form-group ">
+                       <div class="col-xs-5">
+                            <label for="gender" class="col-md-12 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <label style="padding:10px;" for="gender">
+                             <input type="radio" id="gender" value="Male" name="gender"> Male
+                            </label>
+
+                            <label for="gender">
+                            <input type="radio" id="gender" value="Female" name="gender"> Female
+                            </label>
+
+                                @error('gender')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                       <div class="col-xs-7">
+                            <label for="birth" class="col-md-12 col-form-label text-md-right">{{ __('Birth date') }}</label>
+
+                            <input id="birth" type="date" class="form-control @error('birth') is-invalid @enderror" name="birth" value="{{ old('birth') }}" required autocomplete="birth"><br>
+                            
+
+
+                                @error('birth')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+                        
+                    </div>
+                    
                     
 
                     <div class="form-group">

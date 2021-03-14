@@ -23,6 +23,8 @@ class CreateConsultantsTable extends Migration
             $table->string('profession');
             $table->string('specialist');
             $table->string('institute');
+            $table->string('idn');
+            $table->string('reg');
             $table->text('avatar');
             
             $table->integer('status')->default(1);

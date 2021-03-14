@@ -31,6 +31,8 @@ class RegistrationController extends Controller
 					'phone_number' => 'required|digits:11',
 					'address' => 'required|max:191',
 					'specialist' => 'required',
+					'idn' => 'required',
+					'reg' => 'required',
 					'avatar' => 'required|',
 					'password' => 'required|string|min:6|',
 				]
@@ -55,6 +57,8 @@ class RegistrationController extends Controller
 				$register->profession = $request->profession;
 				$register->specialist = $request->specialist;
 				$register->institute = $request->work_institute;
+				$register->idn = $request->idn;
+				$register->reg = $request->reg;
 				$register->avatar = $image_name;
 				$register->password = bcrypt($request['password']);
 				// dd($register);
