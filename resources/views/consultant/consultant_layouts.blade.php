@@ -83,6 +83,8 @@
                                 <span class="clearfix"></span>
                             </div>
 
+
+
                               <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <?php $notifications = \App\Model\Message::where('consultant_id',Auth::guard('consultant')->user()->id)
@@ -142,6 +144,7 @@
                                 </li>
 
                             </ul>
+                           
                         </div>
                         <!--/.nav-collapse -->
                     </div>
