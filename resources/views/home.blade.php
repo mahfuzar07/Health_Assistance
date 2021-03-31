@@ -78,9 +78,7 @@
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset($product->image_1) }}">
                             <ul class="featured__item__pic__hover">
 
-                                {{-- <button type="" style="border-radius: 50%;">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                </button> --}}
+                                
 
                                 <form action="{{ url('add/to-cart/'.$product->id) }}" method="POST">
                                     @csrf
@@ -256,8 +254,8 @@
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i>{{ $row-> created_at }}</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> {{ $row-> created_at->format('j F Y') }}</li>
+                                        <li> <i class="fa fa-user"></i> {{ $row->joincon-> name }}</li>
                             </ul>
                             <h5><a href="{{ url('post/details/'.$row->id) }}">{{ $row-> post_title }}</a></h5>
                             <p>{{ $row-> short }}</p>

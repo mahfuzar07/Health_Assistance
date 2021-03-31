@@ -77,12 +77,13 @@
                                 </div>
                                 <div class="blog__item__text">
                                     <ul>
-                                        <li><i class="fa fa-calendar-o"></i>{{ $post-> created_at }}</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
+                                        <li><i class="fa fa-calendar-o"></i> {{ $post-> created_at->format('j F Y') }}</li>
+                                        <li> <i class="fa fa-user"></i> {{ $post->joincon-> name }}</li>
+                                     </ul>
                                     <h5><a href="{{ url('post/details/'.$post-> id) }}">{{ $post-> post_title }}</a></h5>
                                     <p>{{ $post-> short}}</p>
-                                    <a href="{{ url('post/details/'.$post-> id) }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                    <p></p>
+                                    <a href="{{ url('post/details/'.$post-> id) }}" class="blog__btn"> বিস্তারিত পড়ুন <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>

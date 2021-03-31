@@ -11,10 +11,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
                         <h2>পণ্যের বর্ণনা</h2>
-                        <div class="breadcrumb__option">
-                            <a href="{{ url('/home') }}">Home</a>
-                            <span>Product Details</span>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -133,7 +130,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title related__product__title">
-                        <h2>Related Product</h2>
+                        <h2>সংশ্লিষ্ট পণ্য</h2>
                     </div>
                 </div>
             </div>

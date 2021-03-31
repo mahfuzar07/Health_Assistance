@@ -32,7 +32,7 @@
 
                               <a href="{{ route('blood.page') }}" class="list-group-item list-group-item-action"><i class="fa fa-hospital-o" aria-hidden="true"></i> ব্লাড অনুসন্ধান</a>
 
-                             {{--  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> --}}
+                             
                     </div>
                          </div>
 

@@ -100,6 +100,7 @@ class HomeController extends Controller
         $blogs = Blog::where('status',0)-> latest()-> get();
         $blogcategories = Blogcategory::latest()-> get();
         $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+        
 
       return view('pages.blog',compact('blogs','blogcategories','lts_b'));
         
@@ -110,12 +111,11 @@ class HomeController extends Controller
     {
         $blogs = Blog::findOrfail($post_id);
         $blogcategory_id = $blogs->blogcategory_id;
-        // $blogs = Blog::where('status',0)-> latest()-> get();
-        // $related_p = Product::where('category_id',$category_id)-> latest()-> get();
-        $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+       $lts_b = Blog::where('status',0)-> latest()->limit(3)-> get();
+        $related_post = Blog::where('blogcategory_id',$blogcategory_id)-> latest()-> get();
 
 
-        return view('pages.blogpost',compact('blogs','lts_b'));
+        return view('pages.blogpost',compact('blogs','lts_b','related_post'));
 
     }
 
@@ -132,15 +132,5 @@ class HomeController extends Controller
     }
 
 
-
-     //  public function filter_price(Request $request){
-
-     //    $min_price = $request->get('min') ;
-     //    $max_price = $request->get('max') ;
-     //    $products = Product::wherebetween('price',[$min_price,$max_price])->OrderBy('price',ASC)->get();
-        
-        
-     //    return response->json($product);
-        
-     // }
+     
 }

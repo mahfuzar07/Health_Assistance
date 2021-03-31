@@ -13,10 +13,10 @@
 	                <div class="col-lg-12 text-center">
 	                    <div class="breadcrumb__text">
 	                        <h2>শপ </h2>
-	                        <div class="breadcrumb__option">
+	                        {{-- <div class="breadcrumb__option">
 	                            <a href="{{ url('/home') }}">Home</a>
 	                            <span>Shop</span>
-	                        </div>
+	                        </div> --}}
 	                    </div>
 	                </div>
 	            </div>
@@ -70,7 +70,7 @@
 
                         <div class="sidebar__item">
                             <div class="latest-product__text">
-                                <h4>Latest Products</h4>
+                                <h4>নতুন পণ্য</h4>
                                 
                                     <div class="latest-product__slider owl-carousel">
 		                            <div class="latest-prdouct__slider__item">

@@ -13,10 +13,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
                         <h2>কেনাকাটা</h2>
-                        <div class="breadcrumb__option">
-                            <a href="{{ url('/home') }}">Home</a>
-                            <span>Shopping Cart</span>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
