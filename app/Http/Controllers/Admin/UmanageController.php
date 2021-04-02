@@ -59,10 +59,7 @@ public function consultantManage(){
          $consultant =  Consultant::find($con_id);
           $consultant->status =  0;
           $consultant->save();
-          // dd($consultant->email);
-          Mail::to($consultant->email)->send(new ConsultantApproved($consultant));
-
-          // Mail::to($consultant->email)->send(new ConsultantApproved($consultant));
+           Mail::to($consultant->email)->send(new ConsultantApproved($consultant));
           return Redirect() -> back();
             
        } 
