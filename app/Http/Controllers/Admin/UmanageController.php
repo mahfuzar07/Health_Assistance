@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Consultant;
+use App\Mail\ConsultantApproved;
+use Mail;
 
 class UmanageController extends Controller
 {
@@ -54,10 +56,19 @@ public function consultantManage(){
 
    public function cActive($con_id){
 
-          Consultant::find($con_id)->update(['status' => 0]);
+         $consultant =  Consultant::find($con_id);
+          $consultant->status =  0;
+          $consultant->save();
+          // dd($consultant->email);
+          Mail::to($consultant->email)->send(new ConsultantApproved($consultant));
+
+          // Mail::to($consultant->email)->send(new ConsultantApproved($consultant));
           return Redirect() -> back();
             
        } 
+      
+
+
        public function cView($con_id){
 
           $consultants = Consultant::findOrfail($con_id);
