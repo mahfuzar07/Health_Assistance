@@ -43,14 +43,14 @@ class BloodController extends Controller
            'hospital_name' =>'required|max:255',
            
            'address' =>'required|max:255',
-           'phone' =>'required|max:14',
+           'phone' =>'required|digits:11',
            'blood_group' =>'required',
            'note' =>'required',
           
            ]);
 
-         Blood::insert([
-
+         Blood::insertGetId([
+        'user_id'=> Auth::id(),
         'full_name'=> $request-> full_name,
         'hospital_name'=> $request-> hospital_name,
         'address'=> $request-> address,

@@ -51,7 +51,7 @@
                                                         @foreach($orders as $order)
                                                         <tr>
                                                             <td>{{ $i ++ }}</td>
-                                                            <td>{{ $order-> created_at }}</td>
+                                                            <td>{{ $order-> created_at->format('d-m-Y , h:i A') }}</td>
                                                             <td>{{ $order-> invoice_no }}</td>
 
                                                             <td>{{ $order-> payment_type }}</td>

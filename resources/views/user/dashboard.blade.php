@@ -41,7 +41,7 @@
 
                   <div><h4 class="text-center">আপনার তথ্য বিবরণ</h4></div>
                   <hr>
-                   <div class="card bg-secondary text-center">
+                   <div class="card  text-center">
 
               <div class="card-body">
                 <div class="row">
@@ -59,7 +59,7 @@
       <div class="card" style="width: 15rem;">
                  <div class="card-body bg-primary">
                   <h5 class="card-title text-white"> পরামর্শ সেবা নিয়েছেন </h5>
-                  <p class="card-text text-white">[ 0 ]</p>
+                  <p class="card-text text-white">[ {{ $messages }} ]</p>
 
                 </div>
 
@@ -70,7 +70,7 @@
       <div class="card" style="width: 15rem;">
                  <div class="card-body bg-primary">
                   <h5 class="card-title text-white"> পোস্ট করেছেন</h5>
-                  <p class="card-text text-white">[ 0 ]</p>
+                  <p class="card-text text-white">[ {{ $bloods }} ]</p>
 
                 </div>
 
@@ -97,6 +97,7 @@
                      <strong>Blood Group</strong ><br>
                      <strong>Gender</strong ><br>
                      <strong>Date Of Birth</strong ><br>
+                     <strong>Age</strong ><br>
 
                      </address>
                   </div>
@@ -108,7 +109,8 @@
                      <strong>:  {{ Auth::user()->phone }} </strong> <br>
                      <strong>:  {{ Auth::user()->blood_grp }} </strong> <br>
                      <strong>:  {{ Auth::user()->gender }} </strong> <br>
-                     <strong>:  {{ Auth::user()->birth }} </strong> <br>
+                     <strong>:  {{ Auth::user()->birth->format('d-m-Y') }} </strong> <br>
+                     <strong>:  {{ Auth::user()->birth->age }} years </strong> <br>
 
                      </address>
                   </div>

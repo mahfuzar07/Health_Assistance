@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Consultant;
 use App\Order;
+use App\Product;
 
 class AdminController extends Controller
 {
@@ -31,9 +32,10 @@ class AdminController extends Controller
 
     {
         $consultants =Consultant::where('status', 0)-> count();
+        $products =Product::where('status', 1)-> count();
         $users =User::count();
         $orders =Order::count();
-        return view('admin.home',compact('consultants','users','orders'));
+        return view('admin.home',compact('consultants','users','orders','products'));
     }
 
      public function Logout()

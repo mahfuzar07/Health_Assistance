@@ -96,9 +96,9 @@
                                                             <td>{{ $coupon-> discount}} %</td>
                                                             <td>
                                                                 @if($coupon-> status == 1)
-                                                                <span class="badge badge-success">Active</span>
+                                                                <span class="label label-success">Active</span>
                                                                 @else
-                                                                <span class="badge badge-danger">Inactive</span>
+                                                                <span class="label label-danger">Inactive</span>
                                                                 @endif
 
                                                             </td>

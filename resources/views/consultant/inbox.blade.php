@@ -28,24 +28,47 @@
                       <div class="card-body">
                      @foreach($questionList as $in_fo)
                     <?php $user_info = \App\User::where('id',$in_fo->user_id)->first();?>
-                    <div class="form-group">
-                       <label class="col-md-2 control-label"></label>
+
+                  <div class="form-group">
+                       
                        <div class="col-lg-12 col-sm-12">
-                           <h5> <span class="badge badge-success"> Name </span> :  {{isset($user_info)?$user_info->name:''}}</h5>
-                           <h5> <span class="badge badge-success"> Contact Number </span> :  {{isset($user_info)?$user_info->phone:''}}</h5>
+                        <span class="label label-info">{{ $in_fo-> created_at->format('j F Y , h:i A') }}</span>
+                        
+       <div class="col-lg-12 bg-primary " style="margin-top: 10px;margin-bottom: 10px">
+                        
+       <div class="col-lg-3 "> Name : {{isset($user_info)?$user_info->name:''}} </div> 
+        
 
-                           {{-- <h5> <span class="badge badge-success"> Blood Gruop </span> ::  {{isset($user_info)?$user_info->blood_grp:''}}</h5> --}}
+      <div class="col-lg-2"> Gender  : {{isset($user_info)?$user_info->gender:''}} </div> 
 
-                           <h5> <span class="badge badge-success"> Question </span> ::  {{$in_fo->question}} </h5>
+      <div class="col-lg-2"> Age  : {{$user_info->birth->age}} years </div> 
+
+      <div class="col-lg-2"> Blood Group :  {{isset($user_info)?$user_info->blood_grp:''}} </div> 
+
+      <div class="col-lg-3"> Contact: {{isset($user_info)?$user_info->phone:''}}</div> 
+
+       
+                       
+ </div>
+                          <h5> <span class="label label-success" style="margin-right:10px"> Question </span> :: <span> {{$in_fo->question}} </span>?</h5>
 
                        </div>
 
 
                        <div class="col-sm-12">
                           @if($in_fo->replay==!null)
-                          <h5 ><span class="badge badge-success"> Answer  </span> ::   {!! $in_fo->replay  !!}  </h5>
+                          <h5  ><span class="label label-success" style="margin-right:10px"> Answer  </span> ::   {!! $in_fo->replay  !!}  </h5><hr>
+                          
+                          <h5>
+                           @if($in_fo->docs_file)
+                <h5> <span class="label label-success"> Sugestion file  </span> ::
+                <a href="{{asset('uploads/documents/Consultant/'.$in_fo->docs_file)}}" class="label label-primary"> {{ $in_fo-> docs_file }}</a>
+                </h5><hr>
+                @endif
+              </h5> 
                           @else
-                         <h5 ><span class="badge badge-success"> Answer :: </span> </h5>
+                          
+                         <h5 ><span class="label label-success"> Answer :: </span> </h5>
 
                            <form class="form-horizontal"  action="{{ route('send-replay',$in_fo->id) }}" method="POST" enctype="multipart/form-data"  >
                             @csrf

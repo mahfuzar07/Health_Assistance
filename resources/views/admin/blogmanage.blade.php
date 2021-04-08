@@ -60,14 +60,14 @@
                                                            {{--  <td>{{ $row-> view }}</td> --}}
                                                             <td>{{ $row-> post_title }}</td>
 
-                                                            <td>{{ $row-> created_at }}</td>
-                                                            <td>{{ $row-> updated_at }}</td>
+                                                            <td>{{ $row-> created_at->format('d-m-Y , h:i A')  }}</td>
+                                                            <td>{{ $row-> updated_at->format('d-m-Y , h:i A')  }}</td>
                                                             
                                                             <td>
                                                                 @if($row-> status == 1)
-                                                                <span class="badge badge-danger">Pending</span>
+                                                                <span class="label label-danger">Pending</span>
                                                                 @else
-                                                                <span class="badge badge-success">Published</span>
+                                                                <span class="label label-success">Published</span>
                                                                 @endif
 
                                                             </td>

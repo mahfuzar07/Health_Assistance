@@ -67,21 +67,24 @@
             <?php $questionList = \App\Model\Message::where('user_id',Auth::user()->id)->where('consultant_id',$consaltant->id)->paginate(10);?>
 
             <div class="form-group">
+
             	@php
                 $i =1;
                 @endphp
                @foreach($questionList as $in_fo)
-                <h5><span class="badge badge-success">( {{$i++}} )  Question</span> ::  {{$in_fo->question}} </h5>
+               <h6 class="text-muted"> <u>{{ $in_fo-> created_at->format('j F Y , h:i a') }}</h6></u>  <br> 
+                <h6><span class="badge badge-success">( {{$i++}} )  Question</span> ::  {{$in_fo->question}} </h6>
                 <h5 > <span class="badge badge-success"> Answer  </span> :: {!! $in_fo->replay!!}</h5>
                 <hr>
                 @if($in_fo->docs_file)
                 <h5> <span class="badge badge-success"> Sugestion file  </span> ::
-                <a href="{{asset('uploads/documents/Consultant/'.$in_fo->docs_file)}}" class="btn btn-info">Download Sugestion File</a>
+                <a href="{{asset('uploads/documents/Consultant/'.$in_fo->docs_file)}}" class="badge badge-warning">Download {{ $in_fo->docs_file }}</a>
                 </h5><hr>
                 @endif
-               @endforeach
+                @endforeach
                        
             </div>
+
 
 
             </div>

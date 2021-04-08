@@ -69,7 +69,7 @@
                                                           @foreach($orders as $order)
                                                           <tr>
                                                               <td>{{ $i ++ }}</td>
-                                                              <td> {{ $order-> created_at }}</td>
+                                                              <td> {{ $order-> created_at->format('d-m-Y')  }}</td>
                                                               <td>{{ $order-> invoice_no }}</td>
 
                                                               <td>{{ $order-> payment_type }}</td>
@@ -88,7 +88,7 @@
                                                               </td>
 
                                                               <td>
-                                                                  <a href="{{ url('user/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i> View</a>
+                                                                  <a href="{{ url('user/orders/view/'.$order-> id) }}"class="btn btn-primary"><i class="fa fa-eye"></i></a>
                                                               </td>
                                                           </tr>
                                                           @endforeach

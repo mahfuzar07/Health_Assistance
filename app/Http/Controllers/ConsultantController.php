@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Consultant;
 use App\User;
+use App\Blog;
+use App\Model\Message;
 
 class ConsultantController extends Controller
 {
@@ -28,7 +30,12 @@ class ConsultantController extends Controller
 
     {
         $consultants = Consultant::latest()->get();
-        return view('consultant.home', compact('consultants'));
+        $blogs = Blog::where('user_id',Auth::id())->get();
+        $users = User::count();
+        $messages = Message::count();
+        
+
+        return view('consultant.home', compact('consultants','blogs','users','messages'));
     }
 
     public function inbox()

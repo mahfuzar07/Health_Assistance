@@ -147,7 +147,7 @@
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                     @enderror
                                 </div>
-                                <div class="checkout__input__checkbox">
+                                {{-- <div class="checkout__input__checkbox">
                                     <label for="bkash">
                                         bkash
                                         <input type="checkbox" id="bkash" value="B kash" name="payment_type">
@@ -156,7 +156,7 @@
                                         
                                     </label>
                                   
-                                </div>
+                                </div> --}}
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
                             </div>
                         </div>

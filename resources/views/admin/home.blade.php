@@ -27,16 +27,7 @@
                                         <span class="counter">{{ $orders }}</span>
                                         Total  Orders
                                     </div>
-                                    <div class="tiles-progress">
-                                        <div class="m-t-20">
-                                            <h5 class="text-uppercase">Orders</h5>
-                                            <div class="progress progress-sm m-0">
-                                                <div class="progress-bar progress-bar-purple" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-lg-3">
@@ -46,16 +37,7 @@
                                         <span class="counter">{{ $users }}</span>
                                         Total Users
                                     </div>
-                                    <div class="tiles-progress">
-                                        <div class="m-t-20">
-                                            <h5 class="text-uppercase">Users</h5>
-                                            <div class="progress progress-sm m-0">
-                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-lg-3">
@@ -65,16 +47,27 @@
                                         <span class="counter">{{ $consultants }}</span>
                                         Total Consultants
                                     </div>
-                                    <div class="tiles-progress">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-lg-3">
+                                <div class="mini-stat clearfix bx-shadow">
+                                    <span class="mini-stat-icon bg-primary"><i class="ion-ios7-cart"></i></span>
+                                    <div class="mini-stat-info text-right text-muted">
+                                        <span class="counter">{{ $products }}</span>
+                                        Total  Product
+                                    </div>
+                                    {{-- <div class="tiles-progress">
                                         <div class="m-t-20">
-                                            <h5 class="text-uppercase">Consultants</h5>
+                                            <h5 class="text-uppercase">Products</h5>
                                             <div class="progress progress-sm m-0">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                <div class="progress-bar progress-bar-purple" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
                                                     
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div> 

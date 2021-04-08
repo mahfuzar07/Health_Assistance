@@ -50,7 +50,7 @@
                         </ul>
                         </div>
 
-                        <div class="sidebar__item">
+                        {{-- <div class="sidebar__item">
                             <h4>Price</h4>
                             <div class="price-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="sidebar__item">
                             <div class="latest-product__text">

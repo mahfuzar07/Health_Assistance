@@ -77,7 +77,7 @@
                                                      </address>
                                                 </div>
                                                 <div class="pull-right m-t-30">
-                                                    <p><strong>Order Date: </strong > {{ $order-> created_at }}</p>
+                                                    <p><strong>Order Date: </strong > {{ $order-> created_at->format('d-m-y , h:i a') }}</p>
                                                      <p><strong>Payment Type: </strong > {{ $order-> payment_type }}</p>
 
                                                     

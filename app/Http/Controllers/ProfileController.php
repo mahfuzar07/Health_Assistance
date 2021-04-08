@@ -11,6 +11,8 @@ use App\Shipping;
 use Carbon\Carbon;
 use App\Consultant;
 use App\User;
+use App\Blood;
+use App\Model\Message;
 
 
 class ProfileController extends Controller
@@ -27,9 +29,11 @@ class ProfileController extends Controller
 
      public function uProfile()
 
-    {    
+    {   
+        $bloods = Blood:: where('user_id',Auth::id())->count();
+        $messages = Message::where('user_id',Auth::id())->count();
         $orders = Order::where('user_id',Auth::id())-> count();
-        return view('user.dashboard',compact('orders'));
+        return view('user.dashboard',compact('orders','messages','bloods'));
 
     }
     public function uOrders()

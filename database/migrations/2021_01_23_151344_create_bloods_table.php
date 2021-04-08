@@ -15,6 +15,7 @@ class CreateBloodsTable extends Migration
     {
         Schema::create('bloods', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('full_name');
             $table->string('hospital_name');
             $table->string('address');

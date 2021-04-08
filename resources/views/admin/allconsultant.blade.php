@@ -58,9 +58,9 @@
                                                             <td>{{ $con-> profession }}</td>
                                                             <td>
                                                                 @if($con-> status == 1)
-                                                                <span class="badge badge-danger"> Pending</span>
+                                                                <span class="label label-danger"> Pending</span>
                                                                 @else
-                                                                <span class="badge badge-success">Active</span>
+                                                                <span class="label label-success">Active</span>
                                                                 @endif
                                                             </td>
                                                             

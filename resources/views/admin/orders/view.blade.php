@@ -60,16 +60,16 @@
                                                       </address>
                                                 </div>
                                                 <div class="pull-right m-t-30">
-                                                    <p><strong>Order Date: </strong > {{ $order-> created_at }}</p>
+                                                    <p><strong>Order Date: </strong > {{ $order-> created_at->format('d-m-Y  , h:i A')  }}</p>
                                                      <p class="m-t-10"><strong>Order ID: </strong> {{ $shipping->order_id }}</p>
                                                      <p><strong>Payment Type: </strong > {{ $order-> payment_type }}</p>
 
                                                     
                                                     <p class="m-t-10"><strong>Order Status: </strong> 
                                                         @if($order-> status == 1)
-                                                                <span class="badge badge-danger">Pending</span>
+                                                                <span class="label label-danger">Pending</span>
                                                                 @else
-                                                                <span class="badge badge-success">Success</span>
+                                                                <span class="label label-success">Success</span>
                                                                 @endif</p>
                                                     </p>
 

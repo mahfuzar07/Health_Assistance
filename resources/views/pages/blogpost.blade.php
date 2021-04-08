@@ -66,6 +66,7 @@
                             <img src="{{ asset($blogs-> image) }}" alt="" style="width: 500px;height:250px ;">
 
                         </div>
+                        <u><span> প্রকাশ: {{ $blogs-> created_at->format('j F Y , h:i A') }}</span></p></u>
                         
                         <h3>{{ $blogs-> post_title }}</h3>
 

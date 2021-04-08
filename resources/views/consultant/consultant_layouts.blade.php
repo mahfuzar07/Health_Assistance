@@ -124,9 +124,7 @@
                                 <li class="hidden-xs">
                                     <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
                                 </li>
-                                <li class="hidden-xs">
-                                    <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
-                                </li>
+                                
 
 
                                 <li class="dropdown">
@@ -192,29 +190,11 @@
 
             <!-- Left Sidebar End -->
 
-            <!-- Right Sidebar -->
-            <div class="side-bar right-bar nicescroll">
-                <h4 class="text-center">Chat</h4>
-                <div class="contact-list nicescroll">
-                    <ul class="list-group contacts-list">
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="{{ asset('backend/images/users/avatar-1.jpg') }}" alt="">
-                                </div>
-                                <span class="name">Chadengle</span>
-                                <i class="fa fa-circle online"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
+           
 
 
         @endguest
-            <!-- /Right-bar -->
+          
 
 
         </div>

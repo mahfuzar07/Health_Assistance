@@ -210,12 +210,19 @@
                     <div class="col-lg-3">
                         <div class="card" style="width: 13rem;">
                 <img src="{{asset('uploads/documents/consultant/'. $row-> avatar) }}"class="card-img-top" style=" height: 9rem;">
-                <div class="card-body">
-                  <h5 class="card-title"><i class="fa fa-user-md"></i> {{ $row-> name }} </h5>
-                  <h5 class="card-title"></i> {{ $row-> profession }} </h5>
-                  <h6 class="card-title  text-primary"> {{ $row-> specialist }} </h6>
-                  <p class="card-text"><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
-                  <a href="{{ route('chatcon',$row->id.'-'.str_slug($row->name)) }}"><button  type="button" class="btn btn-primary"><i class="fa fa-envelope"></i> বার্তা পাঠান  </button></a>
+                <h6 class="text-center badge badge-primary"><i class="fa fa-user-md"></i> {{ $row-> name }} </h6>
+
+                 <div class="card-body">
+                  <h6 class=""> {{ $row-> profession }} </h6>
+                  <h6 class=""> {{ $row-> institute }} </h6>
+                  <h6 class="text-primary"><b> {{ $row-> specialist }}</b> </h6>
+                  <p class=""><i class="fa fa-phone"></i> {{ $row-> phone_number}}</p>
+                  <a href="{{ route('chatcon',$row->id.'-'.str_slug($row->name)) }}"><button  type="button" class="btn btn-primary btn-sm "><i class="fa fa-envelope"></i>  বার্তা পাঠান  </button>
+                    </a>
+
+                  {{-- <a href=""><button  type="button" class="btn btn-primary btn-sm"><i class="fa fa-phone"></i></button></a>
+
+                  <a href=""><button  type="button" class="btn btn-primary btn-sm"><i class="fa fa-video-camera"></i></button></a> --}}
                 </div>
                 
               </div>
@@ -269,7 +276,7 @@
         </div>
     </section>
     <!-- Blog Section End -->
-
+{{-- 
             <div class="container">
           <div class="card text-center">
   <div class="card-header ">
@@ -329,7 +336,7 @@
 </div>
             
            
-        </div>
+        </div> --}}
 
 
 

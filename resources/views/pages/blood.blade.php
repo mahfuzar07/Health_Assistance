@@ -152,30 +152,33 @@
 
                     <div class="row">
 
-                        @foreach ($bloods as $blood)
+                        @foreach ($bloods as $row)
                         <div class="col-lg-6 col-md-6 col-sm-6">
 
                             <div class="blog__item">
                                <div class="blog__item__text">
-                                    <h5>রোগীর নাম : {{ $blood-> full_name  }}</h5>
-                                    <h6>হাসপাতাল : {{ $blood->  hospital_name }}</h6>
-                                    <h6>রক্তের গ্ৰুপ: <b>{{ $blood-> blood_group  }}</b></h6>
-                                    <h6>যোগাযোগের ঠিকানা:  {{ $blood-> address  }}</h6>
+                                    <h5>রোগীর নাম : {{ $row-> full_name  }}</h5>
+                                    <h6>হাসপাতাল : {{ $row->  hospital_name }}</h6>
+                                    <h6>রক্তের গ্ৰুপ: <b>{{ $row-> blood_group  }}</b></h6>
+                                    <h6>যোগাযোগের ঠিকানা:  {{ $row-> address  }}</h6>
                                     
-                                    <h6>মোবাইল নং: <b>{{ $blood->  phone }}</b> </h6>
-                                    <h6> রোগীর অতিরিক্ত বিবরণ:{{ $blood->  note }}</h6>
+                                    <h6>মোবাইল নং: <b>{{ $row->  phone }}</b> </h6>
+                                    <h6> রোগীর অতিরিক্ত বিবরণ:{{ $row->  note }}</h6>
+                                    <h6> পোস্ট দাতা:{{ $row->join-> name}}</h6>
 
                                     <ul>
                                         
-                                    <li><i class="fa fa-calendar-o"></i> {{ $blood-> created_at->diffForHumans()  }}</li>
+                                    <li><i class="fa fa-calendar-o"></i> {{ $row-> created_at->diffForHumans()  }}</li>
 
-                                        {{-- <li><i class="fa fa-comment-o"> কমেন্ট </i> 5</li> --}}
+                        
                                     </ul>
                                     
                                 </div>
                             </div>
                         </div>
                         @endforeach
+
+
                          
                        </div>
 

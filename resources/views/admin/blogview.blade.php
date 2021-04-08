@@ -66,9 +66,9 @@
                                                     <br/>
                                                     <p>
                                                     @if($blogs-> status == 1)
-                                                        <span class="badge badge-danger">Pending</span>
+                                                        <span class="label label-danger">Pending</span>
                                                          @else
-                                                        <span class="badge badge-success">Published</span>
+                                                        <span class="label label-success">Published</span>
                                                         @endif</p>
                                                 </div>
                                                 <div class="about-info-p">
@@ -79,12 +79,12 @@
                                                 <div class="about-info-p">
                                                     <strong>Post Create </strong>
                                                     <br/>
-                                                    <p class="text-muted">{{ $blogs-> created_at }}</p>
+                                                    <p class="text-muted">{{ $blogs-> created_at->format('d-m-Y , h:i A') }}</p>
                                                 </div>
                                                 <div class="about-info-p">
                                                     <strong>Post Updated</strong>
                                                     <br/>
-                                                    <p class="text-muted">{{ $blogs-> updated_at }}</p>
+                                                    <p class="text-muted">{{ $blogs-> updated_at->format('d-m-Y , h:i A') }}</p>
                                                 </div>
 
                                                 <div class="about-info-p">
